@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Voting Flow</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #main-viz {
+            flex: 1;
+            position: relative;
+            background: #ffffff;
+        }
+
+        #boot-track {
+            width: 200px;
+            background: #fafafa;
+            border-left: 2px solid #e0e0e0;
+            padding: 12px;
+            overflow-y: auto;
+        }
+
+        #boot-track h3 {
+            text-align: center;
+            margin-bottom: 12px;
+            color: #d32f2f;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .boot-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            margin-bottom: 4px;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            font-size: 12px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .boot-item:hover {
+            background: #f0f7ff;
+            border-color: #90caf9;
+        }
+
+        .boot-item .color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .boot-item .placement {
+            color: #888;
+            margin-right: 6px;
+            font-size: 10px;
+            min-width: 24px;
+        }
+
+        .boot-item .name {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .boot-item .tc-num {
+            color: #999;
+            font-size: 10px;
+        }
+
+        #header {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            z-index: 100;
+        }
+
+        #header h1 {
+            font-size: 24px;
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
+        #header .subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        #controls {
+            position: absolute;
+            top: 12px;
+            right: 220px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        #controls select, #controls button {
+            padding: 8px 14px;
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        #controls select:hover, #controls button:hover {
+            background: #f5f5f5;
+            border-color: #bbb;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            max-width: 280px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        #tooltip.visible {
+            opacity: 1;
+        }
+
+        #tooltip .title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #222;
+        }
+
+        #tooltip .detail {
+            color: #666;
+            line-height: 1.4;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+        }
+
+        .layer-label {
+            fill: #888;
+            font-size: 11px;
+            text-anchor: middle;
+            font-weight: 500;
+        }
+
+        .merge-line {
+            stroke: #d32f2f;
+            stroke-width: 2px;
+            stroke-dasharray: 8, 4;
+            opacity: 0.7;
+        }
+
+        .merge-label {
+            fill: #d32f2f;
+            font-size: 12px;
+            text-anchor: middle;
+            font-weight: bold;
+        }
+
+        .node circle {
+            stroke: #fff;
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: stroke-width 0.2s, filter 0.2s;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+        }
+
+        .node circle:hover {
+            stroke-width: 3px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .node text {
+            fill: #fff;
+            font-size: 9px;
+            text-anchor: middle;
+            pointer-events: none;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .vote-link {
+            fill: none;
+            stroke-opacity: 0.6;
+            stroke-width: 2px;
+            transition: stroke-opacity 0.2s, stroke-width 0.2s;
+        }
+
+        .vote-link.highlighted {
+            stroke-opacity: 1;
+            stroke-width: 3px;
+        }
+
+        .vote-link.dimmed {
+            stroke-opacity: 0.1;
+        }
+
+        .node.highlighted circle {
+            stroke-width: 4px;
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.4));
+        }
+
+        .node.dimmed circle {
+            opacity: 0.25;
+        }
+
+        .node.dimmed text {
+            opacity: 0.25;
+        }
+
+        .node.selected circle {
+            stroke: #ff9800 !important;
+            stroke-width: 4px !important;
+            filter: drop-shadow(0 0 10px rgba(255, 152, 0, 0.6));
+        }
+
+        .boot-item.selected {
+            background: #fff3e0 !important;
+            border: 2px solid #ff9800 !important;
+        }
+
+        #instructions {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 280px;
+        }
+
+        #instructions h4 {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        #instructions .instruction-group {
+            margin-bottom: 10px;
+        }
+
+        #instructions .instruction-group:last-child {
+            margin-bottom: 0;
+        }
+
+        #instructions .instruction-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        #instructions .instruction-item {
+            color: #666;
+            line-height: 1.6;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        #instructions .instruction-item::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        #legend {
+            position: absolute;
+            bottom: 12px;
+            right: 220px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 11px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        #legend h4 {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        #legend .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        #legend .legend-color {
+            width: 24px;
+            height: 4px;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        #legend .legend-divider {
+            height: 1px;
+            background: #eee;
+            margin: 10px 0;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main-viz">
+            <div id="header">
+                <h1>Survivor Voting Flow</h1>
+                <div class="subtitle">Season <span id="season-num">--</span> · <span id="castaway-count">--</span> castaways · <span id="tc-count">--</span> tribal councils</div>
+            </div>
+            <div id="controls">
+                <select id="season-select">
+                    <option value="us46">Season 46</option>
+                </select>
+                <button id="reset-zoom">Reset Zoom</button>
+            </div>
+            <div id="tooltip"></div>
+            <div id="instructions">
+                <h4>📖 How to Explore</h4>
+                <div class="instruction-group">
+                    <div class="instruction-label">Hover</div>
+                    <div class="instruction-item">Start coin: see their voting path</div>
+                    <div class="instruction-item">Vote coin: see all paths leading to it</div>
+                    <div class="instruction-item">Boot Order: see all votes against them</div>
+                </div>
+                <div class="instruction-group">
+                    <div class="instruction-label">Click</div>
+                    <div class="instruction-item">Start coin: lock voting lines view</div>
+                    <div class="instruction-item">Boot Order: lock votes received view</div>
+                    <div class="instruction-item">Background: clear selection</div>
+                </div>
+            </div>
+            <div id="legend">
+                <h4>Legend</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(90deg, #e57373, #ffb74d, #fff176, #81c784);"></div>
+                    <span>Vote line (voter's color)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d32f2f; height: 2px; border-top: 2px dashed #d32f2f;"></div>
+                    <span>Merge</span>
+                </div>
+                <div class="legend-item">
+                    <span style="margin-right: 10px;">💀</span>
+                    <span>Eliminated at this tribal</span>
+                </div>
+            </div>
+            <svg id="viz"></svg>
+            <div class="loading" id="loading">Loading...</div>
+        </div>
+        <div id="boot-track">
+            <h3>🔥 Boot Order</h3>
+            <div id="boot-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            nodeRadius: 18,
+            layerWidth: 120,
+            verticalPadding: 60,
+            headerOffset: 80,
+            colors: {
+                eliminationVote: '#e94560',
+                regularVote: '#888'
+            }
+        };
+
+        // State
+        let currentData = null;
+        let svg, g, zoom;
+        let width, height;
+        let allNodes = [];
+        let selectedCastaways = new Set(); // Track selected castaways
+        let selectionMode = null; // 'votes-cast' or 'votes-received'
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', init);
+
+        async function init() {
+            setupSVG();
+            setupZoom();
+            setupEventListeners();
+            
+            await loadSeason('us46');
+        }
+
+        function setupSVG() {
+            const container = document.getElementById('main-viz');
+            width = container.clientWidth;
+            height = container.clientHeight;
+
+            svg = d3.select('#viz')
+                .attr('width', width)
+                .attr('height', height);
+
+            g = svg.append('g');
+        }
+
+        function setupZoom() {
+            zoom = d3.zoom()
+                .scaleExtent([0.2, 3])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+
+            svg.call(zoom);
+
+            // Click on background to clear selections
+            svg.on('click', () => {
+                selectedCastaways.clear();
+                updateSelectionHighlights();
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById('reset-zoom').addEventListener('click', resetZoom);
+            document.getElementById('season-select').addEventListener('change', (e) => {
+                loadSeason(e.target.value);
+            });
+
+            window.addEventListener('resize', () => {
+                width = document.getElementById('main-viz').clientWidth;
+                height = document.getElementById('main-viz').clientHeight;
+                svg.attr('width', width).attr('height', height);
+                if (currentData) render(currentData);
+            });
+        }
+
+        function resetZoom() {
+            svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+        }
+
+        async function loadSeason(seasonId) {
+            document.getElementById('loading').style.display = 'block';
+            selectedCastaways.clear();
+            selectionMode = null;
+            
+            try {
+                const response = await fetch(`data/${seasonId}_voting_flow.json`);
+                if (!response.ok) throw new Error('Failed to load data');
+                currentData = await response.json();
+                render(currentData);
+            } catch (error) {
+                console.error('Error loading season:', error);
+                document.getElementById('loading').textContent = 'Error loading data. Make sure the JSON file is in the data/ folder.';
+            }
+        }
+
+        function render(data) {
+            document.getElementById('loading').style.display = 'none';
+            
+            document.getElementById('season-num').textContent = data.season;
+            document.getElementById('castaway-count').textContent = data.total_castaways;
+            document.getElementById('tc-count').textContent = data.total_tribal_councils;
+
+            g.selectAll('*').remove();
+
+            const { nodes, links, nodeMap } = buildGraph(data);
+            allNodes = nodes;
+
+            calculatePositions(nodes, data);
+
+            const nodePositions = new Map();
+            nodes.forEach(n => nodePositions.set(n.id, { x: n.x, y: n.y, layer: n.layer }));
+
+            // Find merge point
+            const mergeTC = data.tribal_councils.find(tc => tc.tribe_status === 'Merged');
+            const mergeLayer = mergeTC ? data.tribal_councils.indexOf(mergeTC) + 1 : null;
+
+            if (mergeLayer) {
+                renderMergeLine(mergeLayer, data);
+            }
+
+            renderLinks(links, nodePositions, nodes);
+            renderNodes(nodes);
+            renderLayerLabels(data);
+            renderBootTrack(data);
+
+            fitToScreen(nodes);
+        }
+
+        function buildGraph(data) {
+            const nodes = [];
+            const links = [];
+            const nodeMap = new Map();
+
+            // Layer 0: All castaways (start column)
+            data.castaways.forEach((c, idx) => {
+                const node = {
+                    id: `${c.id}-L0`,
+                    castawayId: c.id,
+                    name: c.name,
+                    color: c.color,
+                    tribeColor: c.tribe_color,
+                    layer: 0,
+                    placement: c.placement,
+                    isOriginal: true
+                };
+                nodes.push(node);
+                nodeMap.set(node.id, node);
+            });
+
+            // Track each castaway's current position (for their continuous line)
+            const currentPosition = new Map();
+            data.castaways.forEach(c => currentPosition.set(c.id, `${c.id}-L0`));
+
+            const eliminated = new Set();
+
+            // Process each tribal council
+            data.tribal_councils.forEach((tc, tcIdx) => {
+                const layer = tcIdx + 1;
+                const layerTargets = new Set();
+
+                // Collect unique targets in this TC
+                tc.votes.forEach(v => {
+                    if (v.target_id) {
+                        layerTargets.add(v.target_id);
+                    }
+                });
+
+                // Create nodes for vote targets in this layer
+                layerTargets.forEach(targetId => {
+                    const castaway = data.castaways.find(c => c.id === targetId);
+                    if (!castaway) return;
+
+                    const nodeId = `${targetId}-L${layer}`;
+                    const node = {
+                        id: nodeId,
+                        castawayId: targetId,
+                        name: castaway.name,
+                        color: castaway.color,
+                        tribeColor: castaway.tribe_color,
+                        layer: layer,
+                        placement: castaway.placement,
+                        isTarget: true,
+                        tcNumber: tc.tc_number,
+                        isEliminated: tc.eliminated_id === targetId
+                    };
+                    nodes.push(node);
+                    nodeMap.set(node.id, node);
+                });
+
+                // Create links - each voter's line continues from their CURRENT position
+                tc.votes.forEach(v => {
+                    if (!v.target_id) return;
+                    
+                    const voterId = v.voter_id;
+                    const targetId = v.target_id;
+
+                    // Skip if voter was already eliminated
+                    if (eliminated.has(voterId)) return;
+
+                    const sourceNodeId = currentPosition.get(voterId);
+                    const targetNodeId = `${targetId}-L${layer}`;
+
+                    if (sourceNodeId && nodeMap.has(targetNodeId)) {
+                        links.push({
+                            source: sourceNodeId,
+                            target: targetNodeId,
+                            voter: v.voter,
+                            voterId: voterId,
+                            targetName: v.target,
+                            targetId: targetId,
+                            voterColor: v.voter_color,
+                            voteRound: v.vote_round,
+                            isEliminationVote: tc.eliminated_id === targetId,
+                            tcNumber: tc.tc_number,
+                            layer: layer
+                        });
+
+                        // Update this voter's current position for their continuous line
+                        currentPosition.set(voterId, targetNodeId);
+                    }
+                });
+
+                // Mark eliminated player
+                if (tc.eliminated_id) {
+                    eliminated.add(tc.eliminated_id);
+                }
+            });
+
+            return { nodes, links, nodeMap };
+        }
+
+        function calculatePositions(nodes, data) {
+            const numLayers = data.total_tribal_councils + 1;
+            const usableWidth = Math.max(width - 100, numLayers * CONFIG.layerWidth);
+            const layerSpacing = usableWidth / (numLayers + 1);
+
+            const layers = d3.group(nodes, d => d.layer);
+
+            layers.forEach((layerNodes, layerIdx) => {
+                const x = 80 + layerIdx * layerSpacing;
+                const usableHeight = height - CONFIG.headerOffset - CONFIG.verticalPadding * 2;
+                const nodeSpacing = usableHeight / (layerNodes.length + 1);
+
+                layerNodes.sort((a, b) => (a.placement || 999) - (b.placement || 999));
+
+                layerNodes.forEach((node, idx) => {
+                    node.x = x;
+                    node.y = CONFIG.headerOffset + CONFIG.verticalPadding + (idx + 1) * nodeSpacing;
+                });
+            });
+        }
+
+        function renderMergeLine(mergeLayer, data) {
+            const numLayers = data.total_tribal_councils + 1;
+            const usableWidth = Math.max(width - 100, numLayers * CONFIG.layerWidth);
+            const layerSpacing = usableWidth / (numLayers + 1);
+            
+            const mergeX = 80 + (mergeLayer - 0.5) * layerSpacing;
+
+            const mergeG = g.append('g').attr('class', 'merge-indicator');
+
+            mergeG.append('line')
+                .attr('class', 'merge-line')
+                .attr('x1', mergeX)
+                .attr('x2', mergeX)
+                .attr('y1', CONFIG.headerOffset - 30)
+                .attr('y2', height - 20);
+
+            mergeG.append('text')
+                .attr('class', 'merge-label')
+                .attr('x', mergeX)
+                .attr('y', CONFIG.headerOffset - 35)
+                .text('MERGE');
+        }
+
+        function renderLinks(links, nodePositions, nodes) {
+            const linkG = g.append('g').attr('class', 'links');
+
+            // Group links by source-target pair to calculate offsets
+            const linkGroups = new Map();
+            links.forEach((link, idx) => {
+                const key = `${link.source}->${link.target}`;
+                if (!linkGroups.has(key)) {
+                    linkGroups.set(key, []);
+                }
+                linkGroups.get(key).push({ ...link, index: idx });
+            });
+
+            // Calculate offset for each link
+            const linkOffsets = new Map();
+            linkGroups.forEach((group, key) => {
+                const count = group.length;
+                group.forEach((link, i) => {
+                    // Spread lines evenly around center
+                    const offset = count === 1 ? 0 : (i - (count - 1) / 2) * 4;
+                    linkOffsets.set(link.index, offset);
+                });
+            });
+
+            // Draw the paths
+            linkG.selectAll('.vote-link')
+                .data(links)
+                .enter()
+                .append('path')
+                .attr('class', 'vote-link')
+                .attr('d', (d, i) => {
+                    const source = nodePositions.get(d.source);
+                    const target = nodePositions.get(d.target);
+                    if (!source || !target) return '';
+                    
+                    const offset = linkOffsets.get(i) || 0;
+                    return createRoutedPath(source, target, offset);
+                })
+                .attr('stroke', d => d.voterColor)
+                .attr('data-voter', d => d.voterId)
+                .attr('data-target', d => d.targetId)
+                .on('mouseover', handleLinkHover)
+                .on('mouseout', handleLinkOut);
+        }
+
+        function createRoutedPath(source, target, offset = 0) {
+            const x1 = source.x, y1 = source.y + offset;
+            const x2 = target.x, y2 = target.y + offset;
+            
+            // Bezier curve with offset
+            const midX = (x1 + x2) / 2;
+            return `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
+        }
+
+        function renderNodes(nodes) {
+            const nodeG = g.append('g').attr('class', 'nodes');
+
+            const nodeGroups = nodeG.selectAll('.node')
+                .data(nodes)
+                .enter()
+                .append('g')
+                .attr('class', d => `node ${d.isEliminated ? 'eliminated' : ''}`)
+                .attr('id', d => `node-${d.id}`)
+                .attr('transform', d => `translate(${d.x}, ${d.y})`)
+                .on('mouseover', handleNodeHover)
+                .on('mouseout', handleNodeOut)
+                .on('click', handleNodeClick);
+
+            nodeGroups.append('circle')
+                .attr('r', d => d.isOriginal ? CONFIG.nodeRadius : CONFIG.nodeRadius * 0.85)
+                .attr('fill', d => d.color)
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 1.5);
+
+            nodeGroups.append('text')
+                .attr('class', 'node-name')
+                .attr('dy', '0.35em')
+                .text(d => truncateName(d.name));
+
+            // Add skull indicator for eliminated nodes
+            nodeGroups.filter(d => d.isEliminated)
+                .append('text')
+                .attr('class', 'eliminated-indicator')
+                .attr('x', CONFIG.nodeRadius * 0.6)
+                .attr('y', -CONFIG.nodeRadius * 0.6)
+                .attr('font-size', '10px')
+                .text('💀');
+        }
+
+        function renderLayerLabels(data) {
+            const numLayers = data.total_tribal_councils + 1;
+            const usableWidth = Math.max(width - 100, numLayers * CONFIG.layerWidth);
+            const layerSpacing = usableWidth / (numLayers + 1);
+
+            const labels = ['Start'];
+            data.tribal_councils.forEach(tc => {
+                labels.push(`TC${tc.tc_number}`);
+            });
+
+            const labelG = g.append('g').attr('class', 'layer-labels');
+
+            labelG.selectAll('.layer-label')
+                .data(labels)
+                .enter()
+                .append('text')
+                .attr('class', 'layer-label')
+                .attr('x', (d, i) => 80 + i * layerSpacing)
+                .attr('y', CONFIG.headerOffset - 10)
+                .text(d => d);
+        }
+
+        function renderBootTrack(data) {
+            const bootList = document.getElementById('boot-list');
+            bootList.innerHTML = '';
+
+            data.boot_order.forEach(boot => {
+                const item = document.createElement('div');
+                item.className = 'boot-item';
+                item.setAttribute('data-castaway', boot.id);
+                item.innerHTML = `
+                    <div class="color-dot" style="background: ${boot.color}"></div>
+                    <span class="placement">#${boot.placement}</span>
+                    <span class="name">${boot.name}</span>
+                    <span class="tc-num">TC${boot.tc_number}</span>
+                `;
+                item.addEventListener('mouseover', () => {
+                    if (selectedCastaways.size === 0) {
+                        highlightVotesReceived(boot.id);
+                    }
+                });
+                item.addEventListener('mouseout', () => {
+                    if (selectedCastaways.size === 0) {
+                        clearHighlights();
+                    }
+                });
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Boot order click = votes received mode
+                    if (selectionMode && selectionMode !== 'votes-received') {
+                        selectedCastaways.clear();
+                    }
+                    selectionMode = 'votes-received';
+                    toggleSelection(boot.id);
+                });
+                bootList.appendChild(item);
+            });
+        }
+
+        function fitToScreen(nodes) {
+            if (nodes.length === 0) return;
+
+            const bounds = {
+                minX: d3.min(nodes, d => d.x) - CONFIG.nodeRadius * 2,
+                maxX: d3.max(nodes, d => d.x) + CONFIG.nodeRadius * 2,
+                minY: d3.min(nodes, d => d.y) - CONFIG.nodeRadius * 2,
+                maxY: d3.max(nodes, d => d.y) + CONFIG.nodeRadius * 2
+            };
+
+            const graphWidth = bounds.maxX - bounds.minX;
+            const graphHeight = bounds.maxY - bounds.minY;
+
+            const scale = Math.min(
+                (width - 40) / graphWidth,
+                (height - 40) / graphHeight,
+                1
+            ) * 0.9;
+
+            const centerX = (bounds.minX + bounds.maxX) / 2;
+            const centerY = (bounds.minY + bounds.maxY) / 2;
+
+            const transform = d3.zoomIdentity
+                .translate(width / 2, height / 2)
+                .scale(scale)
+                .translate(-centerX, -centerY);
+
+            svg.transition().duration(500).call(zoom.transform, transform);
+        }
+
+        function handleNodeHover(event, d) {
+            // Don't change highlights on hover if we have selections
+            if (selectedCastaways.size > 0) {
+                // Just show tooltip
+                if (d.isOriginal) {
+                    showTooltip(event, {
+                        title: d.name,
+                        details: [`Click to ${selectedCastaways.has(d.castawayId) ? 'deselect' : 'select'}`]
+                    });
+                } else {
+                    const tc = currentData.tribal_councils[d.tcNumber - 1];
+                    const votesAgainst = tc.votes.filter(v => v.target_id === d.castawayId);
+                    const voters = votesAgainst.map(v => v.voter);
+                    const voteCount = votesAgainst.length;
+                    
+                    showTooltip(event, {
+                        title: `${d.name} - TC${d.tcNumber}`,
+                        details: [
+                            `${voteCount} vote${voteCount !== 1 ? 's' : ''}: ${voters.join(', ')}`,
+                            d.isEliminated ? '💀 Eliminated' : '✓ Survived'
+                        ]
+                    });
+                }
+                return;
+            }
+
+            if (d.isOriginal) {
+                // Start column: show votes cast by this person
+                highlightVotesCast(d.castawayId);
+                showTooltip(event, {
+                    title: d.name,
+                    details: [`Hover to see votes cast`, `Click to select`]
+                });
+            } else {
+                // Vote coin: show full tree of votes leading to this coin
+                highlightVoteTree(d.id);
+                
+                const tc = currentData.tribal_councils[d.tcNumber - 1];
+                const votesAgainst = tc.votes.filter(v => v.target_id === d.castawayId);
+                const voters = votesAgainst.map(v => v.voter);
+                const voteCount = votesAgainst.length;
+                
+                showTooltip(event, {
+                    title: `${d.name} - TC${d.tcNumber}`,
+                    details: [
+                        `${voteCount} vote${voteCount !== 1 ? 's' : ''}: ${voters.join(', ')}`,
+                        d.isEliminated ? '💀 Eliminated' : '✓ Survived'
+                    ]
+                });
+            }
+        }
+
+        function handleNodeOut() {
+            hideTooltip();
+            // Only clear highlights if nothing is selected
+            if (selectedCastaways.size === 0) {
+                clearHighlights();
+            }
+        }
+
+        function handleNodeClick(event, d) {
+            event.stopPropagation();
+            
+            // Clicking on start column = show votes cast (lines)
+            // Clicking on vote coins = show votes received (coins)
+            const newMode = d.isOriginal ? 'votes-cast' : 'votes-received';
+            
+            // If switching modes, clear previous selections
+            if (selectionMode && selectionMode !== newMode) {
+                selectedCastaways.clear();
+            }
+            selectionMode = newMode;
+            
+            toggleSelection(d.castawayId);
+        }
+
+        function toggleSelection(castawayId) {
+            if (selectedCastaways.has(castawayId)) {
+                selectedCastaways.delete(castawayId);
+                if (selectedCastaways.size === 0) {
+                    selectionMode = null;
+                }
+            } else {
+                selectedCastaways.add(castawayId);
+            }
+            updateSelectionHighlights();
+        }
+
+        function updateSelectionHighlights() {
+            if (selectedCastaways.size === 0) {
+                // Clear all
+                clearHighlights();
+                g.selectAll('.node').classed('selected', false);
+                document.querySelectorAll('.boot-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
+                selectionMode = null;
+                return;
+            }
+
+            if (selectionMode === 'votes-cast') {
+                // Show only the voting LINES for selected castaways
+                // Highlight: start nodes for selected + their vote lines
+                g.selectAll('.node')
+                    .classed('selected', d => selectedCastaways.has(d.castawayId) && d.isOriginal)
+                    .classed('highlighted', d => selectedCastaways.has(d.castawayId) && d.isOriginal)
+                    .classed('dimmed', d => !(selectedCastaways.has(d.castawayId) && d.isOriginal));
+
+                g.selectAll('.vote-link')
+                    .classed('highlighted', d => selectedCastaways.has(d.voterId))
+                    .classed('dimmed', d => !selectedCastaways.has(d.voterId));
+
+            } else if (selectionMode === 'votes-received') {
+                // Show only the vote COINS for selected castaways
+                // Highlight: all vote-receiving nodes (coins) for selected castaways
+                g.selectAll('.node')
+                    .classed('selected', d => selectedCastaways.has(d.castawayId))
+                    .classed('highlighted', d => selectedCastaways.has(d.castawayId))
+                    .classed('dimmed', d => !selectedCastaways.has(d.castawayId));
+
+                // Dim all lines in this mode
+                g.selectAll('.vote-link')
+                    .classed('highlighted', false)
+                    .classed('dimmed', true);
+            }
+
+            // Update boot track
+            document.querySelectorAll('.boot-item').forEach(item => {
+                const id = item.getAttribute('data-castaway');
+                item.classList.toggle('selected', selectedCastaways.has(id));
+            });
+        }
+
+        function handleLinkHover(event, d) {
+            showTooltip(event, {
+                title: `${d.voter} → ${d.targetName}`,
+                details: [
+                    `TC${d.tcNumber}`,
+                    d.voteRound > 1 ? `Revote round ${d.voteRound}` : '',
+                    d.isEliminationVote ? '❌ Elimination vote' : ''
+                ].filter(Boolean)
+            });
+            d3.select(event.target).classed('highlighted', true);
+        }
+
+        function handleLinkOut(event) {
+            hideTooltip();
+            d3.select(event.target).classed('highlighted', false);
+        }
+
+        function highlightVotesCast(castawayId) {
+            // Find all votes cast by this person
+            const voterLinks = [];
+            g.selectAll('.vote-link').each(function(d) {
+                if (d.voterId === castawayId) {
+                    voterLinks.push(d);
+                }
+            });
+
+            // Find all target nodes hit by this voter (but NOT the voter's own coins)
+            const targetNodeIds = new Set(voterLinks.map(l => l.target));
+
+            g.selectAll('.node')
+                .classed('highlighted', d => {
+                    // Highlight: voter's start node + target nodes (but not voter's own vote coins)
+                    if (d.castawayId === castawayId && d.isOriginal) return true;
+                    if (targetNodeIds.has(d.id) && d.castawayId !== castawayId) return true;
+                    return false;
+                })
+                .classed('dimmed', d => {
+                    if (d.castawayId === castawayId && d.isOriginal) return false;
+                    if (targetNodeIds.has(d.id) && d.castawayId !== castawayId) return false;
+                    return true;
+                });
+
+            g.selectAll('.vote-link')
+                .classed('highlighted', d => d.voterId === castawayId)
+                .classed('dimmed', d => d.voterId !== castawayId);
+        }
+
+        function highlightVoteTree(targetNodeId) {
+            // Trace back the full tree of votes that led to this node
+            // Build a map of all links by their target node
+            const linksByTarget = new Map();
+            const allLinks = [];
+            
+            g.selectAll('.vote-link').each(function(d) {
+                allLinks.push(d);
+                if (!linksByTarget.has(d.target)) {
+                    linksByTarget.set(d.target, []);
+                }
+                linksByTarget.get(d.target).push(d);
+            });
+
+            // BFS backward from target node to find all ancestor links and nodes
+            const highlightedLinks = new Set();
+            const highlightedNodes = new Set();
+            const queue = [targetNodeId];
+            
+            highlightedNodes.add(targetNodeId);
+
+            while (queue.length > 0) {
+                const currentNodeId = queue.shift();
+                
+                // Find all links that point TO this node
+                const incomingLinks = linksByTarget.get(currentNodeId) || [];
+                
+                incomingLinks.forEach(link => {
+                    highlightedLinks.add(link);
+                    
+                    // Add the source node and continue tracing back
+                    if (!highlightedNodes.has(link.source)) {
+                        highlightedNodes.add(link.source);
+                        queue.push(link.source);
+                    }
+                });
+            }
+
+            // Apply highlights
+            g.selectAll('.node')
+                .classed('highlighted', d => highlightedNodes.has(d.id))
+                .classed('dimmed', d => !highlightedNodes.has(d.id));
+
+            g.selectAll('.vote-link')
+                .classed('highlighted', d => highlightedLinks.has(d))
+                .classed('dimmed', d => !highlightedLinks.has(d));
+        }
+
+        function highlightVotesReceived(castawayId) {
+            // Find all votes against this person (across all TCs)
+            const incomingLinks = [];
+            g.selectAll('.vote-link').each(function(d) {
+                if (d.targetId === castawayId) {
+                    incomingLinks.push(d);
+                }
+            });
+
+            // Find all voters who voted against this person
+            const voterIds = new Set(incomingLinks.map(l => l.voterId));
+
+            // Highlight: all nodes for this castaway + all voter start nodes
+            g.selectAll('.node')
+                .classed('highlighted', d => d.castawayId === castawayId || (d.isOriginal && voterIds.has(d.castawayId)))
+                .classed('dimmed', d => d.castawayId !== castawayId && !(d.isOriginal && voterIds.has(d.castawayId)));
+
+            g.selectAll('.vote-link')
+                .classed('highlighted', d => d.targetId === castawayId)
+                .classed('dimmed', d => d.targetId !== castawayId);
+
+            document.querySelectorAll('.boot-item').forEach(item => {
+                item.style.background = item.getAttribute('data-castaway') === castawayId 
+                    ? 'rgba(233, 69, 96, 0.3)' 
+                    : '';
+            });
+        }
+
+        function clearHighlights() {
+            g.selectAll('.node').classed('highlighted', false).classed('dimmed', false);
+            g.selectAll('.vote-link').classed('highlighted', false).classed('dimmed', false);
+            document.querySelectorAll('.boot-item').forEach(item => {
+                if (!item.classList.contains('selected')) {
+                    item.style.background = '';
+                }
+            });
+        }
+
+        function showTooltip(event, { title, details }) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <div class="title">${title}</div>
+                ${details.map(d => `<div class="detail">${d}</div>`).join('')}
+            `;
+            tooltip.style.left = (event.pageX + 15) + 'px';
+            tooltip.style.top = (event.pageY - 10) + 'px';
+            tooltip.classList.add('visible');
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('visible');
+        }
+
+        function truncateName(name) {
+            return name.length > 8 ? name.substring(0, 7) + '…' : name;
+        }
+    </script>
+</body>
+</html>

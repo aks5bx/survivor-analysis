@@ -364,7 +364,7 @@
             </div>
             <div id="controls">
                 <select id="season-select">
-                    <option value="us46">Season 46</option>
+                    <option>Loading seasons...</option>
                 </select>
                 <button id="reset-zoom">Reset Zoom</button>
             </div>
@@ -423,6 +423,7 @@
 
         // State
         let currentData = null;
+        let seasonsManifest = null;
         let svg, g, zoom;
         let width, height;
         let allNodes = [];
@@ -437,7 +438,68 @@
             setupZoom();
             setupEventListeners();
             
-            await loadSeason('us46');
+            // Load manifest and populate dropdown
+            await loadManifest();
+            
+            // Load most recent season by default
+            const defaultSeason = seasonsManifest?.seasons[seasonsManifest.seasons.length - 1]?.id || 'us46';
+            await loadSeason(defaultSeason);
+        }
+
+        async function loadManifest() {
+            try {
+                const response = await fetch('data/seasons_manifest.json');
+                if (!response.ok) throw new Error('Failed to load manifest');
+                seasonsManifest = await response.json();
+                populateSeasonDropdown();
+            } catch (error) {
+                console.error('Error loading manifest:', error);
+                // Fallback to hardcoded seasons
+                seasonsManifest = {
+                    seasons: Array.from({length: 49}, (_, i) => ({
+                        id: `us${String(i + 1).padStart(2, '0')}`,
+                        name: `Season ${i + 1}`,
+                        file: `us${String(i + 1).padStart(2, '0')}_voting_flow.json`
+                    }))
+                };
+                populateSeasonDropdown();
+            }
+        }
+
+        function populateSeasonDropdown() {
+            const select = document.getElementById('season-select');
+            select.innerHTML = '';
+            
+            // Group by era
+            const eras = [
+                { name: '── New Era (41-49) ──', start: 41, end: 49 },
+                { name: '── 30s (31-40) ──', start: 31, end: 40 },
+                { name: '── 20s (21-30) ──', start: 21, end: 30 },
+                { name: '── 10s (11-20) ──', start: 11, end: 20 },
+                { name: '── Classic (1-10) ──', start: 1, end: 10 }
+            ];
+            
+            eras.forEach(era => {
+                // Add era header as disabled option
+                const header = document.createElement('option');
+                header.textContent = era.name;
+                header.disabled = true;
+                header.style.fontWeight = 'bold';
+                select.appendChild(header);
+                
+                // Add seasons in this era (reverse order - newest first)
+                const eraSeasons = seasonsManifest.seasons.filter(s => {
+                    const num = parseInt(s.id.replace('us', ''));
+                    return num >= era.start && num <= era.end;
+                }).reverse();
+                
+                eraSeasons.forEach(season => {
+                    const option = document.createElement('option');
+                    option.value = season.id;
+                    option.textContent = season.name;
+                    select.appendChild(option);
+                });
+            });
         }
 
         function setupSVG() {

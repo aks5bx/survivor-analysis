@@ -1,0 +1,1413 @@
+{
+  "season": 43,
+  "version_season": "US43",
+  "version": "US",
+  "total_castaways": 18,
+  "total_tribal_councils": 15,
+  "castaways": [
+    {
+      "id": "US0639",
+      "name": "Morriah",
+      "full_name": "Morriah Young",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#bd2828",
+      "placement": 1,
+      "result": "1st voted out"
+    },
+    {
+      "id": "US0635",
+      "name": "Justine",
+      "full_name": "Justine Brennan",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#e57f4c",
+      "placement": 2,
+      "result": "2nd voted out"
+    },
+    {
+      "id": "US0640",
+      "name": "Nneka",
+      "full_name": "Nneka Ejere",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#d49311",
+      "placement": 3,
+      "result": "3rd voted out"
+    },
+    {
+      "id": "US0637",
+      "name": "Lindsay",
+      "full_name": "Lindsay Carmine",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#dbdb56",
+      "placement": 4,
+      "result": "4th voted out"
+    },
+    {
+      "id": "US0631",
+      "name": "Geo",
+      "full_name": "Geo Bustamante",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#8fc81c",
+      "placement": 5,
+      "result": "5th voted out"
+    },
+    {
+      "id": "US0630",
+      "name": "Elie",
+      "full_name": "Elie Scott",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#7cef42",
+      "placement": 6,
+      "result": "6th voted out"
+    },
+    {
+      "id": "US0629",
+      "name": "Dwight",
+      "full_name": "Dwight Moore",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#28bd28",
+      "placement": 7,
+      "result": "7th voted out"
+    },
+    {
+      "id": "US0633",
+      "name": "Jeanine",
+      "full_name": "Jeanine Zheng",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#4ce57f",
+      "placement": 8,
+      "result": "8th voted out"
+    },
+    {
+      "id": "US0632",
+      "name": "James",
+      "full_name": "James Jones",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#11d493",
+      "placement": 9,
+      "result": "9th voted out"
+    },
+    {
+      "id": "US0643",
+      "name": "Ryan",
+      "full_name": "Ryan Medrano",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#56dbdb",
+      "placement": 10,
+      "result": "10th voted out"
+    },
+    {
+      "id": "US0641",
+      "name": "Noelle",
+      "full_name": "Noelle Lambert",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#1c8fc8",
+      "placement": 11,
+      "result": "11th voted out"
+    },
+    {
+      "id": "US0644",
+      "name": "Sami",
+      "full_name": "Sami Layadi",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#427cef",
+      "placement": 12,
+      "result": "12th voted out"
+    },
+    {
+      "id": "US0628",
+      "name": "Cody",
+      "full_name": "Cody Assenmacher",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#2828bd",
+      "placement": 13,
+      "result": "13th voted out"
+    },
+    {
+      "id": "US0636",
+      "name": "Karla",
+      "full_name": "Karla Cruz Godoy",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#7f4ce5",
+      "placement": 14,
+      "result": "14th voted out"
+    },
+    {
+      "id": "US0634",
+      "name": "Jesse",
+      "full_name": "Jesse Lopez",
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "color": "#9311d4",
+      "placement": 15,
+      "result": "Lost final 4 fire challenge"
+    },
+    {
+      "id": "US0642",
+      "name": "Owen",
+      "full_name": "Owen Knight",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#db56db",
+      "placement": 16,
+      "result": "2nd runner-up"
+    },
+    {
+      "id": "US0627",
+      "name": "Cassidy",
+      "full_name": "Cassidy Clark",
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "color": "#c81c8f",
+      "placement": 17,
+      "result": "Runner-up"
+    },
+    {
+      "id": "US0638",
+      "name": "Gabler",
+      "full_name": "Mike Gabler",
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "color": "#ef427c",
+      "placement": 18,
+      "result": "Sole Survivor"
+    }
+  ],
+  "tribes": {
+    "Baka": "#F8DC05",
+    "Coco": "#0687CB",
+    "Gaia": "#A7E4E4",
+    "Vesi": "#EE4C53"
+  },
+  "tribal_councils": [
+    {
+      "tc_number": 1,
+      "episode": 1,
+      "day": 3,
+      "sog_id": 1,
+      "tribe": "Baka",
+      "tribe_color": "#F8DC05",
+      "tribe_status": "Original",
+      "eliminated": "Morriah",
+      "eliminated_id": "US0639",
+      "eliminated_color": "#bd2828",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Elie",
+          "voter_id": "US0630",
+          "voter_color": "#7cef42",
+          "target": "Morriah",
+          "target_id": "US0639",
+          "target_color": "#bd2828",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jeanine",
+          "voter_id": "US0633",
+          "voter_color": "#4ce57f",
+          "target": "Morriah",
+          "target_id": "US0639",
+          "target_color": "#bd2828",
+          "vote_round": 1
+        },
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Morriah",
+          "target_id": "US0639",
+          "target_color": "#bd2828",
+          "vote_round": 1
+        },
+        {
+          "voter": "Morriah",
+          "voter_id": "US0639",
+          "voter_color": "#bd2828",
+          "target": "Owen",
+          "target_id": "US0642",
+          "target_color": "#db56db",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Morriah",
+          "target_id": "US0639",
+          "target_color": "#bd2828",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "Morriah",
+          "target_id": "US0639",
+          "target_color": "#bd2828",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 2,
+      "episode": 2,
+      "day": 5,
+      "sog_id": 2,
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "tribe_status": "Original",
+      "eliminated": "Justine",
+      "eliminated_id": "US0635",
+      "eliminated_color": "#e57f4c",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Justine",
+          "target_id": "US0635",
+          "target_color": "#e57f4c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Justine",
+          "target_id": "US0635",
+          "target_color": "#e57f4c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Justine",
+          "voter_id": "US0635",
+          "voter_color": "#e57f4c",
+          "target": "Cody",
+          "target_id": "US0628",
+          "target_color": "#2828bd",
+          "vote_round": 1
+        },
+        {
+          "voter": "Nneka",
+          "voter_id": "US0640",
+          "voter_color": "#d49311",
+          "target": "Justine",
+          "target_id": "US0635",
+          "target_color": "#e57f4c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "Nneka",
+          "target_id": "US0640",
+          "target_color": "#d49311",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 3,
+      "episode": 3,
+      "day": 7,
+      "sog_id": 3,
+      "tribe": "Vesi",
+      "tribe_color": "#EE4C53",
+      "tribe_status": "Original",
+      "eliminated": "Nneka",
+      "eliminated_id": "US0640",
+      "eliminated_color": "#d49311",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Nneka",
+          "target_id": "US0640",
+          "target_color": "#d49311",
+          "vote_round": 1
+        },
+        {
+          "voter": "Dwight",
+          "voter_id": "US0629",
+          "voter_color": "#28bd28",
+          "target": "Nneka",
+          "target_id": "US0640",
+          "target_color": "#d49311",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Nneka",
+          "target_id": "US0640",
+          "target_color": "#d49311",
+          "vote_round": 1
+        },
+        {
+          "voter": "Nneka",
+          "voter_id": "US0640",
+          "voter_color": "#d49311",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "Nneka",
+          "target_id": "US0640",
+          "target_color": "#d49311",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 4,
+      "episode": 4,
+      "day": 9,
+      "sog_id": 4,
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "tribe_status": "Original",
+      "eliminated": "Lindsay",
+      "eliminated_id": "US0637",
+      "eliminated_color": "#dbdb56",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Lindsay",
+          "target_id": "US0637",
+          "target_color": "#dbdb56",
+          "vote_round": 1
+        },
+        {
+          "voter": "Geo",
+          "voter_id": "US0631",
+          "voter_color": "#8fc81c",
+          "target": "Cassidy",
+          "target_id": "US0627",
+          "target_color": "#c81c8f",
+          "vote_round": 1
+        },
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Lindsay",
+          "target_id": "US0637",
+          "target_color": "#dbdb56",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Lindsay",
+          "target_id": "US0637",
+          "target_color": "#dbdb56",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Lindsay",
+          "target_id": "US0637",
+          "target_color": "#dbdb56",
+          "vote_round": 1
+        },
+        {
+          "voter": "Lindsay",
+          "voter_id": "US0637",
+          "voter_color": "#dbdb56",
+          "target": "Geo",
+          "target_id": "US0631",
+          "target_color": "#8fc81c",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 5,
+      "episode": 5,
+      "day": 11,
+      "sog_id": 5,
+      "tribe": "Coco",
+      "tribe_color": "#0687CB",
+      "tribe_status": "Original",
+      "eliminated": "Geo",
+      "eliminated_id": "US0631",
+      "eliminated_color": "#8fc81c",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Geo",
+          "target_id": "US0631",
+          "target_color": "#8fc81c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Geo",
+          "voter_id": "US0631",
+          "voter_color": "#8fc81c",
+          "target": "Cassidy",
+          "target_id": "US0627",
+          "target_color": "#c81c8f",
+          "vote_round": 1
+        },
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Geo",
+          "target_id": "US0631",
+          "target_color": "#8fc81c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Geo",
+          "target_id": "US0631",
+          "target_color": "#8fc81c",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Cassidy",
+          "target_id": "US0627",
+          "target_color": "#c81c8f",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 6,
+      "episode": 6,
+      "day": 13,
+      "sog_id": 6,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Elie",
+      "eliminated_id": "US0630",
+      "eliminated_color": "#7cef42",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Elie",
+          "voter_id": "US0630",
+          "voter_color": "#7cef42",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        },
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Owen",
+          "target_id": "US0642",
+          "target_color": "#db56db",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Dwight",
+          "voter_id": "US0629",
+          "voter_color": "#28bd28",
+          "target": "Elie",
+          "target_id": "US0630",
+          "target_color": "#7cef42",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "Cassidy",
+          "target_id": "US0627",
+          "target_color": "#c81c8f",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 7,
+      "episode": 7,
+      "day": 14,
+      "sog_id": 7,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Dwight",
+      "eliminated_id": "US0629",
+      "eliminated_color": "#28bd28",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Jeanine",
+          "voter_id": "US0633",
+          "voter_color": "#4ce57f",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Dwight",
+          "voter_id": "US0629",
+          "voter_color": "#28bd28",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Dwight",
+          "target_id": "US0629",
+          "target_color": "#28bd28",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 8,
+      "episode": 8,
+      "day": 16,
+      "sog_id": 8,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Jeanine",
+      "eliminated_id": "US0633",
+      "eliminated_color": "#4ce57f",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Jeanine",
+          "voter_id": "US0633",
+          "voter_color": "#4ce57f",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "Jeanine",
+          "target_id": "US0633",
+          "target_color": "#4ce57f",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 9,
+      "episode": 9,
+      "day": 17,
+      "sog_id": 9,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "James",
+      "eliminated_id": "US0632",
+      "eliminated_color": "#11d493",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "James",
+          "voter_id": "US0632",
+          "voter_color": "#11d493",
+          "target": "Owen",
+          "target_id": "US0642",
+          "target_color": "#db56db",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "James",
+          "target_id": "US0632",
+          "target_color": "#11d493",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 10,
+      "episode": 9,
+      "day": 17,
+      "sog_id": 10,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Ryan",
+      "eliminated_id": "US0643",
+      "eliminated_color": "#56dbdb",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Ryan",
+          "target_id": "US0643",
+          "target_color": "#56dbdb",
+          "vote_round": 1
+        },
+        {
+          "voter": "Ryan",
+          "voter_id": "US0643",
+          "voter_color": "#56dbdb",
+          "target": "Cassidy",
+          "target_id": "US0627",
+          "target_color": "#c81c8f",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 11,
+      "episode": 10,
+      "day": 19,
+      "sog_id": 11,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Noelle",
+      "eliminated_id": "US0641",
+      "eliminated_color": "#1c8fc8",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Sami",
+          "voter_id": "US0644",
+          "voter_color": "#427cef",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Noelle",
+          "target_id": "US0641",
+          "target_color": "#1c8fc8",
+          "vote_round": 1
+        },
+        {
+          "voter": "Noelle",
+          "voter_id": "US0641",
+          "voter_color": "#1c8fc8",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 12,
+      "episode": 11,
+      "day": 21,
+      "sog_id": 12,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Sami",
+      "eliminated_id": "US0644",
+      "eliminated_color": "#427cef",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Sami",
+          "target_id": "US0644",
+          "target_color": "#427cef",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 13,
+      "episode": 12,
+      "day": 23,
+      "sog_id": 13,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Cody",
+      "eliminated_id": "US0628",
+      "eliminated_color": "#2828bd",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Cody",
+          "target_id": "US0628",
+          "target_color": "#2828bd",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Cody",
+          "target_id": "US0628",
+          "target_color": "#2828bd",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Cody",
+          "target_id": "US0628",
+          "target_color": "#2828bd",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Owen",
+          "target_id": "US0642",
+          "target_color": "#db56db",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cody",
+          "voter_id": "US0628",
+          "voter_color": "#2828bd",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Cody",
+          "target_id": "US0628",
+          "target_color": "#2828bd",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 14,
+      "episode": 13,
+      "day": 24,
+      "sog_id": 14,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Karla",
+      "eliminated_id": "US0636",
+      "eliminated_color": "#7f4ce5",
+      "elimination_type": "voted_out",
+      "votes": [
+        {
+          "voter": "Gabler",
+          "voter_id": "US0638",
+          "voter_color": "#ef427c",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Owen",
+          "voter_id": "US0642",
+          "voter_color": "#db56db",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Cassidy",
+          "voter_id": "US0627",
+          "voter_color": "#c81c8f",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        },
+        {
+          "voter": "Karla",
+          "voter_id": "US0636",
+          "voter_color": "#7f4ce5",
+          "target": "Jesse",
+          "target_id": "US0634",
+          "target_color": "#9311d4",
+          "vote_round": 1
+        },
+        {
+          "voter": "Jesse",
+          "voter_id": "US0634",
+          "voter_color": "#9311d4",
+          "target": "Karla",
+          "target_id": "US0636",
+          "target_color": "#7f4ce5",
+          "vote_round": 1
+        }
+      ],
+      "had_revote": false
+    },
+    {
+      "tc_number": 15,
+      "episode": 13,
+      "day": 25,
+      "sog_id": 15,
+      "tribe": "Gaia",
+      "tribe_color": "#A7E4E4",
+      "tribe_status": "Merged",
+      "eliminated": "Jesse",
+      "eliminated_id": "US0634",
+      "eliminated_color": "#9311d4",
+      "elimination_type": "fire_challenge",
+      "votes": [],
+      "had_revote": false
+    }
+  ],
+  "boot_order": [
+    {
+      "name": "Morriah",
+      "id": "US0639",
+      "color": "#bd2828",
+      "tc_number": 1,
+      "placement": 1,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Justine",
+      "id": "US0635",
+      "color": "#e57f4c",
+      "tc_number": 2,
+      "placement": 2,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Nneka",
+      "id": "US0640",
+      "color": "#d49311",
+      "tc_number": 3,
+      "placement": 3,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Lindsay",
+      "id": "US0637",
+      "color": "#dbdb56",
+      "tc_number": 4,
+      "placement": 4,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Geo",
+      "id": "US0631",
+      "color": "#8fc81c",
+      "tc_number": 5,
+      "placement": 5,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Elie",
+      "id": "US0630",
+      "color": "#7cef42",
+      "tc_number": 6,
+      "placement": 6,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Dwight",
+      "id": "US0629",
+      "color": "#28bd28",
+      "tc_number": 7,
+      "placement": 7,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Jeanine",
+      "id": "US0633",
+      "color": "#4ce57f",
+      "tc_number": 8,
+      "placement": 8,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "James",
+      "id": "US0632",
+      "color": "#11d493",
+      "tc_number": 9,
+      "placement": 9,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Ryan",
+      "id": "US0643",
+      "color": "#56dbdb",
+      "tc_number": 10,
+      "placement": 10,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Noelle",
+      "id": "US0641",
+      "color": "#1c8fc8",
+      "tc_number": 11,
+      "placement": 11,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Sami",
+      "id": "US0644",
+      "color": "#427cef",
+      "tc_number": 12,
+      "placement": 12,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Cody",
+      "id": "US0628",
+      "color": "#2828bd",
+      "tc_number": 13,
+      "placement": 13,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Karla",
+      "id": "US0636",
+      "color": "#7f4ce5",
+      "tc_number": 14,
+      "placement": 14,
+      "elimination_type": "voted_out"
+    },
+    {
+      "name": "Jesse",
+      "id": "US0634",
+      "color": "#9311d4",
+      "tc_number": 15,
+      "placement": 15,
+      "elimination_type": "fire_challenge"
+    }
+  ]
+}

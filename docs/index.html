@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survivor Voting Flow</title>
+    <title>Survivor Voting Analysis</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         * {
@@ -19,10 +19,49 @@
             overflow: hidden;
         }
 
-        #container {
+        /* Tab Navigation */
+        .tab-nav {
             display: flex;
-            height: 100vh;
-            width: 100vw;
+            background: #fff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 0 20px;
+        }
+
+        .tab-btn {
+            padding: 14px 24px;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .tab-btn.active {
+            color: #d32f2f;
+            border-bottom-color: #d32f2f;
+        }
+
+        .tab-content {
+            display: none;
+            height: calc(100vh - 50px);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Vote Flow Tab - needs higher specificity to override display: block */
+        #voteflow-tab.active {
+            display: flex;
         }
 
         #main-viz {
@@ -31,10 +70,61 @@
             background: #ffffff;
         }
 
-        #boot-track {
-            width: 200px;
+        #sidebar {
+            width: 220px;
             background: #fafafa;
             border-left: 2px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #similar-seasons {
+            padding: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        #similar-seasons h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .similar-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            margin-bottom: 4px;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .similar-item:hover {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+        }
+
+        .similar-item .sim-percent {
+            font-weight: 600;
+            color: #2e7d32;
+            margin-right: 8px;
+            min-width: 40px;
+        }
+
+        .similar-item .sim-name {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #boot-track {
+            flex: 1;
             padding: 12px;
             overflow-y: auto;
         }
@@ -114,7 +204,7 @@
         #controls {
             position: absolute;
             top: 12px;
-            right: 220px;
+            right: 240px;
             z-index: 100;
             display: flex;
             gap: 10px;
@@ -311,7 +401,7 @@
         #legend {
             position: absolute;
             bottom: 12px;
-            right: 220px;
+            right: 240px;
             background: #fff;
             border: 1px solid #e0e0e0;
             border-radius: 10px;
@@ -339,12 +429,6 @@
             border-radius: 2px;
         }
 
-        #legend .legend-divider {
-            height: 1px;
-            background: #eee;
-            margin: 10px 0;
-        }
-
         .loading {
             position: absolute;
             top: 50%;
@@ -353,10 +437,206 @@
             font-size: 18px;
             color: #888;
         }
+
+        /* Analysis Tab Styles */
+        #analysis-tab {
+            padding: 30px;
+            overflow-y: auto;
+            background: #f5f5f5;
+        }
+
+        .analysis-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .analysis-section h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .season-selectors {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .season-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .season-selector label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .season-selector select {
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            min-width: 200px;
+            cursor: pointer;
+        }
+
+        .comparison-results {
+            margin-top: 20px;
+        }
+
+        .similarity-summary {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .similarity-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px 20px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .similarity-card .seasons {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .similarity-card .percent {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .similarity-card .percent.medium {
+            color: #f57c00;
+        }
+
+        .similarity-card .percent.low {
+            color: #d32f2f;
+        }
+
+        .voting-blocks-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .voting-blocks-table th,
+        .voting-blocks-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .voting-blocks-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .voting-blocks-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .vote-block {
+            display: inline-flex;
+            gap: 4px;
+        }
+
+        .vote-block span {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Common Blocks Section */
+        .common-blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .voter-count-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .voter-count-card h4 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .voter-count-card h4 .count {
+            background: #d32f2f;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .block-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .block-item:last-child {
+            border-bottom: none;
+        }
+
+        .block-item .pattern {
+            font-weight: 500;
+        }
+
+        .block-item .frequency {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .no-data {
+            color: #999;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div id="container">
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="voteflow">📊 Vote Flow</button>
+        <button class="tab-btn" data-tab="analysis">🔬 Analysis</button>
+    </nav>
+
+    <!-- Vote Flow Tab -->
+    <div id="voteflow-tab" class="tab-content active">
         <div id="main-viz">
             <div id="header">
                 <h1>Survivor Voting Flow</h1>
@@ -402,9 +682,57 @@
             <svg id="viz"></svg>
             <div class="loading" id="loading">Loading...</div>
         </div>
-        <div id="boot-track">
-            <h3>🔥 Boot Order</h3>
-            <div id="boot-list"></div>
+        <div id="sidebar">
+            <div id="similar-seasons">
+                <h3>🎯 Similar Seasons</h3>
+                <div id="similar-list">Loading...</div>
+            </div>
+            <div id="boot-track">
+                <h3>🔥 Boot Order</h3>
+                <div id="boot-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Tab -->
+    <div id="analysis-tab" class="tab-content">
+        <div class="analysis-section">
+            <h2>🔄 Season Comparison Tool</h2>
+            <p style="color: #666; margin-bottom: 16px;">Compare voting block patterns across seasons. Select up to 3 seasons to see how their post-merge voting dynamics compare.</p>
+            
+            <div class="season-selectors">
+                <div class="season-selector">
+                    <label>Season 1</label>
+                    <select id="compare-season-1">
+                        <option value="">Select a season...</option>
+                    </select>
+                </div>
+                <div class="season-selector">
+                    <label>Season 2</label>
+                    <select id="compare-season-2">
+                        <option value="">Select a season...</option>
+                    </select>
+                </div>
+                <div class="season-selector">
+                    <label>Season 3 (Optional)</label>
+                    <select id="compare-season-3">
+                        <option value="">None</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="comparison-results" class="comparison-results">
+                <div class="no-data">Select seasons above to compare voting patterns</div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h2>📈 Most Common Voting Blocks</h2>
+            <p style="color: #666; margin-bottom: 16px;">The most frequent voting split patterns at each stage of the game, based on number of voters.</p>
+            
+            <div id="common-blocks" class="common-blocks-grid">
+                <div class="no-data">Loading voting block data...</div>
+            </div>
         </div>
     </div>
 
@@ -414,7 +742,7 @@
             nodeRadius: 18,
             layerWidth: 120,
             verticalPadding: 60,
-            headerOffset: 80,
+            headerOffset: 95,
             colors: {
                 eliminationVote: '#e94560',
                 regularVote: '#888'
@@ -424,26 +752,56 @@
         // State
         let currentData = null;
         let seasonsManifest = null;
+        let similarityData = null;
+        let allSeasonsData = {};
         let svg, g, zoom;
         let width, height;
         let allNodes = [];
-        let selectedCastaways = new Set(); // Track selected castaways
-        let selectionMode = null; // 'votes-cast' or 'votes-received'
+        let selectedCastaways = new Set();
+        let selectionMode = null;
 
         // Initialize
         document.addEventListener('DOMContentLoaded', init);
 
         async function init() {
+            setupTabs();
             setupSVG();
             setupZoom();
             setupEventListeners();
             
-            // Load manifest and populate dropdown
             await loadManifest();
+            await loadSimilarityData();
             
-            // Load most recent season by default
             const defaultSeason = seasonsManifest?.seasons[seasonsManifest.seasons.length - 1]?.id || 'us46';
             await loadSeason(defaultSeason);
+            
+            setupAnalysisTab();
+            loadCommonBlocks();
+        }
+
+        // Tab functionality
+        function setupTabs() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.dataset.tab;
+                    
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                    
+                    if (tabId === 'voteflow') {
+                        // Resize SVG when switching back
+                        setTimeout(() => {
+                            width = document.getElementById('main-viz').clientWidth;
+                            height = document.getElementById('main-viz').clientHeight;
+                            svg.attr('width', width).attr('height', height);
+                            if (currentData) render(currentData);
+                        }, 100);
+                    }
+                });
+            });
         }
 
         async function loadManifest() {
@@ -454,7 +812,6 @@
                 populateSeasonDropdown();
             } catch (error) {
                 console.error('Error loading manifest:', error);
-                // Fallback to hardcoded seasons
                 seasonsManifest = {
                     seasons: Array.from({length: 49}, (_, i) => ({
                         id: `us${String(i + 1).padStart(2, '0')}`,
@@ -466,11 +823,21 @@
             }
         }
 
+        async function loadSimilarityData() {
+            try {
+                const response = await fetch('data/season_similarity.json');
+                if (!response.ok) throw new Error('Failed to load similarity data');
+                similarityData = await response.json();
+            } catch (error) {
+                console.error('Error loading similarity data:', error);
+                similarityData = null;
+            }
+        }
+
         function populateSeasonDropdown() {
             const select = document.getElementById('season-select');
             select.innerHTML = '';
             
-            // Group by era
             const eras = [
                 { name: '── New Era (41-49) ──', start: 41, end: 49 },
                 { name: '── 30s (31-40) ──', start: 31, end: 40 },
@@ -480,14 +847,11 @@
             ];
             
             eras.forEach(era => {
-                // Add era header as disabled option
                 const header = document.createElement('option');
                 header.textContent = era.name;
                 header.disabled = true;
-                header.style.fontWeight = 'bold';
                 select.appendChild(header);
                 
-                // Add seasons in this era (reverse order - newest first)
                 const eraSeasons = seasonsManifest.seasons.filter(s => {
                     const num = parseInt(s.id.replace('us', ''));
                     return num >= era.start && num <= era.end;
@@ -498,6 +862,55 @@
                     option.value = season.id;
                     option.textContent = season.name;
                     select.appendChild(option);
+                });
+            });
+        }
+
+        function updateSimilarSeasons(seasonId) {
+            const list = document.getElementById('similar-list');
+            
+            if (!similarityData) {
+                list.innerHTML = '<div class="no-data">Similarity data not available</div>';
+                return;
+            }
+            
+            const seasonIdx = similarityData.seasons.indexOf(seasonId);
+            if (seasonIdx === -1) {
+                list.innerHTML = '<div class="no-data">No data for this season</div>';
+                return;
+            }
+            
+            // Get similarities for this season
+            const similarities = [];
+            similarityData.seasons.forEach((otherId, idx) => {
+                if (idx !== seasonIdx) {
+                    const sim = similarityData.similarity_matrix[seasonIdx][idx];
+                    const otherSeason = seasonsManifest.seasons.find(s => s.id === otherId);
+                    similarities.push({
+                        id: otherId,
+                        name: otherSeason ? otherSeason.name : otherId,
+                        similarity: sim
+                    });
+                }
+            });
+            
+            // Sort by similarity descending
+            similarities.sort((a, b) => b.similarity - a.similarity);
+            
+            // Show top 5
+            list.innerHTML = similarities.slice(0, 5).map(s => `
+                <div class="similar-item" data-season="${s.id}">
+                    <span class="sim-percent">${s.similarity.toFixed(0)}%</span>
+                    <span class="sim-name">${s.name}</span>
+                </div>
+            `).join('');
+            
+            // Add click handlers
+            list.querySelectorAll('.similar-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const sid = item.dataset.season;
+                    document.getElementById('season-select').value = sid;
+                    loadSeason(sid);
                 });
             });
         }
@@ -522,8 +935,7 @@
                 });
 
             svg.call(zoom);
-
-            // Click on background to clear selections
+            
             svg.on('click', () => {
                 selectedCastaways.clear();
                 updateSelectionHighlights();
@@ -537,10 +949,12 @@
             });
 
             window.addEventListener('resize', () => {
-                width = document.getElementById('main-viz').clientWidth;
-                height = document.getElementById('main-viz').clientHeight;
-                svg.attr('width', width).attr('height', height);
-                if (currentData) render(currentData);
+                if (document.getElementById('voteflow-tab').classList.contains('active')) {
+                    width = document.getElementById('main-viz').clientWidth;
+                    height = document.getElementById('main-viz').clientHeight;
+                    svg.attr('width', width).attr('height', height);
+                    if (currentData) render(currentData);
+                }
             });
         }
 
@@ -557,10 +971,13 @@
                 const response = await fetch(`data/${seasonId}_voting_flow.json`);
                 if (!response.ok) throw new Error('Failed to load data');
                 currentData = await response.json();
+                allSeasonsData[seasonId] = currentData;
                 render(currentData);
+                updateSimilarSeasons(seasonId);
+                document.getElementById('season-select').value = seasonId;
             } catch (error) {
                 console.error('Error loading season:', error);
-                document.getElementById('loading').textContent = 'Error loading data. Make sure the JSON file is in the data/ folder.';
+                document.getElementById('loading').textContent = 'Error loading data.';
             }
         }
 
@@ -581,7 +998,6 @@
             const nodePositions = new Map();
             nodes.forEach(n => nodePositions.set(n.id, { x: n.x, y: n.y, layer: n.layer }));
 
-            // Find merge point
             const mergeTC = data.tribal_councils.find(tc => tc.tribe_status === 'Merged');
             const mergeLayer = mergeTC ? data.tribal_councils.indexOf(mergeTC) + 1 : null;
 
@@ -602,7 +1018,6 @@
             const links = [];
             const nodeMap = new Map();
 
-            // Layer 0: All castaways (start column)
             data.castaways.forEach((c, idx) => {
                 const node = {
                     id: `${c.id}-L0`,
@@ -618,25 +1033,26 @@
                 nodeMap.set(node.id, node);
             });
 
-            // Track each castaway's current position (for their continuous line)
             const currentPosition = new Map();
             data.castaways.forEach(c => currentPosition.set(c.id, `${c.id}-L0`));
 
             const eliminated = new Set();
 
-            // Process each tribal council
             data.tribal_councils.forEach((tc, tcIdx) => {
                 const layer = tcIdx + 1;
                 const layerTargets = new Set();
-
-                // Collect unique targets in this TC
+                
+                // Count votes for each target (only round 1)
+                const voteCountByTarget = {};
                 tc.votes.forEach(v => {
-                    if (v.target_id) {
+                    if (v.target_id && v.vote_round === 1) {
+                        layerTargets.add(v.target_id);
+                        voteCountByTarget[v.target_id] = (voteCountByTarget[v.target_id] || 0) + 1;
+                    } else if (v.target_id) {
                         layerTargets.add(v.target_id);
                     }
                 });
 
-                // Create nodes for vote targets in this layer
                 layerTargets.forEach(targetId => {
                     const castaway = data.castaways.find(c => c.id === targetId);
                     if (!castaway) return;
@@ -652,20 +1068,19 @@
                         placement: castaway.placement,
                         isTarget: true,
                         tcNumber: tc.tc_number,
-                        isEliminated: tc.eliminated_id === targetId
+                        isEliminated: tc.eliminated_id === targetId,
+                        voteCount: voteCountByTarget[targetId] || 1
                     };
                     nodes.push(node);
                     nodeMap.set(node.id, node);
                 });
 
-                // Create links - each voter's line continues from their CURRENT position
                 tc.votes.forEach(v => {
                     if (!v.target_id) return;
                     
                     const voterId = v.voter_id;
                     const targetId = v.target_id;
 
-                    // Skip if voter was already eliminated
                     if (eliminated.has(voterId)) return;
 
                     const sourceNodeId = currentPosition.get(voterId);
@@ -686,12 +1101,10 @@
                             layer: layer
                         });
 
-                        // Update this voter's current position for their continuous line
                         currentPosition.set(voterId, targetNodeId);
                     }
                 });
 
-                // Mark eliminated player
                 if (tc.eliminated_id) {
                     eliminated.add(tc.eliminated_id);
                 }
@@ -747,7 +1160,6 @@
         function renderLinks(links, nodePositions, nodes) {
             const linkG = g.append('g').attr('class', 'links');
 
-            // Group links by source-target pair to calculate offsets
             const linkGroups = new Map();
             links.forEach((link, idx) => {
                 const key = `${link.source}->${link.target}`;
@@ -757,18 +1169,15 @@
                 linkGroups.get(key).push({ ...link, index: idx });
             });
 
-            // Calculate offset for each link
             const linkOffsets = new Map();
             linkGroups.forEach((group, key) => {
                 const count = group.length;
                 group.forEach((link, i) => {
-                    // Spread lines evenly around center
                     const offset = count === 1 ? 0 : (i - (count - 1) / 2) * 4;
                     linkOffsets.set(link.index, offset);
                 });
             });
 
-            // Draw the paths
             linkG.selectAll('.vote-link')
                 .data(links)
                 .enter()
@@ -793,13 +1202,25 @@
             const x1 = source.x, y1 = source.y + offset;
             const x2 = target.x, y2 = target.y + offset;
             
-            // Bezier curve with offset
             const midX = (x1 + x2) / 2;
             return `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
         }
 
         function renderNodes(nodes) {
             const nodeG = g.append('g').attr('class', 'nodes');
+            
+            // Calculate radius based on vote count
+            // Start nodes: fixed size
+            // Target nodes: scale from 0.5x to 1.2x based on votes (1 vote = small, 10+ votes = large)
+            const getRadius = (d) => {
+                if (d.isOriginal) return CONFIG.nodeRadius;
+                const minScale = 0.5;
+                const maxScale = 1.2;
+                const voteCount = d.voteCount || 1;
+                // Scale: 1 vote = minScale, 10 votes = maxScale
+                const scale = minScale + (maxScale - minScale) * Math.min((voteCount - 1) / 9, 1);
+                return CONFIG.nodeRadius * scale;
+            };
 
             const nodeGroups = nodeG.selectAll('.node')
                 .data(nodes)
@@ -813,7 +1234,7 @@
                 .on('click', handleNodeClick);
 
             nodeGroups.append('circle')
-                .attr('r', d => d.isOriginal ? CONFIG.nodeRadius : CONFIG.nodeRadius * 0.85)
+                .attr('r', d => getRadius(d))
                 .attr('fill', d => d.color)
                 .attr('stroke', '#fff')
                 .attr('stroke-width', 1.5);
@@ -823,12 +1244,11 @@
                 .attr('dy', '0.35em')
                 .text(d => truncateName(d.name));
 
-            // Add skull indicator for eliminated nodes
             nodeGroups.filter(d => d.isEliminated)
                 .append('text')
                 .attr('class', 'eliminated-indicator')
-                .attr('x', CONFIG.nodeRadius * 0.6)
-                .attr('y', -CONFIG.nodeRadius * 0.6)
+                .attr('x', d => getRadius(d) * 0.5)
+                .attr('y', d => -getRadius(d) * 0.5)
                 .attr('font-size', '10px')
                 .text('💀');
         }
@@ -838,21 +1258,45 @@
             const usableWidth = Math.max(width - 100, numLayers * CONFIG.layerWidth);
             const layerSpacing = usableWidth / (numLayers + 1);
 
-            const labels = ['Start'];
-            data.tribal_councils.forEach(tc => {
-                labels.push(`TC${tc.tc_number}`);
+            // Calculate players remaining at each TC
+            const labels = [{
+                main: 'Start',
+                sub: `${data.total_castaways} players`
+            }];
+            
+            let playersRemaining = data.total_castaways;
+            data.tribal_councils.forEach((tc, idx) => {
+                // Count voters in round 1 to get players at this TC
+                const votersAtTC = new Set(tc.votes.filter(v => v.vote_round === 1).map(v => v.voter_id)).size;
+                labels.push({
+                    main: `TC${tc.tc_number}`,
+                    sub: votersAtTC > 0 ? `${votersAtTC} voting` : ''
+                });
             });
 
             const labelG = g.append('g').attr('class', 'layer-labels');
 
+            // Main labels
             labelG.selectAll('.layer-label')
                 .data(labels)
                 .enter()
                 .append('text')
                 .attr('class', 'layer-label')
                 .attr('x', (d, i) => 80 + i * layerSpacing)
-                .attr('y', CONFIG.headerOffset - 10)
-                .text(d => d);
+                .attr('y', CONFIG.headerOffset - 15)
+                .text(d => d.main);
+            
+            // Sub labels (player count)
+            labelG.selectAll('.layer-sublabel')
+                .data(labels)
+                .enter()
+                .append('text')
+                .attr('class', 'layer-label')
+                .attr('x', (d, i) => 80 + i * layerSpacing)
+                .attr('y', CONFIG.headerOffset)
+                .attr('font-size', '9px')
+                .attr('fill', '#999')
+                .text(d => d.sub);
         }
 
         function renderBootTrack(data) {
@@ -881,7 +1325,6 @@
                 });
                 item.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    // Boot order click = votes received mode
                     if (selectionMode && selectionMode !== 'votes-received') {
                         selectedCastaways.clear();
                     }
@@ -923,9 +1366,7 @@
         }
 
         function handleNodeHover(event, d) {
-            // Don't change highlights on hover if we have selections
             if (selectedCastaways.size > 0) {
-                // Just show tooltip
                 if (d.isOriginal) {
                     showTooltip(event, {
                         title: d.name,
@@ -949,14 +1390,12 @@
             }
 
             if (d.isOriginal) {
-                // Start column: show votes cast by this person
                 highlightVotesCast(d.castawayId);
                 showTooltip(event, {
                     title: d.name,
                     details: [`Hover to see votes cast`, `Click to select`]
                 });
             } else {
-                // Vote coin: show full tree of votes leading to this coin
                 highlightVoteTree(d.id);
                 
                 const tc = currentData.tribal_councils[d.tcNumber - 1];
@@ -976,7 +1415,6 @@
 
         function handleNodeOut() {
             hideTooltip();
-            // Only clear highlights if nothing is selected
             if (selectedCastaways.size === 0) {
                 clearHighlights();
             }
@@ -985,11 +1423,8 @@
         function handleNodeClick(event, d) {
             event.stopPropagation();
             
-            // Clicking on start column = show votes cast (lines)
-            // Clicking on vote coins = show votes received (coins)
             const newMode = d.isOriginal ? 'votes-cast' : 'votes-received';
             
-            // If switching modes, clear previous selections
             if (selectionMode && selectionMode !== newMode) {
                 selectedCastaways.clear();
             }
@@ -1012,7 +1447,6 @@
 
         function updateSelectionHighlights() {
             if (selectedCastaways.size === 0) {
-                // Clear all
                 clearHighlights();
                 g.selectAll('.node').classed('selected', false);
                 document.querySelectorAll('.boot-item').forEach(item => {
@@ -1023,8 +1457,6 @@
             }
 
             if (selectionMode === 'votes-cast') {
-                // Show only the voting LINES for selected castaways
-                // Highlight: start nodes for selected + their vote lines
                 g.selectAll('.node')
                     .classed('selected', d => selectedCastaways.has(d.castawayId) && d.isOriginal)
                     .classed('highlighted', d => selectedCastaways.has(d.castawayId) && d.isOriginal)
@@ -1035,20 +1467,16 @@
                     .classed('dimmed', d => !selectedCastaways.has(d.voterId));
 
             } else if (selectionMode === 'votes-received') {
-                // Show only the vote COINS for selected castaways
-                // Highlight: all vote-receiving nodes (coins) for selected castaways
                 g.selectAll('.node')
                     .classed('selected', d => selectedCastaways.has(d.castawayId))
                     .classed('highlighted', d => selectedCastaways.has(d.castawayId))
                     .classed('dimmed', d => !selectedCastaways.has(d.castawayId));
 
-                // Dim all lines in this mode
                 g.selectAll('.vote-link')
                     .classed('highlighted', false)
                     .classed('dimmed', true);
             }
 
-            // Update boot track
             document.querySelectorAll('.boot-item').forEach(item => {
                 const id = item.getAttribute('data-castaway');
                 item.classList.toggle('selected', selectedCastaways.has(id));
@@ -1061,7 +1489,7 @@
                 details: [
                     `TC${d.tcNumber}`,
                     d.voteRound > 1 ? `Revote round ${d.voteRound}` : '',
-                    d.isEliminationVote ? '❌ Elimination vote' : ''
+                    d.isEliminationVote ? '💀 Elimination vote' : ''
                 ].filter(Boolean)
             });
             d3.select(event.target).classed('highlighted', true);
@@ -1073,7 +1501,6 @@
         }
 
         function highlightVotesCast(castawayId) {
-            // Find all votes cast by this person
             const voterLinks = [];
             g.selectAll('.vote-link').each(function(d) {
                 if (d.voterId === castawayId) {
@@ -1081,12 +1508,10 @@
                 }
             });
 
-            // Find all target nodes hit by this voter (but NOT the voter's own coins)
             const targetNodeIds = new Set(voterLinks.map(l => l.target));
 
             g.selectAll('.node')
                 .classed('highlighted', d => {
-                    // Highlight: voter's start node + target nodes (but not voter's own vote coins)
                     if (d.castawayId === castawayId && d.isOriginal) return true;
                     if (targetNodeIds.has(d.id) && d.castawayId !== castawayId) return true;
                     return false;
@@ -1103,8 +1528,6 @@
         }
 
         function highlightVoteTree(targetNodeId) {
-            // Trace back the full tree of votes that led to this node
-            // Build a map of all links by their target node
             const linksByTarget = new Map();
             const allLinks = [];
             
@@ -1116,7 +1539,6 @@
                 linksByTarget.get(d.target).push(d);
             });
 
-            // BFS backward from target node to find all ancestor links and nodes
             const highlightedLinks = new Set();
             const highlightedNodes = new Set();
             const queue = [targetNodeId];
@@ -1125,14 +1547,11 @@
 
             while (queue.length > 0) {
                 const currentNodeId = queue.shift();
-                
-                // Find all links that point TO this node
                 const incomingLinks = linksByTarget.get(currentNodeId) || [];
                 
                 incomingLinks.forEach(link => {
                     highlightedLinks.add(link);
                     
-                    // Add the source node and continue tracing back
                     if (!highlightedNodes.has(link.source)) {
                         highlightedNodes.add(link.source);
                         queue.push(link.source);
@@ -1140,7 +1559,6 @@
                 });
             }
 
-            // Apply highlights
             g.selectAll('.node')
                 .classed('highlighted', d => highlightedNodes.has(d.id))
                 .classed('dimmed', d => !highlightedNodes.has(d.id));
@@ -1151,7 +1569,6 @@
         }
 
         function highlightVotesReceived(castawayId) {
-            // Find all votes against this person (across all TCs)
             const incomingLinks = [];
             g.selectAll('.vote-link').each(function(d) {
                 if (d.targetId === castawayId) {
@@ -1159,10 +1576,8 @@
                 }
             });
 
-            // Find all voters who voted against this person
             const voterIds = new Set(incomingLinks.map(l => l.voterId));
 
-            // Highlight: all nodes for this castaway + all voter start nodes
             g.selectAll('.node')
                 .classed('highlighted', d => d.castawayId === castawayId || (d.isOriginal && voterIds.has(d.castawayId)))
                 .classed('dimmed', d => d.castawayId !== castawayId && !(d.isOriginal && voterIds.has(d.castawayId)));
@@ -1205,6 +1620,249 @@
 
         function truncateName(name) {
             return name.length > 8 ? name.substring(0, 7) + '…' : name;
+        }
+
+        // ==================== ANALYSIS TAB ====================
+
+        function setupAnalysisTab() {
+            // Populate comparison dropdowns
+            const selects = ['compare-season-1', 'compare-season-2', 'compare-season-3'];
+            
+            selects.forEach((selectId, idx) => {
+                const select = document.getElementById(selectId);
+                select.innerHTML = idx === 2 ? '<option value="">None</option>' : '<option value="">Select a season...</option>';
+                
+                seasonsManifest.seasons.forEach(season => {
+                    const option = document.createElement('option');
+                    option.value = season.id;
+                    option.textContent = season.name;
+                    select.appendChild(option);
+                });
+                
+                select.addEventListener('change', updateComparison);
+            });
+        }
+
+        async function updateComparison() {
+            const s1 = document.getElementById('compare-season-1').value;
+            const s2 = document.getElementById('compare-season-2').value;
+            const s3 = document.getElementById('compare-season-3').value;
+            
+            const results = document.getElementById('comparison-results');
+            
+            if (!s1 || !s2) {
+                results.innerHTML = '<div class="no-data">Select at least two seasons to compare</div>';
+                return;
+            }
+            
+            results.innerHTML = '<div class="no-data">Loading comparison...</div>';
+            
+            // Load season data if not cached
+            const seasons = [s1, s2];
+            if (s3) seasons.push(s3);
+            
+            for (const sid of seasons) {
+                if (!allSeasonsData[sid]) {
+                    try {
+                        const response = await fetch(`data/${sid}_voting_flow.json`);
+                        allSeasonsData[sid] = await response.json();
+                    } catch (e) {
+                        console.error(`Failed to load ${sid}`, e);
+                    }
+                }
+            }
+            
+            renderComparison(seasons);
+        }
+
+        function renderComparison(seasonIds) {
+            const results = document.getElementById('comparison-results');
+            
+            if (!similarityData) {
+                results.innerHTML = '<div class="no-data">Similarity data not available</div>';
+                return;
+            }
+            
+            // Calculate similarity scores between pairs
+            const pairs = [];
+            for (let i = 0; i < seasonIds.length; i++) {
+                for (let j = i + 1; j < seasonIds.length; j++) {
+                    const idx1 = similarityData.seasons.indexOf(seasonIds[i]);
+                    const idx2 = similarityData.seasons.indexOf(seasonIds[j]);
+                    if (idx1 >= 0 && idx2 >= 0) {
+                        pairs.push({
+                            s1: seasonIds[i],
+                            s2: seasonIds[j],
+                            similarity: similarityData.similarity_matrix[idx1][idx2]
+                        });
+                    }
+                }
+            }
+            
+            // Get season names
+            const getSeasonName = (id) => {
+                const s = seasonsManifest.seasons.find(s => s.id === id);
+                return s ? s.name.replace('Season ', 'S') : id;
+            };
+            
+            // Build similarity cards
+            let html = '<div class="similarity-summary">';
+            pairs.forEach(p => {
+                const simClass = p.similarity >= 80 ? '' : p.similarity >= 60 ? 'medium' : 'low';
+                html += `
+                    <div class="similarity-card">
+                        <div class="seasons">${getSeasonName(p.s1)} vs ${getSeasonName(p.s2)}</div>
+                        <div class="percent ${simClass}">${p.similarity.toFixed(0)}%</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            // Build voting blocks comparison table
+            html += '<h3 style="margin: 20px 0 10px; font-size: 14px;">Voting Blocks by Voter Count</h3>';
+            html += '<table class="voting-blocks-table"><thead><tr><th>Voters</th>';
+            seasonIds.forEach(sid => {
+                html += `<th>${getSeasonName(sid)}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            
+            // Get voting blocks for each season
+            const blocksBySeason = {};
+            seasonIds.forEach(sid => {
+                blocksBySeason[sid] = getVotingBlocksBySeason(sid);
+            });
+            
+            // Find all voter counts across seasons
+            const allVoterCounts = new Set();
+            Object.values(blocksBySeason).forEach(blocks => {
+                Object.keys(blocks).forEach(k => allVoterCounts.add(parseInt(k)));
+            });
+            
+            // Sort descending
+            const sortedCounts = Array.from(allVoterCounts).sort((a, b) => b - a);
+            
+            sortedCounts.forEach(count => {
+                html += `<tr><td><strong>${count}</strong></td>`;
+                seasonIds.forEach(sid => {
+                    const blocks = blocksBySeason[sid][count];
+                    if (blocks && blocks.length > 0) {
+                        html += '<td><div class="vote-block">';
+                        blocks.forEach(b => {
+                            html += `<span>${b.join('-')}</span>`;
+                        });
+                        html += '</div></td>';
+                    } else {
+                        html += '<td style="color: #999;">—</td>';
+                    }
+                });
+                html += '</tr>';
+            });
+            
+            html += '</tbody></table>';
+            
+            results.innerHTML = html;
+        }
+
+        function getVotingBlocksBySeason(seasonId) {
+            const data = allSeasonsData[seasonId];
+            if (!data) return {};
+            
+            const blocksByVoterCount = {};
+            
+            data.tribal_councils.forEach(tc => {
+                if (tc.tribe_status !== 'Merged') return;
+                
+                const votes = tc.votes.filter(v => v.vote_round === 1);
+                if (votes.length === 0) return;
+                
+                const voteCounts = {};
+                votes.forEach(v => {
+                    voteCounts[v.target_id] = (voteCounts[v.target_id] || 0) + 1;
+                });
+                
+                const blocks = Object.values(voteCounts).sort((a, b) => b - a);
+                const numVoters = votes.length;
+                
+                if (!blocksByVoterCount[numVoters]) {
+                    blocksByVoterCount[numVoters] = [];
+                }
+                blocksByVoterCount[numVoters].push(blocks);
+            });
+            
+            return blocksByVoterCount;
+        }
+
+        async function loadCommonBlocks() {
+            const container = document.getElementById('common-blocks');
+            container.innerHTML = '<div class="no-data">Loading all seasons data...</div>';
+            
+            // Load all seasons
+            const allBlocks = {}; // { voterCount: { pattern: count } }
+            
+            for (const season of seasonsManifest.seasons) {
+                try {
+                    if (!allSeasonsData[season.id]) {
+                        const response = await fetch(`data/${season.file}`);
+                        allSeasonsData[season.id] = await response.json();
+                    }
+                    
+                    const data = allSeasonsData[season.id];
+                    data.tribal_councils.forEach(tc => {
+                        if (tc.tribe_status !== 'Merged') return;
+                        
+                        const votes = tc.votes.filter(v => v.vote_round === 1);
+                        if (votes.length === 0) return;
+                        
+                        const voteCounts = {};
+                        votes.forEach(v => {
+                            voteCounts[v.target_id] = (voteCounts[v.target_id] || 0) + 1;
+                        });
+                        
+                        const blocks = Object.values(voteCounts).sort((a, b) => b - a);
+                        const numVoters = votes.length;
+                        const pattern = blocks.join('-');
+                        
+                        if (!allBlocks[numVoters]) {
+                            allBlocks[numVoters] = {};
+                        }
+                        allBlocks[numVoters][pattern] = (allBlocks[numVoters][pattern] || 0) + 1;
+                    });
+                } catch (e) {
+                    console.error(`Failed to load ${season.id}`, e);
+                }
+            }
+            
+            // Render common blocks
+            let html = '';
+            const voterCounts = Object.keys(allBlocks).map(Number).sort((a, b) => b - a);
+            
+            voterCounts.forEach(count => {
+                const patterns = allBlocks[count];
+                const sorted = Object.entries(patterns)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 5);
+                
+                const total = Object.values(patterns).reduce((a, b) => a + b, 0);
+                
+                html += `
+                    <div class="voter-count-card">
+                        <h4><span class="count">${count}</span> Voters</h4>
+                `;
+                
+                sorted.forEach(([pattern, freq]) => {
+                    const pct = ((freq / total) * 100).toFixed(0);
+                    html += `
+                        <div class="block-item">
+                            <span class="pattern">${pattern}</span>
+                            <span class="frequency">${freq}× (${pct}%)</span>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            });
+            
+            container.innerHTML = html;
         }
     </script>
 </body>

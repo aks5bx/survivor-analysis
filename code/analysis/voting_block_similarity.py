@@ -14,7 +14,7 @@ from pathlib import Path
 from collections import Counter
 from itertools import combinations
 
-DATA_DIR = Path("../../docs/data")
+DATA_DIR = Path("output_json")
 
 
 def get_voting_blocks(tc: dict) -> tuple[int, list[float]]:
@@ -153,11 +153,21 @@ def main():
                 comparison_counts[i, j] = count
                 comparison_counts[j, i] = count
     
-    # Create DataFrame for easy viewing
-    dist_df = pd.DataFrame(distance_matrix, index=season_ids, columns=season_ids)
+    # Find max comparisons for coverage penalty
+    max_comparisons = np.max(comparison_counts)
     
-    # Convert distances to similarity percentages
-    similarity_matrix = (1 - distance_matrix) * 100
+    # Convert distances to similarity percentages with coverage penalty
+    # Raw similarity: (1 - distance) * 100
+    # Coverage factor: (num_compared / max_compared) ^ 0.5
+    # This penalizes seasons with less overlap in game stages
+    raw_similarity = (1 - distance_matrix) * 100
+    coverage_factor = np.power(comparison_counts / max_comparisons, 0.5)
+    similarity_matrix = raw_similarity * coverage_factor
+    
+    # Ensure diagonal is 100%
+    np.fill_diagonal(similarity_matrix, 100.0)
+    
+    print(f"\nMax comparisons across pairs: {max_comparisons}")
     
     # Find most similar pairs
     print("\n=== Most Similar Season Pairs ===")
@@ -166,21 +176,23 @@ def main():
         for j, s2 in enumerate(season_ids):
             if i < j:
                 sim_pct = similarity_matrix[i, j]
-                pairs.append((s1, s2, sim_pct, comparison_counts[i, j]))
+                raw_sim = raw_similarity[i, j]
+                pairs.append((s1, s2, sim_pct, comparison_counts[i, j], raw_sim))
     
     pairs.sort(key=lambda x: x[2], reverse=True)  # Sort by similarity descending
     
-    print("(Higher % = more similar voting patterns)\n")
-    for s1, s2, sim, count in pairs[:15]:
+    print("(Higher % = more similar voting patterns)")
+    print("(Similarity is penalized for fewer overlapping game stages)\n")
+    for s1, s2, sim, count, raw in pairs[:15]:
         s1_num = int(s1.replace('us', ''))
         s2_num = int(s2.replace('us', ''))
-        print(f"  {sim:.1f}%: Season {s1_num} vs Season {s2_num} ({count} TCs compared)")
+        print(f"  {sim:.1f}%: Season {s1_num} vs Season {s2_num} ({count} TCs, raw: {raw:.1f}%)")
     
     print("\n=== Most Different Season Pairs ===")
-    for s1, s2, sim, count in pairs[-10:]:
+    for s1, s2, sim, count, raw in pairs[-10:]:
         s1_num = int(s1.replace('us', ''))
         s2_num = int(s2.replace('us', ''))
-        print(f"  {sim:.1f}%: Season {s1_num} vs Season {s2_num} ({count} TCs compared)")
+        print(f"  {sim:.1f}%: Season {s1_num} vs Season {s2_num} ({count} TCs, raw: {raw:.1f}%)")
     
     # Save full matrix (both distance and similarity)
     dist_df = pd.DataFrame(distance_matrix, index=season_ids, columns=season_ids)
@@ -199,7 +211,9 @@ def main():
         "seasons": season_ids,
         "distance_matrix": distance_matrix.tolist(),
         "similarity_matrix": similarity_matrix.tolist(),
-        "comparison_counts": comparison_counts.tolist()
+        "raw_similarity_matrix": raw_similarity.tolist(),
+        "comparison_counts": comparison_counts.tolist(),
+        "max_comparisons": int(max_comparisons)
     }
     json_path = DATA_DIR / "season_similarity.json"
     with open(json_path, 'w') as f:

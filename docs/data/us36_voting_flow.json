@@ -1792,5 +1792,161 @@
       "placement": 17,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0535",
+        "name": "Domenick",
+        "color": "#bd2881",
+        "votes_received": 5
+      },
+      {
+        "id": "US0534",
+        "name": "Laurel",
+        "color": "#ef42de",
+        "votes_received": 0
+      },
+      {
+        "id": "US0536",
+        "name": "Wendell",
+        "color": "#e54c7a",
+        "votes_received": 6
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0524",
+        "juror_name": "Chris",
+        "juror_color": "#4ce55b",
+        "voted_for_id": "US0535",
+        "voted_for_name": "Domenick",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": null,
+        "eligible_votes": 0,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0526",
+        "juror_name": "Desiree",
+        "juror_color": "#56dbb3",
+        "voted_for_id": "US0535",
+        "voted_for_name": "Domenick",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 0.0,
+        "eligible_votes": 3,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0527",
+        "juror_name": "Jenna",
+        "juror_color": "#1cc8c8",
+        "voted_for_id": "US0535",
+        "voted_for_name": "Domenick",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 100.0,
+        "eligible_votes": 3,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0525",
+        "juror_name": "Libby",
+        "juror_color": "#11d45f",
+        "voted_for_id": "US0535",
+        "voted_for_name": "Domenick",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 75.0,
+        "eligible_votes": 4,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0528",
+        "juror_name": "Michael",
+        "juror_color": "#42bbef",
+        "voted_for_id": "US0535",
+        "voted_for_name": "Domenick",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 50.0,
+        "eligible_votes": 4,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0533",
+        "juror_name": "Angela",
+        "juror_color": "#a61cc8",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 42.9,
+        "eligible_votes": 7,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0529",
+        "juror_name": "Chelsea",
+        "juror_color": "#2863bd",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0532",
+        "juror_name": "Donathan",
+        "juror_color": "#9856db",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 8,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0530",
+        "juror_name": "Kellyn",
+        "juror_color": "#4c5be5",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 6,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0534",
+        "juror_name": "Laurel",
+        "juror_color": "#ef42de",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 66.7,
+        "eligible_votes": 9,
+        "aligned_votes": 6,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0531",
+        "juror_name": "Sebastian",
+        "juror_color": "#3811d4",
+        "voted_for_id": "US0536",
+        "voted_for_name": "Wendell",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 66.7,
+        "eligible_votes": 6,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

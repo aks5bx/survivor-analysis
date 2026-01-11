@@ -1447,5 +1447,125 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0601",
+        "name": "Deshawn",
+        "color": "#c81c8f",
+        "votes_received": 1
+      },
+      {
+        "id": "US0594",
+        "name": "Erika",
+        "color": "#ef427c",
+        "votes_received": 7
+      },
+      {
+        "id": "US0597",
+        "name": "Xander",
+        "color": "#db56db",
+        "votes_received": 0
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0599",
+        "juror_name": "Danny",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0601",
+        "voted_for_name": "Deshawn",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 66.7,
+        "eligible_votes": 6,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0598",
+        "juror_name": "Evvie",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0593",
+        "juror_name": "Heather",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 100.0,
+        "eligible_votes": 7,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0608",
+        "juror_name": "Liana",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 4,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0600",
+        "juror_name": "Naseer",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 33.3,
+        "eligible_votes": 3,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0596",
+        "juror_name": "Ricard",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 28.6,
+        "eligible_votes": 7,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0606",
+        "juror_name": "Shan",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 4,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0604",
+        "juror_name": "Tiffany",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0594",
+        "voted_for_name": "Erika",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

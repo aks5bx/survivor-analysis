@@ -43,20 +43,22 @@ def generate_distinct_colors(n: int) -> list[str]:
     return colors
 
 
-def load_data(data_dir: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def load_data(data_dir: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Load required CSV files."""
     vote_history = pd.read_csv(f"{data_dir}/vote_history.csv")
     castaways = pd.read_csv(f"{data_dir}/castaways.csv")
     tribe_colours = pd.read_csv(f"{data_dir}/tribe_colours.csv")
+    jury_votes = pd.read_csv(f"{data_dir}/jury_votes.csv")
     
-    return vote_history, castaways, tribe_colours
+    return vote_history, castaways, tribe_colours, jury_votes
 
 
 def process_season(
     version_season: str,
     vote_history: pd.DataFrame,
     castaways: pd.DataFrame,
-    tribe_colours: pd.DataFrame
+    tribe_colours: pd.DataFrame,
+    jury_votes: pd.DataFrame
 ) -> dict:
     """
     Process a single season into the voting flow JSON structure.
@@ -66,6 +68,7 @@ def process_season(
         vote_history: Full vote history dataframe
         castaways: Full castaways dataframe  
         tribe_colours: Full tribe colours dataframe
+        jury_votes: Full jury votes dataframe
         
     Returns:
         Dictionary ready to be serialized to JSON
@@ -214,6 +217,84 @@ def process_season(
                 "elimination_type": elimination_type
             })
     
+    # Process Final Tribal Council jury votes
+    season_jury_votes = jury_votes[jury_votes['version_season'] == version_season].copy()
+    ftc_data = []
+    
+    if len(season_jury_votes) > 0:
+        # Get all votes for the season (including pre-merge)
+        all_season_votes = vote_history[vote_history['version_season'] == version_season].copy()
+        
+        # Find who each juror voted for (vote=1)
+        juror_votes = season_jury_votes[season_jury_votes['vote'] == 1]
+        
+        # Get list of finalists
+        finalists = season_jury_votes['finalist_id'].unique().tolist()
+        finalist_names = {row['finalist_id']: row['finalist'] for _, row in season_jury_votes.iterrows()}
+        
+        for _, jv_row in juror_votes.iterrows():
+            juror_id = jv_row['castaway_id']
+            juror_name = jv_row['castaway']
+            finalist_id = jv_row['finalist_id']
+            finalist_name = jv_row['finalist']
+            
+            # Calculate voting alignment
+            # Find all TCs where both juror and finalist voted
+            juror_tc_votes = all_season_votes[all_season_votes['castaway_id'] == juror_id]
+            finalist_tc_votes = all_season_votes[all_season_votes['castaway_id'] == finalist_id]
+            
+            # Group by sog_id to compare votes at each TC
+            alignment_count = 0
+            total_eligible = 0
+            
+            juror_by_tc = juror_tc_votes.groupby('sog_id').first()
+            finalist_by_tc = finalist_tc_votes.groupby('sog_id').first()
+            
+            common_tcs = set(juror_by_tc.index) & set(finalist_by_tc.index)
+            
+            for tc in common_tcs:
+                juror_vote = juror_by_tc.loc[tc, 'vote'] if tc in juror_by_tc.index else None
+                finalist_vote = finalist_by_tc.loc[tc, 'vote'] if tc in finalist_by_tc.index else None
+                
+                if pd.notna(juror_vote) and pd.notna(finalist_vote):
+                    total_eligible += 1
+                    if juror_vote == finalist_vote:
+                        alignment_count += 1
+            
+            alignment_pct = (alignment_count / total_eligible * 100) if total_eligible > 0 else None
+            
+            # Check if finalist voted to eliminate juror
+            finalist_votes_for_juror = all_season_votes[
+                (all_season_votes['castaway_id'] == finalist_id) & 
+                (all_season_votes['voted_out_id'] == juror_id)
+            ]
+            helped_eliminate = len(finalist_votes_for_juror) > 0
+            
+            ftc_data.append({
+                "juror_id": juror_id,
+                "juror_name": juror_name,
+                "juror_color": castaway_color_map.get(juror_id, '#888888'),
+                "voted_for_id": finalist_id,
+                "voted_for_name": finalist_name,
+                "voted_for_color": castaway_color_map.get(finalist_id, '#888888'),
+                "alignment_pct": round(alignment_pct, 1) if alignment_pct is not None else None,
+                "eligible_votes": total_eligible,
+                "aligned_votes": alignment_count,
+                "finalist_helped_eliminate": helped_eliminate
+            })
+        
+        # Add finalist info
+        finalists_list = []
+        for fid in finalists:
+            fname = finalist_names.get(fid, '')
+            votes_received = len(season_jury_votes[(season_jury_votes['finalist_id'] == fid) & (season_jury_votes['vote'] == 1)])
+            finalists_list.append({
+                "id": fid,
+                "name": fname,
+                "color": castaway_color_map.get(fid, '#888888'),
+                "votes_received": votes_received
+            })
+    
     # Build final JSON structure
     result = {
         "season": season_num,
@@ -224,7 +305,11 @@ def process_season(
         "castaways": castaways_list,
         "tribes": tribe_colors,
         "tribal_councils": tribal_councils,
-        "boot_order": boot_order
+        "boot_order": boot_order,
+        "ftc": {
+            "finalists": finalists_list if ftc_data else [],
+            "jury_votes": ftc_data
+        }
     }
     
     return result
@@ -247,10 +332,10 @@ def generate_season_json(
         Path to generated JSON file
     """
     # Load data
-    vote_history, castaways, tribe_colours = load_data(data_dir)
+    vote_history, castaways, tribe_colours, jury_votes = load_data(data_dir)
     
     # Process season
-    season_data = process_season(version_season, vote_history, castaways, tribe_colours)
+    season_data = process_season(version_season, vote_history, castaways, tribe_colours, jury_votes)
     
     # Ensure output directory exists
     Path(output_dir).mkdir(parents=True, exist_ok=True)

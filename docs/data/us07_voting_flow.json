@@ -1459,5 +1459,107 @@
       "placement": 16,
       "elimination_type": "voted_out"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0099",
+        "name": "Lillian",
+        "color": "#d411a3",
+        "votes_received": 1
+      },
+      {
+        "id": "US0112",
+        "name": "Sandra",
+        "color": "#db5688",
+        "votes_received": 6
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0108",
+        "juror_name": "Tijuana",
+        "juror_color": "#56a9db",
+        "voted_for_id": "US0099",
+        "voted_for_name": "Lillian",
+        "voted_for_color": "#d411a3",
+        "alignment_pct": 42.9,
+        "eligible_votes": 7,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0100",
+        "juror_name": "Burton",
+        "juror_color": "#5742ef",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 42.9,
+        "eligible_votes": 7,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0109",
+        "juror_name": "Christa",
+        "juror_color": "#1c47c8",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 88.9,
+        "eligible_votes": 9,
+        "aligned_votes": 8,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0110",
+        "juror_name": "Darrah",
+        "juror_color": "#7228bd",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 28.6,
+        "eligible_votes": 7,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0111",
+        "juror_name": "Jonny Fairplay",
+        "juror_color": "#d24ce5",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 63.6,
+        "eligible_votes": 11,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0107",
+        "juror_name": "Rupert",
+        "juror_color": "#11d4d4",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 83.3,
+        "eligible_votes": 6,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0106",
+        "juror_name": "Ryan O.",
+        "juror_color": "#4ce5ac",
+        "voted_for_id": "US0112",
+        "voted_for_name": "Sandra",
+        "voted_for_color": "#db5688",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

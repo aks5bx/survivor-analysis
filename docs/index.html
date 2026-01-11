@@ -68,6 +68,177 @@
             flex: 1;
             position: relative;
             background: #ffffff;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #main-viz svg {
+            flex-shrink: 0;
+            min-height: 600px;
+        }
+
+        /* FTC Section Styles */
+        #ftc-section {
+            background: #fafafa;
+            border-top: 2px solid #e0e0e0;
+            padding: 24px 30px;
+            flex-shrink: 0;
+        }
+
+        #ftc-section h2 {
+            font-size: 20px;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+
+        .ftc-finalists {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .finalist-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 120px;
+        }
+
+        .finalist-card.winner {
+            border: 3px solid #ffd700;
+            background: linear-gradient(135deg, #fffef0 0%, #fff 100%);
+        }
+
+        .finalist-card .finalist-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+
+        .finalist-card .finalist-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .finalist-card .finalist-votes {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .finalist-card .winner-badge {
+            background: #ffd700;
+            color: #333;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .ftc-table {
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .ftc-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ftc-table th,
+        .ftc-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ftc-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        .ftc-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ftc-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .juror-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .juror-cell .color-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .voted-for-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .voted-for-cell .color-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .alignment-cell {
+            font-weight: 500;
+        }
+
+        .alignment-cell.high {
+            color: #2e7d32;
+        }
+
+        .alignment-cell.medium {
+            color: #f57c00;
+        }
+
+        .alignment-cell.low {
+            color: #d32f2f;
+        }
+
+        .eliminated-by {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .eliminated-by.yes {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .eliminated-by.no {
+            background: #e8f5e9;
+            color: #2e7d32;
         }
 
         #sidebar {
@@ -681,6 +852,14 @@
             </div>
             <svg id="viz"></svg>
             <div class="loading" id="loading">Loading...</div>
+            
+            <!-- FTC Section -->
+            <div id="ftc-section">
+                <h2>🏆 Final Tribal Council</h2>
+                <div id="ftc-content">
+                    <div class="no-data">Loading jury vote data...</div>
+                </div>
+            </div>
         </div>
         <div id="sidebar">
             <div id="similar-seasons">
@@ -1009,6 +1188,7 @@
             renderNodes(nodes);
             renderLayerLabels(data);
             renderBootTrack(data);
+            renderFTC(data);
 
             fitToScreen(nodes);
         }
@@ -1333,6 +1513,88 @@
                 });
                 bootList.appendChild(item);
             });
+        }
+
+        function renderFTC(data) {
+            const container = document.getElementById('ftc-content');
+            
+            if (!data.ftc || !data.ftc.jury_votes || data.ftc.jury_votes.length === 0) {
+                container.innerHTML = '<div class="no-data">No jury vote data available for this season</div>';
+                return;
+            }
+            
+            const ftc = data.ftc;
+            const finalists = ftc.finalists || [];
+            const juryVotes = ftc.jury_votes || [];
+            
+            // Find winner (most votes)
+            const maxVotes = Math.max(...finalists.map(f => f.votes_received));
+            
+            // Build finalists cards
+            let html = '<div class="ftc-finalists">';
+            finalists.sort((a, b) => b.votes_received - a.votes_received).forEach(f => {
+                const isWinner = f.votes_received === maxVotes && maxVotes > 0;
+                html += `
+                    <div class="finalist-card ${isWinner ? 'winner' : ''}">
+                        <div class="finalist-color" style="background: ${f.color}"></div>
+                        <div class="finalist-name">${f.name}</div>
+                        <div class="finalist-votes">${f.votes_received} vote${f.votes_received !== 1 ? 's' : ''}</div>
+                        ${isWinner ? '<div class="winner-badge">👑 WINNER</div>' : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            // Build jury votes table
+            html += `
+                <div class="ftc-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Juror</th>
+                                <th>Voted For</th>
+                                <th>Voting Alignment</th>
+                                <th>Eliminated By?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            juryVotes.forEach(jv => {
+                const alignmentClass = jv.alignment_pct === null ? '' : 
+                    jv.alignment_pct >= 70 ? 'high' : 
+                    jv.alignment_pct >= 40 ? 'medium' : 'low';
+                
+                const alignmentText = jv.alignment_pct === null ? '—' : 
+                    `${jv.alignment_pct}% (${jv.aligned_votes}/${jv.eligible_votes})`;
+                
+                html += `
+                    <tr>
+                        <td>
+                            <div class="juror-cell">
+                                <div class="color-dot" style="background: ${jv.juror_color}"></div>
+                                <span>${jv.juror_name}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="voted-for-cell">
+                                <div class="color-dot" style="background: ${jv.voted_for_color}"></div>
+                                <span>${jv.voted_for_name}</span>
+                            </div>
+                        </td>
+                        <td class="alignment-cell ${alignmentClass}">${alignmentText}</td>
+                        <td>
+                            <span class="eliminated-by ${jv.finalist_helped_eliminate ? 'yes' : 'no'}">
+                                ${jv.finalist_helped_eliminate ? '✗ Yes' : '✓ No'}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table></div>';
+            
+            container.innerHTML = html;
         }
 
         function fitToScreen(nodes) {

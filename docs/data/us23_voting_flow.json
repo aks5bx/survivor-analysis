@@ -1872,5 +1872,137 @@
       "placement": 17,
       "elimination_type": "voted_out"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0352",
+        "name": "Albert",
+        "color": "#db56db",
+        "votes_received": 0
+      },
+      {
+        "id": "US0277",
+        "name": "Coach",
+        "color": "#c81c8f",
+        "votes_received": 3
+      },
+      {
+        "id": "US0353",
+        "name": "Sophie",
+        "color": "#ef427c",
+        "votes_received": 6
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0348",
+        "juror_name": "Cochran",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0277",
+        "voted_for_name": "Coach",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 66.7,
+        "eligible_votes": 6,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0349",
+        "juror_name": "Edna",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0277",
+        "voted_for_name": "Coach",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 70.0,
+        "eligible_votes": 10,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0351",
+        "juror_name": "Rick",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0277",
+        "voted_for_name": "Coach",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 83.3,
+        "eligible_votes": 12,
+        "aligned_votes": 10,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0350",
+        "juror_name": "Brandon",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 72.7,
+        "eligible_votes": 11,
+        "aligned_votes": 8,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0346",
+        "juror_name": "Dawn",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0345",
+        "juror_name": "Jim",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 3,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0344",
+        "juror_name": "Keith",
+        "juror_color": "#28bd28",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 1,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0201",
+        "juror_name": "Ozzy",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 4,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0347",
+        "juror_name": "Whitney",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0353",
+        "voted_for_name": "Sophie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 20.0,
+        "eligible_votes": 5,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

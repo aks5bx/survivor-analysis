@@ -1565,5 +1565,125 @@
       "placement": 15,
       "elimination_type": "voted_out"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0441",
+        "name": "Jaclyn",
+        "color": "#c81c8f",
+        "votes_received": 2
+      },
+      {
+        "id": "US0440",
+        "name": "Missy",
+        "color": "#db56db",
+        "votes_received": 1
+      },
+      {
+        "id": "US0442",
+        "name": "Natalie",
+        "color": "#ef427c",
+        "votes_received": 5
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0437",
+        "juror_name": "Jon",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0441",
+        "voted_for_name": "Jaclyn",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 87.5,
+        "eligible_votes": 8,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0435",
+        "juror_name": "Reed",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0441",
+        "voted_for_name": "Jaclyn",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0438",
+        "juror_name": "Baylor",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0440",
+        "voted_for_name": "Missy",
+        "voted_for_color": "#db56db",
+        "alignment_pct": 100.0,
+        "eligible_votes": 9,
+        "aligned_votes": 9,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0436",
+        "juror_name": "Alec",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0442",
+        "voted_for_name": "Natalie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 20.0,
+        "eligible_votes": 5,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0433",
+        "juror_name": "Jeremy",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0442",
+        "voted_for_name": "Natalie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 100.0,
+        "eligible_votes": 3,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0432",
+        "juror_name": "Josh",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0442",
+        "voted_for_name": "Natalie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 1,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0439",
+        "juror_name": "Keith",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0442",
+        "voted_for_name": "Natalie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 33.3,
+        "eligible_votes": 9,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0434",
+        "juror_name": "Wes",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0442",
+        "voted_for_name": "Natalie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 3,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

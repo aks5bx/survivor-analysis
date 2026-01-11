@@ -1843,5 +1843,125 @@
       "placement": 17,
       "elimination_type": "voted_out"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0348",
+        "name": "Cochran",
+        "color": "#e54c7a",
+        "votes_received": 8
+      },
+      {
+        "id": "US0346",
+        "name": "Dawn",
+        "color": "#bd2881",
+        "votes_received": 0
+      },
+      {
+        "id": "US0396",
+        "name": "Sherri",
+        "color": "#ef42de",
+        "votes_received": 0
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0333",
+        "juror_name": "Andrea",
+        "juror_color": "#4c5be5",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 62.5,
+        "eligible_votes": 8,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0312",
+        "juror_name": "Brenda",
+        "juror_color": "#3811d4",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 9,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0395",
+        "juror_name": "Eddie",
+        "juror_color": "#a61cc8",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 0.0,
+        "eligible_votes": 8,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0246",
+        "juror_name": "Erik",
+        "juror_color": "#9856db",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 55.6,
+        "eligible_votes": 9,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0384",
+        "juror_name": "Malcolm",
+        "juror_color": "#42bbef",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 6,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0393",
+        "juror_name": "Michael",
+        "juror_color": "#56dbb3",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 0.0,
+        "eligible_votes": 4,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0337",
+        "juror_name": "Phillip",
+        "juror_color": "#1cc8c8",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 100.0,
+        "eligible_votes": 7,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0394",
+        "juror_name": "Reynold",
+        "juror_color": "#2863bd",
+        "voted_for_id": "US0348",
+        "voted_for_name": "Cochran",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 0.0,
+        "eligible_votes": 5,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

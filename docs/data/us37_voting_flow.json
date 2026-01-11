@@ -1593,5 +1593,149 @@
       "placement": 17,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0554",
+        "name": "Angelina",
+        "color": "#ef42de",
+        "votes_received": 0
+      },
+      {
+        "id": "US0555",
+        "name": "Mike",
+        "color": "#bd2881",
+        "votes_received": 3
+      },
+      {
+        "id": "US0556",
+        "name": "Nick",
+        "color": "#e54c7a",
+        "votes_received": 7
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0552",
+        "juror_name": "Alison",
+        "juror_color": "#9856db",
+        "voted_for_id": "US0555",
+        "voted_for_name": "Mike",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 77.8,
+        "eligible_votes": 9,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0550",
+        "juror_name": "Christian",
+        "juror_color": "#4c5be5",
+        "voted_for_id": "US0555",
+        "voted_for_name": "Mike",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 42.9,
+        "eligible_votes": 7,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0553",
+        "juror_name": "Kara",
+        "juror_color": "#a61cc8",
+        "voted_for_id": "US0555",
+        "voted_for_name": "Mike",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 70.0,
+        "eligible_votes": 10,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0547",
+        "juror_name": "Alec",
+        "juror_color": "#1cc8c8",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0548",
+        "juror_name": "Carl",
+        "juror_color": "#42bbef",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 66.7,
+        "eligible_votes": 6,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0546",
+        "juror_name": "Dan",
+        "juror_color": "#56dbb3",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 3,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0551",
+        "juror_name": "Davie",
+        "juror_color": "#3811d4",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 77.8,
+        "eligible_votes": 9,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0544",
+        "juror_name": "Elizabeth",
+        "juror_color": "#4ce55b",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 2,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0549",
+        "juror_name": "Gabby",
+        "juror_color": "#2863bd",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 71.4,
+        "eligible_votes": 7,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0545",
+        "juror_name": "John",
+        "juror_color": "#11d45f",
+        "voted_for_id": "US0556",
+        "voted_for_name": "Nick",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 2,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

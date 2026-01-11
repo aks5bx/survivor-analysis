@@ -1749,5 +1749,149 @@
       "placement": 17,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0589",
+        "name": "Dean",
+        "color": "#bd2881",
+        "votes_received": 2
+      },
+      {
+        "id": "US0588",
+        "name": "Noura",
+        "color": "#ef42de",
+        "votes_received": 0
+      },
+      {
+        "id": "US0590",
+        "name": "Tommy",
+        "color": "#e54c7a",
+        "votes_received": 8
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0580",
+        "juror_name": "Aaron",
+        "juror_color": "#56dbb3",
+        "voted_for_id": "US0589",
+        "voted_for_name": "Dean",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 50.0,
+        "eligible_votes": 6,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0582",
+        "juror_name": "Elizabeth",
+        "juror_color": "#42bbef",
+        "voted_for_id": "US0589",
+        "voted_for_name": "Dean",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 40.0,
+        "eligible_votes": 5,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0584",
+        "juror_name": "Elaine",
+        "juror_color": "#4c5be5",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0577",
+        "juror_name": "Jack",
+        "juror_color": "#45bd28",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 0.0,
+        "eligible_votes": 1,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0579",
+        "juror_name": "Jamal",
+        "juror_color": "#11d45f",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0586",
+        "juror_name": "Janet",
+        "juror_color": "#9856db",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0583",
+        "juror_name": "Karishma",
+        "juror_color": "#2863bd",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 20.0,
+        "eligible_votes": 5,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0578",
+        "juror_name": "Kellee",
+        "juror_color": "#4ce55b",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 2,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0587",
+        "juror_name": "Lauren",
+        "juror_color": "#a61cc8",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 87.5,
+        "eligible_votes": 8,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0581",
+        "juror_name": "Missy",
+        "juror_color": "#1cc8c8",
+        "voted_for_id": "US0590",
+        "voted_for_name": "Tommy",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

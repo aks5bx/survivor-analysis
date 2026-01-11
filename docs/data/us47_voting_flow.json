@@ -1481,5 +1481,125 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0712",
+        "name": "Sue",
+        "color": "#db56db",
+        "votes_received": 0
+      },
+      {
+        "id": "US0709",
+        "name": "Sam",
+        "color": "#c81c8f",
+        "votes_received": 1
+      },
+      {
+        "id": "US0707",
+        "name": "Rachel",
+        "color": "#ef427c",
+        "votes_received": 7
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0706",
+        "juror_name": "Kyle",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0709",
+        "voted_for_name": "Sam",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0710",
+        "juror_name": "Sierra",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0711",
+        "juror_name": "Sol",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0702",
+        "juror_name": "Gabe",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0701",
+        "juror_name": "Caroline",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 100.0,
+        "eligible_votes": 4,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0698",
+        "juror_name": "Andy",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 8,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0703",
+        "juror_name": "Genevieve",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0713",
+        "juror_name": "Teeny",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0707",
+        "voted_for_name": "Rachel",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

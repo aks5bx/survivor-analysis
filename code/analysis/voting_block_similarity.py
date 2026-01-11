@@ -14,8 +14,7 @@ from pathlib import Path
 from collections import Counter
 from itertools import combinations
 
-DATA_DIR = Path("output_json")
-
+DATA_DIR = Path("../../docs/data")
 
 def get_voting_blocks(tc: dict) -> tuple[int, list[float]]:
     """

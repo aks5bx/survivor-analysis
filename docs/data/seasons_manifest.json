@@ -1,53 +1,249 @@
 {
   "seasons": [
-    {"id": "us01", "name": "Season 1: Borneo", "file": "us01_voting_flow.json"},
-    {"id": "us02", "name": "Season 2: The Australian Outback", "file": "us02_voting_flow.json"},
-    {"id": "us03", "name": "Season 3: Africa", "file": "us03_voting_flow.json"},
-    {"id": "us04", "name": "Season 4: Marquesas", "file": "us04_voting_flow.json"},
-    {"id": "us05", "name": "Season 5: Thailand", "file": "us05_voting_flow.json"},
-    {"id": "us06", "name": "Season 6: The Amazon", "file": "us06_voting_flow.json"},
-    {"id": "us07", "name": "Season 7: Pearl Islands", "file": "us07_voting_flow.json"},
-    {"id": "us08", "name": "Season 8: All-Stars", "file": "us08_voting_flow.json"},
-    {"id": "us09", "name": "Season 9: Vanuatu", "file": "us09_voting_flow.json"},
-    {"id": "us10", "name": "Season 10: Palau", "file": "us10_voting_flow.json"},
-    {"id": "us11", "name": "Season 11: Guatemala", "file": "us11_voting_flow.json"},
-    {"id": "us12", "name": "Season 12: Panama", "file": "us12_voting_flow.json"},
-    {"id": "us13", "name": "Season 13: Cook Islands", "file": "us13_voting_flow.json"},
-    {"id": "us14", "name": "Season 14: Fiji", "file": "us14_voting_flow.json"},
-    {"id": "us15", "name": "Season 15: China", "file": "us15_voting_flow.json"},
-    {"id": "us16", "name": "Season 16: Micronesia", "file": "us16_voting_flow.json"},
-    {"id": "us17", "name": "Season 17: Gabon", "file": "us17_voting_flow.json"},
-    {"id": "us18", "name": "Season 18: Tocantins", "file": "us18_voting_flow.json"},
-    {"id": "us19", "name": "Season 19: Samoa", "file": "us19_voting_flow.json"},
-    {"id": "us20", "name": "Season 20: Heroes vs. Villains", "file": "us20_voting_flow.json"},
-    {"id": "us21", "name": "Season 21: Nicaragua", "file": "us21_voting_flow.json"},
-    {"id": "us22", "name": "Season 22: Redemption Island", "file": "us22_voting_flow.json"},
-    {"id": "us23", "name": "Season 23: South Pacific", "file": "us23_voting_flow.json"},
-    {"id": "us24", "name": "Season 24: One World", "file": "us24_voting_flow.json"},
-    {"id": "us25", "name": "Season 25: Philippines", "file": "us25_voting_flow.json"},
-    {"id": "us26", "name": "Season 26: Caramoan", "file": "us26_voting_flow.json"},
-    {"id": "us27", "name": "Season 27: Blood vs. Water", "file": "us27_voting_flow.json"},
-    {"id": "us28", "name": "Season 28: Cagayan", "file": "us28_voting_flow.json"},
-    {"id": "us29", "name": "Season 29: San Juan del Sur", "file": "us29_voting_flow.json"},
-    {"id": "us30", "name": "Season 30: Worlds Apart", "file": "us30_voting_flow.json"},
-    {"id": "us31", "name": "Season 31: Cambodia", "file": "us31_voting_flow.json"},
-    {"id": "us32", "name": "Season 32: Kaôh Rōng", "file": "us32_voting_flow.json"},
-    {"id": "us33", "name": "Season 33: Millennials vs. Gen X", "file": "us33_voting_flow.json"},
-    {"id": "us34", "name": "Season 34: Game Changers", "file": "us34_voting_flow.json"},
-    {"id": "us35", "name": "Season 35: Heroes vs. Healers vs. Hustlers", "file": "us35_voting_flow.json"},
-    {"id": "us36", "name": "Season 36: Ghost Island", "file": "us36_voting_flow.json"},
-    {"id": "us37", "name": "Season 37: David vs. Goliath", "file": "us37_voting_flow.json"},
-    {"id": "us38", "name": "Season 38: Edge of Extinction", "file": "us38_voting_flow.json"},
-    {"id": "us39", "name": "Season 39: Island of the Idols", "file": "us39_voting_flow.json"},
-    {"id": "us40", "name": "Season 40: Winners at War", "file": "us40_voting_flow.json"},
-    {"id": "us41", "name": "Season 41", "file": "us41_voting_flow.json"},
-    {"id": "us42", "name": "Season 42", "file": "us42_voting_flow.json"},
-    {"id": "us43", "name": "Season 43", "file": "us43_voting_flow.json"},
-    {"id": "us44", "name": "Season 44", "file": "us44_voting_flow.json"},
-    {"id": "us45", "name": "Season 45", "file": "us45_voting_flow.json"},
-    {"id": "us46", "name": "Season 46", "file": "us46_voting_flow.json"},
-    {"id": "us47", "name": "Season 47", "file": "us47_voting_flow.json"},
-    {"id": "us48", "name": "Season 48", "file": "us48_voting_flow.json"},
-    {"id": "us49", "name": "Season 49", "file": "us49_voting_flow.json"}
+    {
+      "id": "us01",
+      "name": "Season 1",
+      "file": "us01_voting_flow.json"
+    },
+    {
+      "id": "us02",
+      "name": "Season 2",
+      "file": "us02_voting_flow.json"
+    },
+    {
+      "id": "us03",
+      "name": "Season 3",
+      "file": "us03_voting_flow.json"
+    },
+    {
+      "id": "us04",
+      "name": "Season 4",
+      "file": "us04_voting_flow.json"
+    },
+    {
+      "id": "us05",
+      "name": "Season 5",
+      "file": "us05_voting_flow.json"
+    },
+    {
+      "id": "us06",
+      "name": "Season 6",
+      "file": "us06_voting_flow.json"
+    },
+    {
+      "id": "us07",
+      "name": "Season 7",
+      "file": "us07_voting_flow.json"
+    },
+    {
+      "id": "us08",
+      "name": "Season 8",
+      "file": "us08_voting_flow.json"
+    },
+    {
+      "id": "us09",
+      "name": "Season 9",
+      "file": "us09_voting_flow.json"
+    },
+    {
+      "id": "us10",
+      "name": "Season 10",
+      "file": "us10_voting_flow.json"
+    },
+    {
+      "id": "us11",
+      "name": "Season 11",
+      "file": "us11_voting_flow.json"
+    },
+    {
+      "id": "us12",
+      "name": "Season 12",
+      "file": "us12_voting_flow.json"
+    },
+    {
+      "id": "us13",
+      "name": "Season 13",
+      "file": "us13_voting_flow.json"
+    },
+    {
+      "id": "us14",
+      "name": "Season 14",
+      "file": "us14_voting_flow.json"
+    },
+    {
+      "id": "us15",
+      "name": "Season 15",
+      "file": "us15_voting_flow.json"
+    },
+    {
+      "id": "us16",
+      "name": "Season 16",
+      "file": "us16_voting_flow.json"
+    },
+    {
+      "id": "us17",
+      "name": "Season 17",
+      "file": "us17_voting_flow.json"
+    },
+    {
+      "id": "us18",
+      "name": "Season 18",
+      "file": "us18_voting_flow.json"
+    },
+    {
+      "id": "us19",
+      "name": "Season 19",
+      "file": "us19_voting_flow.json"
+    },
+    {
+      "id": "us20",
+      "name": "Season 20",
+      "file": "us20_voting_flow.json"
+    },
+    {
+      "id": "us21",
+      "name": "Season 21",
+      "file": "us21_voting_flow.json"
+    },
+    {
+      "id": "us22",
+      "name": "Season 22",
+      "file": "us22_voting_flow.json"
+    },
+    {
+      "id": "us23",
+      "name": "Season 23",
+      "file": "us23_voting_flow.json"
+    },
+    {
+      "id": "us24",
+      "name": "Season 24",
+      "file": "us24_voting_flow.json"
+    },
+    {
+      "id": "us25",
+      "name": "Season 25",
+      "file": "us25_voting_flow.json"
+    },
+    {
+      "id": "us26",
+      "name": "Season 26",
+      "file": "us26_voting_flow.json"
+    },
+    {
+      "id": "us27",
+      "name": "Season 27",
+      "file": "us27_voting_flow.json"
+    },
+    {
+      "id": "us28",
+      "name": "Season 28",
+      "file": "us28_voting_flow.json"
+    },
+    {
+      "id": "us29",
+      "name": "Season 29",
+      "file": "us29_voting_flow.json"
+    },
+    {
+      "id": "us30",
+      "name": "Season 30",
+      "file": "us30_voting_flow.json"
+    },
+    {
+      "id": "us31",
+      "name": "Season 31",
+      "file": "us31_voting_flow.json"
+    },
+    {
+      "id": "us32",
+      "name": "Season 32",
+      "file": "us32_voting_flow.json"
+    },
+    {
+      "id": "us33",
+      "name": "Season 33",
+      "file": "us33_voting_flow.json"
+    },
+    {
+      "id": "us34",
+      "name": "Season 34",
+      "file": "us34_voting_flow.json"
+    },
+    {
+      "id": "us35",
+      "name": "Season 35",
+      "file": "us35_voting_flow.json"
+    },
+    {
+      "id": "us36",
+      "name": "Season 36",
+      "file": "us36_voting_flow.json"
+    },
+    {
+      "id": "us37",
+      "name": "Season 37",
+      "file": "us37_voting_flow.json"
+    },
+    {
+      "id": "us38",
+      "name": "Season 38",
+      "file": "us38_voting_flow.json"
+    },
+    {
+      "id": "us39",
+      "name": "Season 39",
+      "file": "us39_voting_flow.json"
+    },
+    {
+      "id": "us40",
+      "name": "Season 40",
+      "file": "us40_voting_flow.json"
+    },
+    {
+      "id": "us41",
+      "name": "Season 41",
+      "file": "us41_voting_flow.json"
+    },
+    {
+      "id": "us42",
+      "name": "Season 42",
+      "file": "us42_voting_flow.json"
+    },
+    {
+      "id": "us43",
+      "name": "Season 43",
+      "file": "us43_voting_flow.json"
+    },
+    {
+      "id": "us44",
+      "name": "Season 44",
+      "file": "us44_voting_flow.json"
+    },
+    {
+      "id": "us45",
+      "name": "Season 45",
+      "file": "us45_voting_flow.json"
+    },
+    {
+      "id": "us46",
+      "name": "Season 46",
+      "file": "us46_voting_flow.json"
+    },
+    {
+      "id": "us47",
+      "name": "Season 47",
+      "file": "us47_voting_flow.json"
+    },
+    {
+      "id": "us48",
+      "name": "Season 48",
+      "file": "us48_voting_flow.json"
+    },
+    {
+      "id": "us49",
+      "name": "Season 49",
+      "file": "us49_voting_flow.json"
+    }
   ]
 }

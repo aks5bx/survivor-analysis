@@ -1392,5 +1392,125 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0721",
+        "name": "Eva",
+        "color": "#c81c8f",
+        "votes_received": 2
+      },
+      {
+        "id": "US0722",
+        "name": "Joe",
+        "color": "#db56db",
+        "votes_received": 1
+      },
+      {
+        "id": "US0726",
+        "name": "Kyle",
+        "color": "#ef427c",
+        "votes_received": 5
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0731",
+        "juror_name": "Star",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0721",
+        "voted_for_name": "Eva",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0727",
+        "juror_name": "Mary",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0721",
+        "voted_for_name": "Eva",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 40.0,
+        "eligible_votes": 5,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0717",
+        "juror_name": "Cedrek",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0722",
+        "voted_for_name": "Joe",
+        "voted_for_color": "#db56db",
+        "alignment_pct": 100.0,
+        "eligible_votes": 1,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": false
+      },
+      {
+        "juror_id": "US0719",
+        "juror_name": "Chrissy",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0726",
+        "voted_for_name": "Kyle",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 2,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0720",
+        "juror_name": "David",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0726",
+        "voted_for_name": "Kyle",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 4,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0730",
+        "juror_name": "Shauhin",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0726",
+        "voted_for_name": "Kyle",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 62.5,
+        "eligible_votes": 8,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0728",
+        "juror_name": "Mitch",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0726",
+        "voted_for_name": "Kyle",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0724",
+        "juror_name": "Kamilla",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0726",
+        "voted_for_name": "Kyle",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 77.8,
+        "eligible_votes": 9,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

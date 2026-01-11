@@ -1191,5 +1191,125 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0658",
+        "name": "Carolyn",
+        "color": "#db56db",
+        "votes_received": 0
+      },
+      {
+        "id": "US0654",
+        "name": "Heidi",
+        "color": "#c81c8f",
+        "votes_received": 1
+      },
+      {
+        "id": "US0662",
+        "name": "Yam Yam",
+        "color": "#ef427c",
+        "votes_received": 7
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0652",
+        "juror_name": "Danny",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0654",
+        "voted_for_name": "Heidi",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 83.3,
+        "eligible_votes": 6,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0645",
+        "juror_name": "Brandon",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0659",
+        "juror_name": "Carson",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 87.5,
+        "eligible_votes": 8,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0653",
+        "juror_name": "Frannie",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 25.0,
+        "eligible_votes": 4,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0646",
+        "juror_name": "Jaime",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0647",
+        "juror_name": "Kane",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 33.3,
+        "eligible_votes": 3,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0648",
+        "juror_name": "Lauren",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 37.5,
+        "eligible_votes": 8,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0656",
+        "juror_name": "Matt",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0662",
+        "voted_for_name": "Yam Yam",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 0.0,
+        "eligible_votes": 1,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

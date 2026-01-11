@@ -1368,5 +1368,125 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0680",
+        "name": "Ben",
+        "color": "#db56db",
+        "votes_received": 0
+      },
+      {
+        "id": "US0682",
+        "name": "Charlie",
+        "color": "#c81c8f",
+        "votes_received": 3
+      },
+      {
+        "id": "US0687",
+        "name": "Kenzie",
+        "color": "#ef427c",
+        "votes_received": 5
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0693",
+        "juror_name": "Soda",
+        "juror_color": "#4ce57f",
+        "voted_for_id": "US0682",
+        "voted_for_name": "Charlie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0684",
+        "juror_name": "Hunter",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0682",
+        "voted_for_name": "Charlie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 0.0,
+        "eligible_votes": 2,
+        "aligned_votes": 0,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0688",
+        "juror_name": "Liz",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0682",
+        "voted_for_name": "Charlie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 75.0,
+        "eligible_votes": 8,
+        "aligned_votes": 6,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0694",
+        "juror_name": "Tevin",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0687",
+        "voted_for_name": "Kenzie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 50.0,
+        "eligible_votes": 2,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0695",
+        "juror_name": "Tiffany",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0687",
+        "voted_for_name": "Kenzie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 87.5,
+        "eligible_votes": 8,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0697",
+        "juror_name": "Venus",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0687",
+        "voted_for_name": "Kenzie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 80.0,
+        "eligible_votes": 5,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0691",
+        "juror_name": "Q",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0687",
+        "voted_for_name": "Kenzie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 70.0,
+        "eligible_votes": 10,
+        "aligned_votes": 7,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0689",
+        "juror_name": "Maria",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0687",
+        "voted_for_name": "Kenzie",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 42.9,
+        "eligible_votes": 7,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

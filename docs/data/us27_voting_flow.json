@@ -1925,5 +1925,125 @@
       "placement": 20,
       "elimination_type": "voted_out"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0010",
+        "name": "Gervase",
+        "color": "#ef42de",
+        "votes_received": 0
+      },
+      {
+        "id": "US0358",
+        "name": "Monica",
+        "color": "#bd2881",
+        "votes_received": 1
+      },
+      {
+        "id": "US0274",
+        "name": "Tyson",
+        "color": "#e54c7a",
+        "votes_received": 7
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0402",
+        "juror_name": "Vytas",
+        "juror_color": "#1cc8c8",
+        "voted_for_id": "US0358",
+        "voted_for_name": "Monica",
+        "voted_for_color": "#bd2881",
+        "alignment_pct": 50.0,
+        "eligible_votes": 4,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0182",
+        "juror_name": "Aras",
+        "juror_color": "#56dbb3",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 3,
+        "aligned_votes": 1,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0403",
+        "juror_name": "Caleb",
+        "juror_color": "#2863bd",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 80.0,
+        "eligible_votes": 5,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0406",
+        "juror_name": "Ciera",
+        "juror_color": "#9856db",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 8,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0405",
+        "juror_name": "Hayden",
+        "juror_color": "#3811d4",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 57.1,
+        "eligible_votes": 7,
+        "aligned_votes": 4,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0404",
+        "juror_name": "Katie",
+        "juror_color": "#4c5be5",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 33.3,
+        "eligible_votes": 6,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0292",
+        "juror_name": "Laura M.",
+        "juror_color": "#42bbef",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 50.0,
+        "eligible_votes": 6,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0032",
+        "juror_name": "Tina",
+        "juror_color": "#a61cc8",
+        "voted_for_id": "US0274",
+        "voted_for_name": "Tyson",
+        "voted_for_color": "#e54c7a",
+        "alignment_pct": 28.6,
+        "eligible_votes": 7,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

@@ -1472,5 +1472,113 @@
       "placement": 15,
       "elimination_type": "fire_challenge"
     }
-  ]
+  ],
+  "ftc": {
+    "finalists": [
+      {
+        "id": "US0265",
+        "name": "Bob",
+        "color": "#ef427c",
+        "votes_received": 4
+      },
+      {
+        "id": "US0263",
+        "name": "Sugar",
+        "color": "#db56db",
+        "votes_received": 0
+      },
+      {
+        "id": "US0264",
+        "name": "Susie",
+        "color": "#c81c8f",
+        "votes_received": 3
+      }
+    ],
+    "jury_votes": [
+      {
+        "juror_id": "US0257",
+        "juror_name": "Charlie",
+        "juror_color": "#56dbdb",
+        "voted_for_id": "US0265",
+        "voted_for_name": "Bob",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 100.0,
+        "eligible_votes": 3,
+        "aligned_votes": 3,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0259",
+        "juror_name": "Corinne",
+        "juror_color": "#427cef",
+        "voted_for_id": "US0265",
+        "voted_for_name": "Bob",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 100.0,
+        "eligible_votes": 5,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0256",
+        "juror_name": "Marcus",
+        "juror_color": "#11d493",
+        "voted_for_id": "US0265",
+        "voted_for_name": "Bob",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0258",
+        "juror_name": "Randy",
+        "juror_color": "#1c8fc8",
+        "voted_for_id": "US0265",
+        "voted_for_name": "Bob",
+        "voted_for_color": "#ef427c",
+        "alignment_pct": 66.7,
+        "eligible_votes": 3,
+        "aligned_votes": 2,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0260",
+        "juror_name": "Crystal",
+        "juror_color": "#2828bd",
+        "voted_for_id": "US0264",
+        "voted_for_name": "Susie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 85.7,
+        "eligible_votes": 7,
+        "aligned_votes": 6,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0261",
+        "juror_name": "Ken",
+        "juror_color": "#7f4ce5",
+        "voted_for_id": "US0264",
+        "voted_for_name": "Susie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 62.5,
+        "eligible_votes": 8,
+        "aligned_votes": 5,
+        "finalist_helped_eliminate": true
+      },
+      {
+        "juror_id": "US0262",
+        "juror_name": "Matty",
+        "juror_color": "#9311d4",
+        "voted_for_id": "US0264",
+        "voted_for_name": "Susie",
+        "voted_for_color": "#c81c8f",
+        "alignment_pct": 100.0,
+        "eligible_votes": 8,
+        "aligned_votes": 8,
+        "finalist_helped_eliminate": true
+      }
+    ]
+  }
 }

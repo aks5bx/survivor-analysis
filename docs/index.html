@@ -958,11 +958,12 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
+            align-items: flex-end;
         }
 
         .identity-selector {
             flex: 1;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .identity-selector label {
@@ -992,6 +993,26 @@
         .identity-selector select:focus {
             outline: none;
             border-color: #667eea;
+        }
+
+        .reset-filters-btn {
+            padding: 10px 16px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            height: 42px;
+        }
+
+        .reset-filters-btn:hover {
+            background: #e94560;
+            border-color: #e94560;
+            color: #fff;
         }
 
         .identity-main-content {
@@ -1736,6 +1757,14 @@
                         </select>
                     </div>
                     <div class="identity-selector">
+                        <label>LGBTQ+</label>
+                        <select id="identity-lgbtq">
+                            <option value="">Any</option>
+                            <option value="LGBTQ+">LGBTQ+</option>
+                            <option value="Not LGBTQ+">Not LGBTQ+</option>
+                        </select>
+                    </div>
+                    <div class="identity-selector">
                         <label>Occupation</label>
                         <select id="identity-collar">
                             <option value="">Any</option>
@@ -1752,6 +1781,7 @@
                             <option value="Extrovert">Extrovert</option>
                         </select>
                     </div>
+                    <button id="identity-reset" class="reset-filters-btn">Reset Filters</button>
                 </div>
             </div>
             
@@ -3244,13 +3274,27 @@
         function setupIdentityTab() {
             if (!identityData) return;
             
-            const selectors = ['gender', 'age', 'race', 'collar', 'personality'];
+            const selectors = ['gender', 'age', 'race', 'lgbtq', 'collar', 'personality'];
             selectors.forEach(sel => {
                 const element = document.getElementById(`identity-${sel}`);
                 if (element) {
                     element.addEventListener('change', updateIdentityStats);
                 }
             });
+            
+            // Reset button handler
+            const resetBtn = document.getElementById('identity-reset');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    selectors.forEach(sel => {
+                        const element = document.getElementById(`identity-${sel}`);
+                        if (element) element.value = '';
+                    });
+                    selectedMilestone = null;
+                    document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('selected'));
+                    updateIdentityStats();
+                });
+            }
             
             // Add click handlers to stat cards for milestone filtering
             document.querySelectorAll('.stat-card[data-milestone]').forEach(card => {
@@ -3280,6 +3324,7 @@
             const gender = document.getElementById('identity-gender').value;
             const age = document.getElementById('identity-age').value;
             const race = document.getElementById('identity-race').value;
+            const lgbtq = document.getElementById('identity-lgbtq').value;
             const collar = document.getElementById('identity-collar').value;
             const personality = document.getElementById('identity-personality').value;
             
@@ -3287,6 +3332,7 @@
             if (gender) currentFilters['gender'] = gender;
             if (age) currentFilters['age_bucket'] = age;
             if (race) currentFilters['race_cat'] = race;
+            if (lgbtq) currentFilters['lgbtq'] = lgbtq;
             if (collar) currentFilters['collar'] = collar;
             if (personality) currentFilters['personality_cat'] = personality;
             

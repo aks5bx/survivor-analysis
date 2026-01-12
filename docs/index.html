@@ -82,73 +82,73 @@
         #ftc-section {
             background: #fafafa;
             border-top: 2px solid #e0e0e0;
-            padding: 24px 30px;
+            padding: 20px 24px;
             flex-shrink: 0;
         }
 
         #ftc-section h2 {
-            font-size: 20px;
+            font-size: 18px;
             color: #d32f2f;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .ftc-finalists {
             display: flex;
-            gap: 24px;
-            margin-bottom: 24px;
+            gap: 16px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
         }
 
         .finalist-card {
             background: #fff;
-            border-radius: 12px;
-            padding: 16px 24px;
+            border-radius: 10px;
+            padding: 12px 18px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            min-width: 120px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            min-width: 100px;
         }
 
         .finalist-card.winner {
-            border: 3px solid #ffd700;
+            border: 2px solid #ffd700;
             background: linear-gradient(135deg, #fffef0 0%, #fff 100%);
         }
 
         .finalist-card .finalist-color {
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            margin: 0 auto 10px;
+            margin: 0 auto 8px;
             border: 2px solid rgba(0,0,0,0.1);
         }
 
         .finalist-card .finalist-name {
             font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 4px;
+            font-size: 14px;
+            margin-bottom: 2px;
         }
 
         .finalist-card .finalist-votes {
             color: #666;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .finalist-card .winner-badge {
             background: #ffd700;
             color: #333;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 12px;
-            margin-top: 8px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
             display: inline-block;
         }
 
         .ftc-table {
             width: 100%;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
         .ftc-table table {
@@ -158,15 +158,16 @@
 
         .ftc-table th,
         .ftc-table td {
-            padding: 14px 18px;
+            padding: 10px 14px;
             text-align: left;
             border-bottom: 1px solid #eee;
+            font-size: 13px;
         }
 
         .ftc-table th {
             background: #f8f9fa;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             color: #666;
             letter-spacing: 0.5px;
@@ -354,29 +355,28 @@
         }
 
         #header {
-            position: absolute;
-            top: 12px;
-            left: 16px;
-            z-index: 100;
+            padding: 10px 16px;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
         }
 
-        #header h1 {
-            font-size: 24px;
+        #header .header-left h1 {
+            font-size: 20px;
             color: #d32f2f;
             font-weight: 600;
         }
 
         #header .subtitle {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
             margin-top: 2px;
         }
 
         #controls {
-            position: absolute;
-            top: 12px;
-            right: 240px;
-            z-index: 100;
             display: flex;
             gap: 10px;
         }
@@ -431,6 +431,12 @@
             width: 100%;
             height: 100%;
             background: #ffffff;
+        }
+
+        #svg-wrapper {
+            position: relative;
+            flex: 1;
+            min-height: 650px;
         }
 
         .layer-label {
@@ -518,15 +524,48 @@
 
         #instructions {
             position: absolute;
-            bottom: 12px;
-            left: 16px;
-            background: #fff;
+            top: 8px;
+            left: 8px;
+            background: rgba(255,255,255,0.9);
             border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 14px 18px;
-            font-size: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            max-width: 280px;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 9px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            z-index: 50;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        #instructions .instructions-title {
+            font-size: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+            padding-top: 2px;
+        }
+
+        #instructions .instruction-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        #instructions .instruction-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        #instructions .instruction-item {
+            line-height: 1.2;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        #instructions .instruction-item::before {
+            content: "→ ";
+            color: #999;
         }
 
         #instructions h4 {
@@ -571,33 +610,54 @@
 
         #legend {
             position: absolute;
-            bottom: 12px;
-            right: 240px;
-            background: #fff;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.9);
             border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 12px 16px;
-            font-size: 11px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 9px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            z-index: 50;
         }
 
         #legend h4 {
-            font-size: 12px;
+            font-size: 10px;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         #legend .legend-item {
             display: flex;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         #legend .legend-color {
-            width: 24px;
-            height: 4px;
-            margin-right: 10px;
+            width: 16px;
+            height: 3px;
+            margin-right: 6px;
             border-radius: 2px;
+        }
+
+        #scroll-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(211, 47, 47, 0.9);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        #scroll-indicator:hover {
+            background: rgba(211, 47, 47, 1);
         }
 
         .loading {
@@ -797,61 +857,407 @@
             padding: 20px;
             text-align: center;
         }
+
+        /* Player Identity Tab Styles */
+        #identity-tab {
+            padding: 30px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: calc(100vh - 50px);
+        }
+
+        .identity-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .identity-header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .identity-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .identity-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .identity-prompt {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .prompt-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .identity-selectors {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .identity-selector {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .identity-selector label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .identity-selector select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #fff;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .identity-selector select:hover {
+            border-color: #667eea;
+        }
+
+        .identity-selector select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .identity-main-content {
+            display: flex;
+            gap: 24px;
+        }
+
+        .identity-stats-panel {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .identity-players-panel {
+            width: 320px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            max-height: 600px;
+        }
+
+        .players-header {
+            padding: 16px 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .players-header h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 4px 0;
+        }
+
+        .players-filter-info {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .players-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .player-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            transition: background 0.2s;
+        }
+
+        .player-item:hover {
+            background: #e9ecef;
+        }
+
+        .player-item.winner {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border: 1px solid #ffc107;
+        }
+
+        .player-name {
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .player-season {
+            font-size: 12px;
+            color: #888;
+            background: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .player-badges {
+            display: flex;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .player-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .player-badge.winner {
+            background: #ffc107;
+            color: #333;
+        }
+
+        #identity-results {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .results-header h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+        }
+
+        .sample-size {
+            font-size: 14px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .stat-card:hover {
+            background: #e9ecef;
+        }
+
+        .stat-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .stat-diff {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .stat-diff.positive {
+            color: #2e7d32;
+        }
+
+        .stat-diff.negative {
+            color: #d32f2f;
+        }
+
+        .stat-diff.neutral {
+            color: #666;
+        }
+
+        .stat-expected {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .stat-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .stat-bar-expected {
+            position: absolute;
+            top: -4px;
+            width: 3px;
+            height: 16px;
+            background: #ff9800;
+            border-radius: 2px;
+            transition: left 0.5s ease;
+        }
+
+        .stat-card.above-expected .stat-value {
+            color: #2e7d32;
+        }
+
+        .stat-card.below-expected .stat-value {
+            color: #d32f2f;
+        }
+
+        .legend-note {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .legend-actual {
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        .legend-expected {
+            color: #ff9800;
+            font-weight: bold;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 900px) {
+            .identity-main-content {
+                flex-direction: column;
+            }
+            
+            .identity-players-panel {
+                width: 100%;
+                max-height: 400px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Tab Navigation -->
     <nav class="tab-nav">
         <button class="tab-btn active" data-tab="voteflow">📊 Vote Flow</button>
-        <button class="tab-btn" data-tab="analysis">🔬 Analysis</button>
+        <button class="tab-btn" data-tab="analysis">🔬 Season Similarity</button>
+        <button class="tab-btn" data-tab="identity">👤 Player Identity</button>
     </nav>
 
     <!-- Vote Flow Tab -->
     <div id="voteflow-tab" class="tab-content active">
         <div id="main-viz">
             <div id="header">
-                <h1>Survivor Voting Flow</h1>
-                <div class="subtitle">Season <span id="season-num">--</span> · <span id="castaway-count">--</span> castaways · <span id="tc-count">--</span> tribal councils</div>
-            </div>
-            <div id="controls">
-                <select id="season-select">
-                    <option>Loading seasons...</option>
-                </select>
-                <button id="reset-zoom">Reset Zoom</button>
-            </div>
-            <div id="tooltip"></div>
-            <div id="instructions">
-                <h4>📖 How to Explore</h4>
-                <div class="instruction-group">
-                    <div class="instruction-label">Hover</div>
-                    <div class="instruction-item">Start coin: see their voting path</div>
-                    <div class="instruction-item">Vote coin: see all paths leading to it</div>
-                    <div class="instruction-item">Boot Order: see all votes against them</div>
+                <div class="header-left">
+                    <h1>Survivor Voting Flow</h1>
+                    <div class="subtitle">Season <span id="season-num">--</span> · <span id="castaway-count">--</span> castaways · <span id="tc-count">--</span> tribal councils</div>
                 </div>
-                <div class="instruction-group">
-                    <div class="instruction-label">Click</div>
-                    <div class="instruction-item">Start coin: lock voting lines view</div>
-                    <div class="instruction-item">Boot Order: lock votes received view</div>
-                    <div class="instruction-item">Background: clear selection</div>
+                <div id="controls">
+                    <select id="season-select">
+                        <option>Loading seasons...</option>
+                    </select>
+                    <button id="reset-zoom">Reset Zoom</button>
                 </div>
             </div>
-            <div id="legend">
-                <h4>Legend</h4>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: linear-gradient(90deg, #e57373, #ffb74d, #fff176, #81c784);"></div>
-                    <span>Vote line (voter's color)</span>
+            <div id="svg-wrapper" style="position: relative; flex: 1; overflow: hidden;">
+                <div id="tooltip"></div>
+                <div id="instructions">
+                    <div class="instructions-title">📖 How to Explore</div>
+                    <div class="instruction-group">
+                        <div class="instruction-label">Hover</div>
+                        <div class="instruction-item">Start coin: see voting path</div>
+                        <div class="instruction-item">Vote coin: see paths to it</div>
+                    </div>
+                    <div class="instruction-group">
+                        <div class="instruction-label">Click</div>
+                        <div class="instruction-item">Coin/Boot: lock view</div>
+                        <div class="instruction-item">Background: clear</div>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #d32f2f; height: 2px; border-top: 2px dashed #d32f2f;"></div>
-                    <span>Merge</span>
+                <div id="legend">
+                    <h4>Legend</h4>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(90deg, #e57373, #ffb74d, #fff176, #81c784);"></div>
+                        <span>Vote line</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #d32f2f; height: 2px; border-top: 2px dashed #d32f2f;"></div>
+                        <span>Merge</span>
+                    </div>
+                    <div class="legend-item">
+                        <span style="margin-right: 6px;">💀</span>
+                        <span>Eliminated</span>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <span style="margin-right: 10px;">💀</span>
-                    <span>Eliminated at this tribal</span>
+                <div id="scroll-indicator" onclick="document.getElementById('ftc-section').scrollIntoView({behavior: 'smooth'})">
+                    ↓ Scroll for Final Tribal Council
                 </div>
+                <svg id="viz"></svg>
+                <div class="loading" id="loading">Loading...</div>
             </div>
-            <svg id="viz"></svg>
-            <div class="loading" id="loading">Loading...</div>
             
             <!-- FTC Section -->
             <div id="ftc-section">
@@ -915,13 +1321,145 @@
         </div>
     </div>
 
+    <!-- Player Identity Tab -->
+    <div id="identity-tab" class="tab-content">
+        <div class="identity-container">
+            <div class="identity-header">
+                <h2>👤 Player Identity Analysis</h2>
+                <p>Select your identity characteristics to see historical Survivor statistics for players like you.</p>
+            </div>
+            
+            <div class="identity-prompt">
+                <span class="prompt-text">I am a...</span>
+                <div class="identity-selectors">
+                    <div class="identity-selector">
+                        <label>Gender</label>
+                        <select id="identity-gender">
+                            <option value="">Any</option>
+                            <option value="Man">Man</option>
+                            <option value="Woman">Woman</option>
+                        </select>
+                    </div>
+                    <div class="identity-selector">
+                        <label>Age</label>
+                        <select id="identity-age">
+                            <option value="">Any</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-29">25-29</option>
+                            <option value="30-39">30-39</option>
+                            <option value="40-49">40-49</option>
+                            <option value="50+">50+</option>
+                        </select>
+                    </div>
+                    <div class="identity-selector">
+                        <label>Race</label>
+                        <select id="identity-race">
+                            <option value="">Any</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Latino/Hispanic">Latino/Hispanic</option>
+                        </select>
+                    </div>
+                    <div class="identity-selector">
+                        <label>Occupation</label>
+                        <select id="identity-collar">
+                            <option value="">Any</option>
+                            <option value="White collar">White Collar</option>
+                            <option value="Blue collar">Blue Collar</option>
+                            <option value="No collar">No Collar</option>
+                        </select>
+                    </div>
+                    <div class="identity-selector">
+                        <label>Personality</label>
+                        <select id="identity-personality">
+                            <option value="">Any</option>
+                            <option value="Introvert">Introvert</option>
+                            <option value="Extrovert">Extrovert</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="identity-main-content">
+                <div class="identity-stats-panel">
+                    <div id="identity-results">
+                        <div class="results-header">
+                            <h3>Your Survivor Odds</h3>
+                            <div class="sample-size">Based on <span id="sample-count">0</span> contestants</div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card" data-milestone="won">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-label">Win the Game</div>
+                                <div class="stat-value" id="stat-win">--</div>
+                                <div class="stat-diff" id="diff-win">--</div>
+                                <div class="stat-expected">Expected: <span id="expected-win">--</span></div>
+                                <div class="stat-bar"><div class="stat-bar-fill" id="bar-win"></div><div class="stat-bar-expected" id="bar-expected-win"></div></div>
+                            </div>
+                            <div class="stat-card" data-milestone="made_ftc">
+                                <div class="stat-icon">🔥</div>
+                                <div class="stat-label">Make Final Tribal</div>
+                                <div class="stat-value" id="stat-ftc">--</div>
+                                <div class="stat-diff" id="diff-ftc">--</div>
+                                <div class="stat-expected">Expected: <span id="expected-ftc">--</span></div>
+                                <div class="stat-bar"><div class="stat-bar-fill" id="bar-ftc"></div><div class="stat-bar-expected" id="bar-expected-ftc"></div></div>
+                            </div>
+                            <div class="stat-card" data-milestone="made_merge">
+                                <div class="stat-icon">🤝</div>
+                                <div class="stat-label">Make the Merge</div>
+                                <div class="stat-value" id="stat-merge">--</div>
+                                <div class="stat-diff" id="diff-merge">--</div>
+                                <div class="stat-expected">Expected: <span id="expected-merge">--</span></div>
+                                <div class="stat-bar"><div class="stat-bar-fill" id="bar-merge"></div><div class="stat-bar-expected" id="bar-expected-merge"></div></div>
+                            </div>
+                            <div class="stat-card" data-milestone="found_advantage">
+                                <div class="stat-icon">🗺️</div>
+                                <div class="stat-label">Find an Idol/Advantage</div>
+                                <div class="stat-value" id="stat-advantage">--</div>
+                                <div class="stat-diff" id="diff-advantage">--</div>
+                                <div class="stat-expected">Expected: <span id="expected-advantage">--</span></div>
+                                <div class="stat-bar"><div class="stat-bar-fill" id="bar-advantage"></div><div class="stat-bar-expected" id="bar-expected-advantage"></div></div>
+                            </div>
+                            <div class="stat-card" data-milestone="won_individual_challenge">
+                                <div class="stat-icon">💪</div>
+                                <div class="stat-label">Win Individual Challenge</div>
+                                <div class="stat-value" id="stat-challenge">--</div>
+                                <div class="stat-diff" id="diff-challenge">--</div>
+                                <div class="stat-expected">Expected: <span id="expected-challenge">--</span></div>
+                                <div class="stat-bar"><div class="stat-bar-fill" id="bar-challenge"></div><div class="stat-bar-expected" id="bar-expected-challenge"></div></div>
+                            </div>
+                        </div>
+                        
+                        <div class="legend-note">
+                            <span class="legend-actual">■</span> Actual % achieving milestone
+                            <span class="legend-expected">|</span> Expected % (if proportional)
+                            <br><small>Click a stat card to filter the players list</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="identity-players-panel">
+                    <div class="players-header">
+                        <h3>Matching Players</h3>
+                        <div class="players-filter-info" id="players-filter-info">All players</div>
+                    </div>
+                    <div class="players-list" id="players-list">
+                        <!-- Players will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Configuration
         const CONFIG = {
             nodeRadius: 18,
             layerWidth: 120,
             verticalPadding: 60,
-            headerOffset: 95,
+            headerOffset: 50,
             colors: {
                 eliminationVote: '#e94560',
                 regularVote: '#888'
@@ -932,6 +1470,7 @@
         let currentData = null;
         let seasonsManifest = null;
         let similarityData = null;
+        let identityData = null;
         let allSeasonsData = {};
         let svg, g, zoom;
         let width, height;
@@ -950,12 +1489,14 @@
             
             await loadManifest();
             await loadSimilarityData();
+            await loadIdentityData();
             
             const defaultSeason = seasonsManifest?.seasons[seasonsManifest.seasons.length - 1]?.id || 'us46';
             await loadSeason(defaultSeason);
             
             setupAnalysisTab();
             loadCommonBlocks();
+            setupIdentityTab();
         }
 
         // Tab functionality
@@ -973,8 +1514,9 @@
                     if (tabId === 'voteflow') {
                         // Resize SVG when switching back
                         setTimeout(() => {
-                            width = document.getElementById('main-viz').clientWidth;
-                            height = document.getElementById('main-viz').clientHeight;
+                            const container = document.getElementById('svg-wrapper');
+                            width = container.clientWidth;
+                            height = container.clientHeight || 600;
                             svg.attr('width', width).attr('height', height);
                             if (currentData) render(currentData);
                         }, 100);
@@ -1095,9 +1637,9 @@
         }
 
         function setupSVG() {
-            const container = document.getElementById('main-viz');
+            const container = document.getElementById('svg-wrapper');
             width = container.clientWidth;
-            height = container.clientHeight;
+            height = container.clientHeight || 600;
 
             svg = d3.select('#viz')
                 .attr('width', width)
@@ -1129,8 +1671,9 @@
 
             window.addEventListener('resize', () => {
                 if (document.getElementById('voteflow-tab').classList.contains('active')) {
-                    width = document.getElementById('main-viz').clientWidth;
-                    height = document.getElementById('main-viz').clientHeight;
+                    const container = document.getElementById('svg-wrapper');
+                    width = container.clientWidth;
+                    height = container.clientHeight || 600;
                     svg.attr('width', width).attr('height', height);
                     if (currentData) render(currentData);
                 }
@@ -2125,6 +2668,245 @@
             });
             
             container.innerHTML = html;
+        }
+
+        // Identity Tab Functions
+        async function loadIdentityData() {
+            try {
+                const response = await fetch('data/identity_stats.json?v=' + Date.now());
+                if (!response.ok) throw new Error('Failed to load identity data');
+                identityData = await response.json();
+            } catch (error) {
+                console.error('Error loading identity data:', error);
+            }
+        }
+
+        let selectedMilestone = null;
+        let currentFilters = {};
+
+        function setupIdentityTab() {
+            if (!identityData) return;
+            
+            const selectors = ['gender', 'age', 'race', 'collar', 'personality'];
+            selectors.forEach(sel => {
+                const element = document.getElementById(`identity-${sel}`);
+                if (element) {
+                    element.addEventListener('change', updateIdentityStats);
+                }
+            });
+            
+            // Add click handlers to stat cards for milestone filtering
+            document.querySelectorAll('.stat-card[data-milestone]').forEach(card => {
+                card.addEventListener('click', () => {
+                    const milestone = card.dataset.milestone;
+                    
+                    // Toggle selection
+                    if (selectedMilestone === milestone) {
+                        selectedMilestone = null;
+                        card.classList.remove('selected');
+                    } else {
+                        document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('selected'));
+                        selectedMilestone = milestone;
+                        card.classList.add('selected');
+                    }
+                    
+                    updatePlayersList();
+                });
+            });
+            
+            updateIdentityStats();
+        }
+
+        function updateIdentityStats() {
+            if (!identityData) return;
+            
+            const gender = document.getElementById('identity-gender').value;
+            const age = document.getElementById('identity-age').value;
+            const race = document.getElementById('identity-race').value;
+            const collar = document.getElementById('identity-collar').value;
+            const personality = document.getElementById('identity-personality').value;
+            
+            currentFilters = {};
+            if (gender) currentFilters['gender'] = gender;
+            if (age) currentFilters['age_bucket'] = age;
+            if (race) currentFilters['race_cat'] = race;
+            if (collar) currentFilters['collar'] = collar;
+            if (personality) currentFilters['personality_cat'] = personality;
+            
+            const result = calculateIdentityStats(currentFilters);
+            displayIdentityStats(result);
+            updatePlayersList();
+        }
+
+        function calculateIdentityStats(filters) {
+            const totals = identityData.totals;
+            const players = identityData.players || [];
+            
+            // Filter players based on identity filters
+            let filteredPlayers = players.filter(player => {
+                for (const [key, value] of Object.entries(filters)) {
+                    if (player[key] !== value) return false;
+                }
+                return true;
+            });
+            
+            const n = filteredPlayers.length;
+            if (n === 0 && Object.keys(filters).length > 0) {
+                return null;
+            }
+            
+            // If no filters, use all players
+            if (Object.keys(filters).length === 0) {
+                filteredPlayers = players;
+            }
+            
+            const actualN = filteredPlayers.length;
+            const representation = actualN / totals.contestants;
+            
+            const milestones = ['won', 'made_ftc', 'made_merge', 'found_advantage', 'won_individual_challenge'];
+            const milestoneStats = {};
+            
+            milestones.forEach(m => {
+                // Count how many in filtered group achieved this milestone
+                const achieved = filteredPlayers.filter(p => p[m]).length;
+                
+                // Actual %: of this identity group, what % achieved milestone
+                const actual_pct = (achieved / actualN) * 100;
+                
+                // Expected %: if proportional representation
+                // = (representation * total_achievers) / actualN * 100
+                const totalAchieved = totals[m];
+                const expected_pct = (representation * totalAchieved / actualN) * 100;
+                
+                milestoneStats[m] = {
+                    achieved: achieved,
+                    actual_pct: actual_pct,
+                    expected_pct: expected_pct,
+                    diff: actual_pct - expected_pct
+                };
+            });
+            
+            return {
+                sampleSize: actualN,
+                representation: representation * 100,
+                milestones: milestoneStats
+            };
+        }
+
+        function displayIdentityStats(result) {
+            if (!result) return;
+            
+            document.getElementById('sample-count').textContent = result.sampleSize.toLocaleString();
+            
+            const metricConfig = [
+                { id: 'win', key: 'won' },
+                { id: 'ftc', key: 'made_ftc' },
+                { id: 'merge', key: 'made_merge' },
+                { id: 'advantage', key: 'found_advantage' },
+                { id: 'challenge', key: 'won_individual_challenge' }
+            ];
+            
+            metricConfig.forEach(({ id, key }) => {
+                const milestone = result.milestones[key];
+                if (!milestone) return;
+                
+                const actual = milestone.actual_pct;
+                const expected = milestone.expected_pct;
+                const diff = milestone.diff;
+                
+                // Update main value - actual % of this identity achieving milestone
+                document.getElementById(`stat-${id}`).textContent = `${actual.toFixed(1)}%`;
+                
+                // Update diff
+                const sign = diff >= 0 ? '+' : '';
+                const diffEl = document.getElementById(`diff-${id}`);
+                diffEl.textContent = `${sign}${diff.toFixed(1)}% vs expected`;
+                diffEl.className = 'stat-diff ' + (diff > 1 ? 'positive' : diff < -1 ? 'negative' : 'neutral');
+                
+                // Update expected text
+                document.getElementById(`expected-${id}`).textContent = `${expected.toFixed(1)}%`;
+                
+                // Update bars - scale to max of actual/expected or 100
+                const maxVal = Math.max(actual, expected, 10);
+                const scale = 100 / maxVal;
+                
+                const barFill = document.getElementById(`bar-${id}`);
+                const barExpected = document.getElementById(`bar-expected-${id}`);
+                
+                barFill.style.width = `${Math.min(actual * scale, 100)}%`;
+                barExpected.style.left = `${Math.min(expected * scale, 100)}%`;
+                
+                // Color coding on card
+                const card = barFill.closest('.stat-card');
+                card.classList.remove('above-expected', 'below-expected');
+                if (diff > 1) {
+                    card.classList.add('above-expected');
+                } else if (diff < -1) {
+                    card.classList.add('below-expected');
+                }
+            });
+        }
+
+        function updatePlayersList() {
+            if (!identityData || !identityData.players) return;
+            
+            const listEl = document.getElementById('players-list');
+            const filterInfoEl = document.getElementById('players-filter-info');
+            
+            // Filter players based on identity filters
+            let filteredPlayers = identityData.players.filter(player => {
+                for (const [key, value] of Object.entries(currentFilters)) {
+                    if (player[key] !== value) return false;
+                }
+                return true;
+            });
+            
+            // Further filter by milestone if selected
+            if (selectedMilestone) {
+                filteredPlayers = filteredPlayers.filter(player => player[selectedMilestone]);
+            }
+            
+            // Update filter info text
+            const milestoneLabels = {
+                'won': 'Winners',
+                'made_ftc': 'Made FTC',
+                'made_merge': 'Made Merge',
+                'found_advantage': 'Found Idol/Advantage',
+                'won_individual_challenge': 'Won Individual Challenge'
+            };
+            
+            let filterText = filteredPlayers.length + ' players';
+            if (selectedMilestone) {
+                filterText += ` • ${milestoneLabels[selectedMilestone]}`;
+            }
+            filterInfoEl.textContent = filterText;
+            
+            // Build HTML for players list
+            if (filteredPlayers.length === 0) {
+                listEl.innerHTML = '<div class="no-players">No players match the selected criteria</div>';
+                return;
+            }
+            
+            let html = '';
+            filteredPlayers.forEach(player => {
+                const isWinner = player.won;
+                html += `
+                    <div class="player-item ${isWinner ? 'winner' : ''}">
+                        <div>
+                            <div class="player-name">${isWinner ? '👑 ' : ''}${player.name}</div>
+                            <div class="player-badges">
+                                ${player.won ? '<span class="player-badge winner">Winner</span>' : ''}
+                                ${player.made_ftc && !player.won ? '<span class="player-badge">FTC</span>' : ''}
+                                ${player.won_individual_challenge ? '<span class="player-badge">🏆 Ind. Challenge</span>' : ''}
+                                ${player.found_advantage ? '<span class="player-badge">🗺️ Idol</span>' : ''}
+                            </div>
+                        </div>
+                        <span class="player-season">S${player.season}</span>
+                    </div>
+                `;
+            });
+            
+            listEl.innerHTML = html;
         }
     </script>
 </body>

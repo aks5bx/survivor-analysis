@@ -1408,6 +1408,33 @@
       "tc_number": 15,
       "placement": 15,
       "elimination_type": "fire_challenge"
+    },
+    {
+      "name": "Owen",
+      "id": "US0642",
+      "color": "#db56db",
+      "tc_number": 16,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Cassidy",
+      "id": "US0627",
+      "color": "#c81c8f",
+      "tc_number": 16,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 1
+    },
+    {
+      "name": "Gabler",
+      "id": "US0638",
+      "color": "#ef427c",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 7
     }
   ],
   "ftc": {

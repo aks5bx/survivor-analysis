@@ -1190,6 +1190,33 @@
       "tc_number": 13,
       "placement": 15,
       "elimination_type": "fire_challenge"
+    },
+    {
+      "name": "Carolyn",
+      "id": "US0658",
+      "color": "#db56db",
+      "tc_number": 14,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Heidi",
+      "id": "US0654",
+      "color": "#c81c8f",
+      "tc_number": 14,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 1
+    },
+    {
+      "name": "Yam Yam",
+      "id": "US0662",
+      "color": "#ef427c",
+      "tc_number": 14,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 7
     }
   ],
   "ftc": {

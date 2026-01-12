@@ -1791,6 +1791,33 @@
       "tc_number": 17,
       "placement": 17,
       "elimination_type": "fire_challenge"
+    },
+    {
+      "name": "Laurel",
+      "id": "US0534",
+      "color": "#ef42de",
+      "tc_number": 18,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Domenick",
+      "id": "US0535",
+      "color": "#bd2881",
+      "tc_number": 18,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 5
+    },
+    {
+      "name": "Wendell",
+      "id": "US0536",
+      "color": "#e54c7a",
+      "tc_number": 18,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 6
     }
   ],
   "ftc": {

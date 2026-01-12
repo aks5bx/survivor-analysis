@@ -1817,6 +1817,33 @@
       "tc_number": 17,
       "placement": 17,
       "elimination_type": "fire_challenge"
+    },
+    {
+      "name": "Julie",
+      "id": "US0569",
+      "color": "#db56db",
+      "tc_number": 18,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Gavin",
+      "id": "US0570",
+      "color": "#c81c8f",
+      "tc_number": 18,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 4
+    },
+    {
+      "name": "Chris",
+      "id": "US0559",
+      "color": "#ef427c",
+      "tc_number": 18,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 9
     }
   ],
   "ftc": {

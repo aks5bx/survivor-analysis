@@ -1773,6 +1773,33 @@
       "tc_number": 17,
       "placement": 17,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Russell",
+      "id": "US0300",
+      "color": "#ef42de",
+      "tc_number": 18,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Parvati",
+      "id": "US0197",
+      "color": "#bd2881",
+      "tc_number": 18,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Sandra",
+      "id": "US0112",
+      "color": "#e54c7a",
+      "tc_number": 18,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 6
     }
   ],
   "ftc": {

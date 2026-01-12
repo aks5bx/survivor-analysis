@@ -1295,6 +1295,33 @@
       "tc_number": 13,
       "placement": 13,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Amanda",
+      "id": "US0235",
+      "color": "#d24ce5",
+      "tc_number": 14,
+      "placement": 14,
+      "elimination_type": "FTC",
+      "ftc_votes": 1
+    },
+    {
+      "name": "Courtney",
+      "id": "US0236",
+      "color": "#d411a3",
+      "tc_number": 14,
+      "placement": 15,
+      "elimination_type": "FTC",
+      "ftc_votes": 2
+    },
+    {
+      "name": "Todd",
+      "id": "US0237",
+      "color": "#db5688",
+      "tc_number": 14,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 4
     }
   ],
   "ftc": {

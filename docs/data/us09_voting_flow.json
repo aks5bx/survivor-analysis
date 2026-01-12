@@ -1567,6 +1567,24 @@
       "tc_number": 16,
       "placement": 16,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Twila",
+      "id": "US0129",
+      "color": "#c81c8f",
+      "tc_number": 17,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 2
+    },
+    {
+      "name": "Chris",
+      "id": "US0130",
+      "color": "#ef427c",
+      "tc_number": 17,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 5
     }
   ],
   "ftc": {

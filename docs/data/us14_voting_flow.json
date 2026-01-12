@@ -1472,6 +1472,33 @@
       "tc_number": 15,
       "placement": 16,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Cassandra",
+      "id": "US0220",
+      "color": "#ef42af",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Dreamz",
+      "id": "US0219",
+      "color": "#c81cbf",
+      "tc_number": 16,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Earl",
+      "id": "US0221",
+      "color": "#bd2857",
+      "tc_number": 16,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 9
     }
   ],
   "ftc": {

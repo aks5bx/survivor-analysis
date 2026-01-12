@@ -1372,6 +1372,33 @@
       "tc_number": 15,
       "placement": 15,
       "elimination_type": "fire_challenge"
+    },
+    {
+      "name": "Jake",
+      "id": "US0671",
+      "color": "#db56db",
+      "tc_number": 16,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Austin",
+      "id": "US0663",
+      "color": "#c81c8f",
+      "tc_number": 16,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Dee",
+      "id": "US0666",
+      "color": "#ef427c",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 5
     }
   ],
   "ftc": {

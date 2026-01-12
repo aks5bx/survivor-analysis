@@ -53,6 +53,7 @@
         .tab-content {
             display: none;
             height: calc(100vh - 50px);
+            overflow: hidden;
         }
 
         .tab-content.active {
@@ -62,6 +63,7 @@
         /* Vote Flow Tab - needs higher specificity to override display: block */
         #voteflow-tab.active {
             display: flex;
+            overflow: hidden;
         }
 
         #main-viz {
@@ -71,6 +73,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            min-width: 0;
         }
 
         #main-viz svg {
@@ -248,11 +251,14 @@
             border-left: 2px solid #e0e0e0;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            max-height: 100%;
         }
 
         #similar-seasons {
             padding: 12px;
             border-bottom: 2px solid #e0e0e0;
+            flex-shrink: 0;
         }
 
         #similar-seasons h3 {
@@ -298,7 +304,10 @@
         #boot-track {
             flex: 1;
             padding: 12px;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
         }
 
         #boot-track h3 {
@@ -308,6 +317,33 @@
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        #boot-list {
+            flex: 1;
+            overflow-y: scroll;
+            min-height: 0;
+            padding-right: 4px;
+        }
+
+        /* Ensure scrollbar is always visible */
+        #boot-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #boot-list::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        #boot-list::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+        #boot-list::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
         }
 
         .boot-item {
@@ -352,6 +388,21 @@
         .boot-item .tc-num {
             color: #999;
             font-size: 10px;
+        }
+
+        .boot-item.ftc-player {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-color: #ffd54f;
+        }
+
+        .boot-item.ftc-player:hover {
+            background: linear-gradient(135deg, #fff3cc 0%, #ffecb3 100%);
+            border-color: #ffca28;
+        }
+
+        .boot-item.ftc-player .tc-num {
+            color: #f9a825;
+            font-weight: 600;
         }
 
         #header {
@@ -475,10 +526,10 @@
 
         .node text {
             fill: #fff;
-            font-size: 9px;
+            font-size: 11px;
             text-anchor: middle;
             pointer-events: none;
-            font-weight: 500;
+            font-weight: 600;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
@@ -1197,6 +1248,328 @@
                 max-height: 400px;
             }
         }
+
+        /* Elimination Predictor Tab Styles */
+        #predictor-tab {
+            padding: 30px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: calc(100vh - 50px);
+        }
+
+        .predictor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .predictor-header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .predictor-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .predictor-header p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .predictor-main {
+            display: flex;
+            gap: 24px;
+        }
+
+        .predictor-inputs-panel {
+            flex: 1;
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+
+        .predictor-inputs-panel h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .input-section {
+            margin-bottom: 24px;
+        }
+
+        .input-section h4 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .input-group label {
+            flex: 0 0 140px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .input-group input[type="range"] {
+            flex: 1;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #e0e0e0;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .input-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #e94560;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .input-group input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .input-group select {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fff;
+        }
+
+        .range-value {
+            flex: 0 0 50px;
+            text-align: right;
+            font-weight: 600;
+            color: #e94560;
+            font-size: 14px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #e94560;
+        }
+
+        .predictor-results-panel {
+            width: 380px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .prediction-result {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .prediction-result h3 {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .probability-display {
+            margin-bottom: 16px;
+        }
+
+        .probability-value {
+            font-size: 56px;
+            font-weight: 700;
+            color: #e94560;
+            line-height: 1;
+        }
+
+        .probability-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .probability-bar {
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .probability-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #ff9800, #e94560);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .risk-level {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .risk-level.low {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .risk-level.medium {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .risk-level.high {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .model-info {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .model-info h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .model-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .model-stat {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .model-stat .stat-label {
+            color: #888;
+        }
+
+        .model-stat .stat-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .model-note {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .feature-importance {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .feature-importance h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .importance-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .importance-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .importance-item .feature-name {
+            flex: 0 0 160px;
+            font-size: 11px;
+            color: #555;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .importance-item .importance-bar-container {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .importance-item .importance-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 4px;
+        }
+
+        .importance-item .importance-value {
+            flex: 0 0 40px;
+            text-align: right;
+            font-size: 11px;
+            color: #888;
+        }
+
+        @media (max-width: 900px) {
+            .predictor-main {
+                flex-direction: column;
+            }
+            
+            .predictor-results-panel {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1205,6 +1578,7 @@
         <button class="tab-btn active" data-tab="voteflow">📊 Vote Flow</button>
         <button class="tab-btn" data-tab="analysis">🔬 Season Similarity</button>
         <button class="tab-btn" data-tab="identity">👤 Player Identity</button>
+        <button class="tab-btn" data-tab="predictor">🎯 Elimination Predictor</button>
     </nav>
 
     <!-- Vote Flow Tab -->
@@ -1453,12 +1827,182 @@
         </div>
     </div>
 
+    <!-- Elimination Predictor Tab -->
+    <div id="predictor-tab" class="tab-content">
+        <div class="predictor-container">
+            <div class="predictor-header">
+                <h2>🎯 Elimination Predictor</h2>
+                <p>Configure a player's situation to predict their elimination probability at the next tribal council.</p>
+            </div>
+            
+            <div class="predictor-main">
+                <div class="predictor-inputs-panel">
+                    <h3>Player Configuration</h3>
+                    
+                    <div class="input-section">
+                        <h4>🎮 Game State</h4>
+                        <div class="input-group">
+                            <label>Players Remaining</label>
+                            <input type="range" id="pred-players-remaining" min="3" max="13" value="8">
+                            <span class="range-value" id="pred-players-remaining-val">8</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Day in Game</label>
+                            <input type="range" id="pred-day" min="13" max="39" value="25">
+                            <span class="range-value" id="pred-day-val">25</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>📺 Confessionals (Prior Episodes)</h4>
+                        <div class="input-group">
+                            <label>Last Episode</label>
+                            <input type="range" id="pred-conf-prev" min="0" max="15" value="3">
+                            <span class="range-value" id="pred-conf-prev-val">3</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Last 3 Episodes</label>
+                            <input type="range" id="pred-conf-3ep" min="0" max="30" value="8">
+                            <span class="range-value" id="pred-conf-3ep-val">8</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Season Total</label>
+                            <input type="range" id="pred-conf-total" min="0" max="80" value="20">
+                            <span class="range-value" id="pred-conf-total-val">20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>🗳️ Votes Against (Prior Episodes)</h4>
+                        <div class="input-group">
+                            <label>Last Episode</label>
+                            <input type="range" id="pred-votes-prev" min="0" max="10" value="0">
+                            <span class="range-value" id="pred-votes-prev-val">0</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Last 3 Episodes</label>
+                            <input type="range" id="pred-votes-3ep" min="0" max="12" value="0">
+                            <span class="range-value" id="pred-votes-3ep-val">0</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Times Received Votes</label>
+                            <input type="range" id="pred-times-votes" min="0" max="6" value="1">
+                            <span class="range-value" id="pred-times-votes-val">1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>🎯 Voting Accuracy</h4>
+                        <div class="input-group">
+                            <label>Last 3 Episodes</label>
+                            <input type="range" id="pred-accuracy-3ep" min="0" max="100" value="70">
+                            <span class="range-value" id="pred-accuracy-3ep-val">70%</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Season Total</label>
+                            <input type="range" id="pred-accuracy-total" min="0" max="100" value="75">
+                            <span class="range-value" id="pred-accuracy-total-val">75%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>💪 Individual Challenge Wins</h4>
+                        <div class="input-group">
+                            <label>Last 3 Episodes</label>
+                            <input type="range" id="pred-wins-3ep" min="0" max="4" value="0">
+                            <span class="range-value" id="pred-wins-3ep-val">0</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Season Total</label>
+                            <input type="range" id="pred-wins-total" min="0" max="6" value="0">
+                            <span class="range-value" id="pred-wins-total-val">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>🗺️ Advantages</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="pred-has-idol"> Has Hidden Immunity Idol</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="pred-has-extra-vote"> Has Extra Vote</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="pred-has-steal-vote"> Has Steal-a-Vote</label>
+                        </div>
+                        <div class="input-group">
+                            <label>Total Advantages in Play</label>
+                            <input type="range" id="pred-adv-circulation" min="0" max="10" value="2">
+                            <span class="range-value" id="pred-adv-circulation-val">2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h4>👤 Demographics</h4>
+                        <div class="input-group">
+                            <label>Gender</label>
+                            <select id="pred-gender">
+                                <option value="Female">Woman</option>
+                                <option value="Male">Man</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Age</label>
+                            <input type="range" id="pred-age" min="18" max="65" value="30">
+                            <span class="range-value" id="pred-age-val">30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="predictor-results-panel">
+                    <div class="prediction-result">
+                        <h3>Elimination Probability</h3>
+                        <div class="probability-display">
+                            <div class="probability-value" id="pred-probability">--</div>
+                            <div class="probability-label">chance of elimination</div>
+                        </div>
+                        <div class="probability-bar">
+                            <div class="probability-fill" id="pred-prob-fill"></div>
+                        </div>
+                        <div class="risk-level" id="pred-risk-level">Configure player to see prediction</div>
+                    </div>
+                    
+                    <div class="model-info">
+                        <h3>About This Prediction</h3>
+                        <div class="model-stats">
+                            <div class="model-stat">
+                                <span class="stat-label">Based on</span>
+                                <span class="stat-value">3,132 post-merge tribal councils</span>
+                            </div>
+                            <div class="model-stat">
+                                <span class="stat-label">Seasons</span>
+                                <span class="stat-value">1 - 49</span>
+                            </div>
+                            <div class="model-stat">
+                                <span class="stat-label">Accuracy</span>
+                                <span class="stat-value" id="model-auc">~61%</span>
+                            </div>
+                        </div>
+                        <p class="model-note">Predictions use only information available before the tribal council episode airs. Survivor is unpredictable by nature!</p>
+                    </div>
+                    
+                    <div class="feature-importance">
+                        <h3>What Matters Most</h3>
+                        <div class="importance-list" id="importance-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Configuration
         const CONFIG = {
-            nodeRadius: 18,
-            layerWidth: 120,
-            verticalPadding: 60,
+            nodeRadius: 24,
+            layerWidth: 140,
+            verticalPadding: 70,
             headerOffset: 50,
             colors: {
                 eliminationVote: '#e94560',
@@ -1471,6 +2015,7 @@
         let seasonsManifest = null;
         let similarityData = null;
         let identityData = null;
+        let predictorModel = null;
         let allSeasonsData = {};
         let svg, g, zoom;
         let width, height;
@@ -1490,6 +2035,7 @@
             await loadManifest();
             await loadSimilarityData();
             await loadIdentityData();
+            await loadPredictorModel();
             
             const defaultSeason = seasonsManifest?.seasons[seasonsManifest.seasons.length - 1]?.id || 'us46';
             await loadSeason(defaultSeason);
@@ -1497,6 +2043,7 @@
             setupAnalysisTab();
             loadCommonBlocks();
             setupIdentityTab();
+            setupPredictorTab();
         }
 
         // Tab functionality
@@ -2028,13 +2575,23 @@
 
             data.boot_order.forEach(boot => {
                 const item = document.createElement('div');
-                item.className = 'boot-item';
+                item.className = 'boot-item' + (boot.elimination_type === 'FTC' ? ' ftc-player' : '');
                 item.setAttribute('data-castaway', boot.id);
+                
+                // Display TC number or FTC for finalists
+                const tcDisplay = boot.elimination_type === 'FTC' 
+                    ? `FTC${boot.ftc_votes !== undefined ? ' (' + boot.ftc_votes + ')' : ''}`
+                    : `TC${boot.tc_number}`;
+                
+                // Show crown for winner (placement 1 or highest FTC votes)
+                const isWinner = boot.placement === 1 || (boot.elimination_type === 'FTC' && boot.ftc_votes === Math.max(...data.boot_order.filter(b => b.elimination_type === 'FTC').map(b => b.ftc_votes || 0)));
+                const nameDisplay = isWinner && boot.elimination_type === 'FTC' ? `👑 ${boot.name}` : boot.name;
+                
                 item.innerHTML = `
                     <div class="color-dot" style="background: ${boot.color}"></div>
                     <span class="placement">#${boot.placement}</span>
-                    <span class="name">${boot.name}</span>
-                    <span class="tc-num">TC${boot.tc_number}</span>
+                    <span class="name">${nameDisplay}</span>
+                    <span class="tc-num">${tcDisplay}</span>
                 `;
                 item.addEventListener('mouseover', () => {
                     if (selectedCastaways.size === 0) {
@@ -2907,6 +3464,226 @@
             });
             
             listEl.innerHTML = html;
+        }
+
+        // ========== ELIMINATION PREDICTOR TAB ==========
+        
+        async function loadPredictorModel() {
+            try {
+                const response = await fetch('data/elimination_model_js.json?v=' + Date.now());
+                predictorModel = await response.json();
+                console.log('Predictor model loaded');
+            } catch (error) {
+                console.error('Error loading predictor model:', error);
+            }
+        }
+
+        function setupPredictorTab() {
+            if (!predictorModel) return;
+            
+            // Setup all slider inputs
+            const sliders = [
+                { id: 'pred-players-remaining', suffix: '' },
+                { id: 'pred-day', suffix: '' },
+                { id: 'pred-conf-prev', suffix: '' },
+                { id: 'pred-conf-3ep', suffix: '' },
+                { id: 'pred-conf-total', suffix: '' },
+                { id: 'pred-votes-prev', suffix: '' },
+                { id: 'pred-votes-3ep', suffix: '' },
+                { id: 'pred-times-votes', suffix: '' },
+                { id: 'pred-accuracy-3ep', suffix: '%' },
+                { id: 'pred-accuracy-total', suffix: '%' },
+                { id: 'pred-wins-3ep', suffix: '' },
+                { id: 'pred-wins-total', suffix: '' },
+                { id: 'pred-adv-circulation', suffix: '' },
+                { id: 'pred-age', suffix: '' }
+            ];
+            
+            sliders.forEach(({ id, suffix }) => {
+                const slider = document.getElementById(id);
+                const valueDisplay = document.getElementById(id + '-val');
+                if (slider && valueDisplay) {
+                    slider.addEventListener('input', () => {
+                        valueDisplay.textContent = slider.value + suffix;
+                        updatePrediction();
+                    });
+                }
+            });
+            
+            // Setup checkboxes
+            ['pred-has-idol', 'pred-has-extra-vote', 'pred-has-steal-vote'].forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) {
+                    checkbox.addEventListener('change', updatePrediction);
+                }
+            });
+            
+            // Setup select
+            const genderSelect = document.getElementById('pred-gender');
+            if (genderSelect) {
+                genderSelect.addEventListener('change', updatePrediction);
+            }
+            
+            // Display model info
+            displayModelInfo();
+            
+            // Initial prediction
+            updatePrediction();
+        }
+
+        function displayModelInfo() {
+            if (!predictorModel) return;
+            
+            // Display feature importance
+            const importanceList = document.getElementById('importance-list');
+            const topFeatures = predictorModel.xgb_feature_importance
+                .sort((a, b) => b.importance - a.importance)
+                .slice(0, 12);
+            
+            const maxImportance = topFeatures[0].importance;
+            
+            const featureLabels = {
+                'players_remaining': 'Players Left',
+                'individual_wins_last_3_ep': 'Recent Challenge Wins',
+                'has_idol': 'Has Idol',
+                'individual_wins_cumulative': 'Total Challenge Wins',
+                'individual_wins_last_2_ep': 'Challenge Wins (2 ep)',
+                'voting_accuracy_last_3_ep': 'Voting Accuracy',
+                'individual_wins_prev_ep': 'Last Challenge Win',
+                'times_received_votes': 'Times Targeted',
+                'age_bucket': 'Age Group',
+                'age': 'Age',
+                'voting_accuracy_prev_ep': 'Last Vote Accuracy',
+                'votes_against_last_3_ep': 'Recent Votes Against',
+                'day': 'Day in Game',
+                'race_cat': 'Race',
+                'voting_accuracy_last_2_ep': 'Vote Accuracy (2 ep)',
+                'confessionals_cumulative': 'Total Confessionals',
+                'season': 'Season Era',
+                'votes_against_cumulative': 'Total Votes Against'
+            };
+            
+            let html = '';
+            topFeatures.forEach(f => {
+                const label = featureLabels[f.feature] || f.feature;
+                const width = (f.importance / maxImportance) * 100;
+                html += `
+                    <div class="importance-item">
+                        <span class="feature-name" title="${f.feature}">${label}</span>
+                        <div class="importance-bar-container">
+                            <div class="importance-bar" style="width: ${width}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+            importanceList.innerHTML = html;
+        }
+
+        function updatePrediction() {
+            if (!predictorModel) return;
+            
+            // Gather all input values
+            const playersRemaining = parseInt(document.getElementById('pred-players-remaining').value);
+            const day = parseInt(document.getElementById('pred-day').value);
+            const confPrev = parseInt(document.getElementById('pred-conf-prev').value);
+            const conf3ep = parseInt(document.getElementById('pred-conf-3ep').value);
+            const confTotal = parseInt(document.getElementById('pred-conf-total').value);
+            const votesPrev = parseInt(document.getElementById('pred-votes-prev').value);
+            const votes3ep = parseInt(document.getElementById('pred-votes-3ep').value);
+            const timesVotes = parseInt(document.getElementById('pred-times-votes').value);
+            const accuracy3ep = parseInt(document.getElementById('pred-accuracy-3ep').value) / 100;
+            const accuracyTotal = parseInt(document.getElementById('pred-accuracy-total').value) / 100;
+            const wins3ep = parseInt(document.getElementById('pred-wins-3ep').value);
+            const winsTotal = parseInt(document.getElementById('pred-wins-total').value);
+            const hasIdol = document.getElementById('pred-has-idol').checked ? 1 : 0;
+            const hasExtraVote = document.getElementById('pred-has-extra-vote').checked ? 1 : 0;
+            const hasStealVote = document.getElementById('pred-has-steal-vote').checked ? 1 : 0;
+            const advCirculation = parseInt(document.getElementById('pred-adv-circulation').value);
+            const gender = document.getElementById('pred-gender').value;
+            const age = parseInt(document.getElementById('pred-age').value);
+            
+            // Determine age bucket
+            let ageBucket;
+            if (age <= 24) ageBucket = '18-24';
+            else if (age <= 29) ageBucket = '25-29';
+            else if (age <= 39) ageBucket = '30-39';
+            else if (age <= 49) ageBucket = '40-49';
+            else ageBucket = '50+';
+            
+            // Build feature vector (in the order expected by the model)
+            const features = {
+                'season': 45, // Use a recent season as default
+                'confessionals_prev_ep': confPrev,
+                'confessionals_last_2_ep': Math.round(confPrev * 1.5), // Estimate
+                'confessionals_last_3_ep': conf3ep,
+                'confessionals_cumulative': confTotal,
+                'confessional_time_prev_ep': confPrev * 20, // Rough estimate
+                'confessional_time_last_2_ep': confPrev * 35,
+                'confessional_time_last_3_ep': conf3ep * 20,
+                'confessional_time_cumulative': confTotal * 18,
+                'votes_against_prev_ep': votesPrev,
+                'votes_against_last_2_ep': Math.round(votesPrev * 1.3),
+                'votes_against_last_3_ep': votes3ep,
+                'votes_against_cumulative': Math.max(votes3ep, timesVotes * 2),
+                'times_received_votes': timesVotes,
+                'voting_accuracy_prev_ep': accuracy3ep, // Use 3ep as proxy
+                'voting_accuracy_last_2_ep': accuracy3ep,
+                'voting_accuracy_last_3_ep': accuracy3ep,
+                'voting_accuracy_cumulative': accuracyTotal,
+                'individual_wins_prev_ep': wins3ep > 0 ? 1 : 0,
+                'individual_wins_last_2_ep': Math.min(wins3ep, 2),
+                'individual_wins_last_3_ep': wins3ep,
+                'individual_wins_cumulative': winsTotal,
+                'num_tribe_swaps': 1, // Default
+                'has_idol': hasIdol,
+                'has_extra_vote': hasExtraVote,
+                'has_steal_vote': hasStealVote,
+                'has_block_vote': 0,
+                'has_idol_nullifier': 0,
+                'has_other_advantage': 0,
+                'advantages_in_circulation': advCirculation,
+                'players_remaining': playersRemaining,
+                'day': day,
+                'gender': predictorModel.label_encoders.gender[gender] || 0,
+                'age': age,
+                'age_bucket': predictorModel.label_encoders.age_bucket[ageBucket] || 2,
+                'race_cat': predictorModel.label_encoders.race_cat['White'] || 0, // Default
+                'collar': predictorModel.label_encoders.collar['Unknown'] || 0,
+                'personality_type': 8 // Default middle value
+            };
+            
+            // Calculate prediction using logistic regression
+            let z = predictorModel.intercept;
+            
+            predictorModel.feature_order.forEach(feat => {
+                const value = features[feat] !== undefined ? features[feat] : 0;
+                const mean = predictorModel.scaler_mean[feat];
+                const std = predictorModel.scaler_std[feat];
+                const scaled = (value - mean) / std;
+                const coef = predictorModel.coefficients[feat];
+                z += scaled * coef;
+            });
+            
+            // Sigmoid function
+            const probability = 1 / (1 + Math.exp(-z));
+            
+            // Update display
+            const probPercent = (probability * 100).toFixed(1);
+            document.getElementById('pred-probability').textContent = probPercent + '%';
+            document.getElementById('pred-prob-fill').style.width = probPercent + '%';
+            
+            // Update risk level
+            const riskEl = document.getElementById('pred-risk-level');
+            if (probability < 0.30) {
+                riskEl.textContent = '🟢 Low Risk';
+                riskEl.className = 'risk-level low';
+            } else if (probability < 0.50) {
+                riskEl.textContent = '🟡 Moderate Risk';
+                riskEl.className = 'risk-level medium';
+            } else {
+                riskEl.textContent = '🔴 High Risk';
+                riskEl.className = 'risk-level high';
+            }
         }
     </script>
 </body>

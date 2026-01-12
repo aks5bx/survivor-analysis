@@ -1214,6 +1214,24 @@
       "tc_number": 13,
       "placement": 14,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Stephen",
+      "id": "US0280",
+      "color": "#d411a3",
+      "tc_number": 14,
+      "placement": 15,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "J.T.",
+      "id": "US0281",
+      "color": "#db5688",
+      "tc_number": 14,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 7
     }
   ],
   "ftc": {

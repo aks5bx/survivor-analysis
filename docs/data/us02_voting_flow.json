@@ -1367,6 +1367,24 @@
       "tc_number": 13,
       "placement": 14,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Colby",
+      "id": "US0031",
+      "color": "#d411a3",
+      "tc_number": 14,
+      "placement": 15,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Tina",
+      "id": "US0032",
+      "color": "#db5688",
+      "tc_number": 14,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 4
     }
   ],
   "ftc": {

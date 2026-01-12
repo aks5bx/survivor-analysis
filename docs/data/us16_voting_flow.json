@@ -1536,6 +1536,24 @@
       "tc_number": 15,
       "placement": 18,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Amanda",
+      "id": "US0235",
+      "color": "#bd2881",
+      "tc_number": 16,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Parvati",
+      "id": "US0197",
+      "color": "#e54c7a",
+      "tc_number": 16,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 5
     }
   ],
   "ftc": {

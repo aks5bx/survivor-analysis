@@ -1707,6 +1707,33 @@
       "tc_number": 15,
       "placement": 17,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Mick",
+      "id": "US0299",
+      "color": "#ef42de",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Russell H.",
+      "id": "US0300",
+      "color": "#bd2881",
+      "tc_number": 16,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 2
+    },
+    {
+      "name": "Natalie",
+      "id": "US0301",
+      "color": "#e54c7a",
+      "tc_number": 16,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 7
     }
   ],
   "ftc": {

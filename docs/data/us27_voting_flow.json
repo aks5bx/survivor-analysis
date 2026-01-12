@@ -1924,6 +1924,33 @@
       "tc_number": 18,
       "placement": 20,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Gervase",
+      "id": "US0010",
+      "color": "#ef42de",
+      "tc_number": 19,
+      "placement": 21,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Monica",
+      "id": "US0358",
+      "color": "#bd2881",
+      "tc_number": 19,
+      "placement": 22,
+      "elimination_type": "FTC",
+      "ftc_votes": 1
+    },
+    {
+      "name": "Tyson",
+      "id": "US0274",
+      "color": "#e54c7a",
+      "tc_number": 19,
+      "placement": 23,
+      "elimination_type": "FTC",
+      "ftc_votes": 7
     }
   ],
   "ftc": {

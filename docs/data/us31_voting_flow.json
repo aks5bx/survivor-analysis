@@ -1840,6 +1840,33 @@
       "tc_number": 16,
       "placement": 17,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Spencer",
+      "id": "US0421",
+      "color": "#ef42de",
+      "tc_number": 17,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Tasha",
+      "id": "US0419",
+      "color": "#bd2881",
+      "tc_number": 17,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Jeremy",
+      "id": "US0433",
+      "color": "#e54c7a",
+      "tc_number": 17,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 10
     }
   ],
   "ftc": {

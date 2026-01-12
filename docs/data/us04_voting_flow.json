@@ -1301,6 +1301,24 @@
       "tc_number": 14,
       "placement": 14,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Neleh",
+      "id": "US0063",
+      "color": "#d411a3",
+      "tc_number": 15,
+      "placement": 15,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Vecepia",
+      "id": "US0064",
+      "color": "#db5688",
+      "tc_number": 15,
+      "placement": 16,
+      "elimination_type": "FTC",
+      "ftc_votes": 4
     }
   ],
   "ftc": {

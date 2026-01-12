@@ -1,0 +1,252 @@
+{
+  "cv_auc_roc": 0.6225,
+  "cv_avg_precision": 0.1902,
+  "best_params": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.01,
+    "max_depth": 3,
+    "min_child_weight": 3,
+    "n_estimators": 100,
+    "subsample": 0.8
+  },
+  "feature_importance": [
+    {
+      "feature": "players_remaining",
+      "importance": 0.0595
+    },
+    {
+      "feature": "individual_wins_last_3_ep",
+      "importance": 0.0457
+    },
+    {
+      "feature": "has_idol",
+      "importance": 0.0424
+    },
+    {
+      "feature": "individual_wins_cumulative",
+      "importance": 0.0419
+    },
+    {
+      "feature": "individual_wins_last_2_ep",
+      "importance": 0.0418
+    },
+    {
+      "feature": "voting_accuracy_last_3_ep",
+      "importance": 0.0392
+    },
+    {
+      "feature": "individual_wins_prev_ep",
+      "importance": 0.0372
+    },
+    {
+      "feature": "times_received_votes",
+      "importance": 0.0356
+    },
+    {
+      "feature": "age_bucket",
+      "importance": 0.0353
+    },
+    {
+      "feature": "age",
+      "importance": 0.0352
+    },
+    {
+      "feature": "voting_accuracy_prev_ep",
+      "importance": 0.0342
+    },
+    {
+      "feature": "votes_against_last_3_ep",
+      "importance": 0.0334
+    },
+    {
+      "feature": "day",
+      "importance": 0.0324
+    },
+    {
+      "feature": "race_cat",
+      "importance": 0.0321
+    },
+    {
+      "feature": "voting_accuracy_last_2_ep",
+      "importance": 0.0304
+    },
+    {
+      "feature": "confessional_time_prev_ep",
+      "importance": 0.0289
+    },
+    {
+      "feature": "votes_against_prev_ep",
+      "importance": 0.0281
+    },
+    {
+      "feature": "confessionals_last_3_ep",
+      "importance": 0.0277
+    },
+    {
+      "feature": "confessional_time_cumulative",
+      "importance": 0.0274
+    },
+    {
+      "feature": "personality_type",
+      "importance": 0.0271
+    },
+    {
+      "feature": "confessionals_cumulative",
+      "importance": 0.0258
+    },
+    {
+      "feature": "votes_against_cumulative",
+      "importance": 0.0256
+    },
+    {
+      "feature": "confessional_time_last_3_ep",
+      "importance": 0.0253
+    },
+    {
+      "feature": "season",
+      "importance": 0.0252
+    },
+    {
+      "feature": "gender",
+      "importance": 0.0241
+    },
+    {
+      "feature": "num_tribe_swaps",
+      "importance": 0.024
+    },
+    {
+      "feature": "voting_accuracy_cumulative",
+      "importance": 0.0228
+    },
+    {
+      "feature": "confessionals_last_2_ep",
+      "importance": 0.022
+    },
+    {
+      "feature": "confessionals_prev_ep",
+      "importance": 0.0215
+    },
+    {
+      "feature": "collar",
+      "importance": 0.021
+    },
+    {
+      "feature": "votes_against_last_2_ep",
+      "importance": 0.0197
+    },
+    {
+      "feature": "advantages_in_circulation",
+      "importance": 0.0156
+    },
+    {
+      "feature": "confessional_time_last_2_ep",
+      "importance": 0.0119
+    },
+    {
+      "feature": "has_other_advantage",
+      "importance": 0.0
+    },
+    {
+      "feature": "has_extra_vote",
+      "importance": 0.0
+    },
+    {
+      "feature": "has_idol_nullifier",
+      "importance": 0.0
+    },
+    {
+      "feature": "has_block_vote",
+      "importance": 0.0
+    },
+    {
+      "feature": "has_steal_vote",
+      "importance": 0.0
+    }
+  ],
+  "label_encoders": {
+    "gender": {
+      "Female": 0,
+      "Male": 1,
+      "Non-binary": 2
+    },
+    "age_bucket": {
+      "18-24": 0,
+      "25-29": 1,
+      "30-39": 2,
+      "40-49": 3,
+      "50+": 4
+    },
+    "race_cat": {
+      "Asian": 0,
+      "Black": 1,
+      "Latino/Hispanic": 2,
+      "Native American": 3,
+      "White": 4
+    },
+    "collar": {
+      "Blue collar": 0,
+      "No collar": 1,
+      "Unknown": 2,
+      "White collar": 3
+    },
+    "personality_type": {
+      "ENFJ": 0,
+      "ENFP": 1,
+      "ENTJ": 2,
+      "ENTP": 3,
+      "ESFJ": 4,
+      "ESFP": 5,
+      "ESTJ": 6,
+      "ESTP": 7,
+      "INFJ": 8,
+      "INFP": 9,
+      "INTJ": 10,
+      "INTP": 11,
+      "ISFJ": 12,
+      "ISFP": 13,
+      "ISTJ": 14,
+      "ISTP": 15,
+      "Unknown": 16
+    }
+  },
+  "feature_order": [
+    "season",
+    "confessionals_prev_ep",
+    "confessionals_last_2_ep",
+    "confessionals_last_3_ep",
+    "confessionals_cumulative",
+    "confessional_time_prev_ep",
+    "confessional_time_last_2_ep",
+    "confessional_time_last_3_ep",
+    "confessional_time_cumulative",
+    "votes_against_prev_ep",
+    "votes_against_last_2_ep",
+    "votes_against_last_3_ep",
+    "votes_against_cumulative",
+    "times_received_votes",
+    "voting_accuracy_prev_ep",
+    "voting_accuracy_last_2_ep",
+    "voting_accuracy_last_3_ep",
+    "voting_accuracy_cumulative",
+    "individual_wins_prev_ep",
+    "individual_wins_last_2_ep",
+    "individual_wins_last_3_ep",
+    "individual_wins_cumulative",
+    "num_tribe_swaps",
+    "has_idol",
+    "has_extra_vote",
+    "has_steal_vote",
+    "has_block_vote",
+    "has_idol_nullifier",
+    "has_other_advantage",
+    "advantages_in_circulation",
+    "players_remaining",
+    "day",
+    "gender",
+    "age",
+    "age_bucket",
+    "race_cat",
+    "collar",
+    "personality_type"
+  ]
+}

@@ -1871,6 +1871,33 @@
       "tc_number": 17,
       "placement": 17,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Albert",
+      "id": "US0352",
+      "color": "#db56db",
+      "tc_number": 18,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Coach",
+      "id": "US0277",
+      "color": "#c81c8f",
+      "tc_number": 18,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 3
+    },
+    {
+      "name": "Sophie",
+      "id": "US0353",
+      "color": "#ef427c",
+      "tc_number": 18,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 6
     }
   ],
   "ftc": {

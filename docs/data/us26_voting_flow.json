@@ -1842,6 +1842,33 @@
       "tc_number": 15,
       "placement": 17,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Dawn",
+      "id": "US0346",
+      "color": "#bd2881",
+      "tc_number": 16,
+      "placement": 19,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Sherri",
+      "id": "US0396",
+      "color": "#ef42de",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 0
+    },
+    {
+      "name": "Cochran",
+      "id": "US0348",
+      "color": "#e54c7a",
+      "tc_number": 16,
+      "placement": 20,
+      "elimination_type": "FTC",
+      "ftc_votes": 8
     }
   ],
   "ftc": {

@@ -1445,6 +1445,24 @@
       "tc_number": 15,
       "placement": 16,
       "elimination_type": "voted_out"
+    },
+    {
+      "name": "Woo",
+      "id": "US0423",
+      "color": "#c81c8f",
+      "tc_number": 16,
+      "placement": 17,
+      "elimination_type": "FTC",
+      "ftc_votes": 1
+    },
+    {
+      "name": "Tony",
+      "id": "US0424",
+      "color": "#ef427c",
+      "tc_number": 16,
+      "placement": 18,
+      "elimination_type": "FTC",
+      "ftc_votes": 8
     }
   ],
   "ftc": {

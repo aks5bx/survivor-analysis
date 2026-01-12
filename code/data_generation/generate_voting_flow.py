@@ -294,6 +294,29 @@ def process_season(
                 "color": castaway_color_map.get(fid, '#888888'),
                 "votes_received": votes_received
             })
+        
+        # Add finalists to boot_order (they made it to FTC)
+        # Sort by votes received (winner last = highest placement)
+        finalists_sorted = sorted(finalists_list, key=lambda x: x['votes_received'])
+        max_tc = max([b['tc_number'] for b in boot_order]) if boot_order else 0
+        
+        for i, finalist in enumerate(finalists_sorted):
+            # Find their placement from castaways_list
+            placement = None
+            for c in castaways_list:
+                if c['id'] == finalist['id']:
+                    placement = c['placement']
+                    break
+            
+            boot_order.append({
+                "name": finalist['name'],
+                "id": finalist['id'],
+                "color": finalist['color'],
+                "tc_number": max_tc + 1,  # FTC
+                "placement": placement,
+                "elimination_type": "FTC",
+                "ftc_votes": finalist['votes_received']
+            })
     
     # Build final JSON structure
     result = {

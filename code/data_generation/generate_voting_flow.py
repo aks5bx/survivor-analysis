@@ -264,9 +264,10 @@ def process_season(
             alignment_pct = (alignment_count / total_eligible * 100) if total_eligible > 0 else None
             
             # Check if finalist voted to eliminate juror
+            # We need to check if the finalist's vote was for the juror (by name), not just if juror was voted out
             finalist_votes_for_juror = all_season_votes[
                 (all_season_votes['castaway_id'] == finalist_id) & 
-                (all_season_votes['voted_out_id'] == juror_id)
+                (all_season_votes['vote_id'] == juror_id)
             ]
             helped_eliminate = len(finalist_votes_for_juror) > 0
             

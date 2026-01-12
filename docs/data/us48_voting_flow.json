@@ -1536,7 +1536,7 @@
         "alignment_pct": 77.8,
         "eligible_votes": 9,
         "aligned_votes": 7,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       }
     ]
   }

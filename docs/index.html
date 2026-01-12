@@ -3366,6 +3366,15 @@
             const actualN = filteredPlayers.length;
             const representation = actualN / totals.contestants;
             
+            // Map from UI milestone names to data field names
+            const milestoneMapping = {
+                'won': 'won',
+                'made_ftc': 'made_ftc', 
+                'made_merge': 'made_merge',
+                'found_advantage': 'found_advantage',
+                'won_individual_challenge': 'won_any_challenge'  // Data uses won_any_challenge
+            };
+            
             const milestones = ['won', 'made_ftc', 'made_merge', 'found_advantage', 'won_individual_challenge'];
             const milestoneStats = {};
             
@@ -3377,8 +3386,9 @@
                 const actual_pct = (achieved / actualN) * 100;
                 
                 // Expected %: if proportional representation
-                // = (representation * total_achievers) / actualN * 100
-                const totalAchieved = totals[m];
+                // Map to correct totals key
+                const totalsKey = milestoneMapping[m] || m;
+                const totalAchieved = totals[totalsKey];
                 const expected_pct = (representation * totalAchieved / actualN) * 100;
                 
                 milestoneStats[m] = {

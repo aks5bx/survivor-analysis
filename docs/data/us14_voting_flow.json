@@ -1581,7 +1581,7 @@
         "alignment_pct": 66.7,
         "eligible_votes": 3,
         "aligned_votes": 2,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0214",
@@ -1593,7 +1593,7 @@
         "alignment_pct": 40.0,
         "eligible_votes": 5,
         "aligned_votes": 2,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0210",

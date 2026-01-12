@@ -1677,7 +1677,7 @@
         "alignment_pct": 70.0,
         "eligible_votes": 10,
         "aligned_votes": 7,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0547",
@@ -1701,7 +1701,7 @@
         "alignment_pct": 66.7,
         "eligible_votes": 6,
         "aligned_votes": 4,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0546",
@@ -1725,7 +1725,7 @@
         "alignment_pct": 77.8,
         "eligible_votes": 9,
         "aligned_votes": 7,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0544",
@@ -1749,7 +1749,7 @@
         "alignment_pct": 71.4,
         "eligible_votes": 7,
         "aligned_votes": 5,
-        "finalist_helped_eliminate": true
+        "finalist_helped_eliminate": false
       },
       {
         "juror_id": "US0545",

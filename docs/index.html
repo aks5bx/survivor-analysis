@@ -1608,6 +1608,433 @@
                 width: 100%;
             }
         }
+
+        /* Winner Quiz Tab Styles */
+        #quiz-tab {
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quiz-container {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .quiz-header h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .quiz-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .progress-dot.completed {
+            background: #667eea;
+        }
+
+        .progress-dot.current {
+            background: #667eea;
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .quiz-question {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .quiz-question h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .question-number {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quiz-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-answer {
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .quiz-answer:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .quiz-answer.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .quiz-nav-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-nav-btn.prev {
+            background: #f0f0f0;
+            border: none;
+            color: #666;
+        }
+
+        .quiz-nav-btn.prev:hover {
+            background: #e0e0e0;
+        }
+
+        .quiz-nav-btn.prev:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Quiz Results */
+        .quiz-results {
+            text-align: center;
+        }
+
+        .quiz-results h3 {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .winner-result {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 32px;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .winner-result .winner-name {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .winner-result .winner-season {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .winner-result .winner-occupation {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+
+        .winner-result .match-percentage {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .winner-result .match-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .winner-traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .winner-trait {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .runner-ups {
+            margin-top: 24px;
+        }
+
+        .runner-ups h4 {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .runner-up-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .runner-up-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .runner-up-item .name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .runner-up-item .season {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .runner-up-item .match {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .quiz-restart {
+            margin-top: 24px;
+        }
+
+        .quiz-restart button {
+            padding: 12px 32px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-restart button:hover {
+            background: #e0e0e0;
+        }
+
+        /* Quiz intro */
+        .quiz-intro {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .quiz-intro h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .quiz-intro p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quiz-start-btn {
+            padding: 16px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .spoiler-note {
+            background: #f0f4ff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #667eea;
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        /* Spoiler check screen */
+        .spoiler-check-content {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .spoiler-check-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .spoiler-check-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .spoiler-season-display {
+            font-size: 24px !important;
+            font-weight: 700;
+            color: #667eea !important;
+            margin: 16px 0 24px 0 !important;
+        }
+
+        .spoiler-question {
+            font-weight: 500;
+            margin-bottom: 24px !important;
+            color: #666 !important;
+        }
+
+        .spoiler-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .spoiler-btn {
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .spoiler-btn.yes {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .spoiler-btn.yes:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .spoiler-btn.no {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .spoiler-btn.no:hover {
+            background: #e0e0e0;
+        }
+
+        .spoiler-skip-count {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Share section */
+        .share-section {
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            border-radius: 12px;
+            color: #667eea;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .share-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .share-btn.copied {
+            background: #4CAF50;
+            color: #fff;
+        }
+
+        .share-btn.copied:hover {
+            background: #4CAF50;
+            transform: none;
+        }
+
+        .share-btn-icon {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -1617,6 +2044,7 @@
         <button class="tab-btn" data-tab="analysis">🔬 Season Similarity</button>
         <button class="tab-btn" data-tab="identity">👤 Player Identity</button>
         <button class="tab-btn" data-tab="predictor">🎯 Elimination Predictor</button>
+        <button class="tab-btn" data-tab="quiz">🏆 Which Winner Are You?</button>
     </nav>
 
     <!-- Vote Flow Tab -->
@@ -2044,6 +2472,78 @@
         </div>
     </div>
 
+    <!-- Winner Quiz Tab -->
+    <div id="quiz-tab" class="tab-content">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>🏆 Which Survivor Winner Are You?</h2>
+                <p>Answer 10 questions to discover which of the 49 Survivor winners matches your personality and play style!</p>
+                <div class="spoiler-note">🔒 Spoiler protection: You'll be asked before revealing any winner names</div>
+            </div>
+            
+            <div id="quiz-content">
+                <!-- Quiz intro -->
+                <div class="quiz-intro" id="quiz-intro">
+                    <h2>Ready to Find Your Winner?</h2>
+                    <p>This quiz will analyze your strategic style, social game, and competitive nature to match you with your Survivor winner twin.</p>
+                    <button class="quiz-start-btn" onclick="startQuiz()">Start Quiz</button>
+                </div>
+                
+                <!-- Quiz questions (hidden initially) -->
+                <div id="quiz-questions" style="display: none;">
+                    <div class="quiz-progress" id="quiz-progress">
+                        <!-- Progress dots generated by JS -->
+                    </div>
+                    
+                    <div class="quiz-question" id="quiz-question">
+                        <span class="question-number">Question 1 of 10</span>
+                        <h3 id="question-text">Loading...</h3>
+                    </div>
+                    
+                    <div class="quiz-answers" id="quiz-answers">
+                        <!-- Answers generated by JS -->
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button class="quiz-nav-btn prev" id="quiz-prev" onclick="prevQuestion()" disabled>← Go Back</button>
+                    </div>
+                </div>
+                
+                <!-- Spoiler check (hidden initially) -->
+                <div id="quiz-spoiler-check" style="display: none;">
+                    <div class="spoiler-check-content">
+                        <h3>🔒 Spoiler Check</h3>
+                        <p>Your top match is the winner of</p>
+                        <p class="spoiler-season-display">Season <span id="spoiler-season">X</span> (<span id="spoiler-season-name"></span>)</p>
+                        <p class="spoiler-question">Are you okay with this spoiler?</p>
+                        <div class="spoiler-buttons">
+                            <button class="spoiler-btn yes" onclick="acceptSpoiler()">Yes, show me!</button>
+                            <button class="spoiler-btn no" onclick="skipSpoiler()">No, try next match</button>
+                        </div>
+                        <div class="spoiler-skip-count" id="spoiler-skip-count"></div>
+                    </div>
+                </div>
+                
+                <!-- Quiz results (hidden initially) -->
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h3>Your Survivor Winner Match</h3>
+                    <div class="winner-result" id="winner-result">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="share-section">
+                        <button class="share-btn" onclick="copyShareText()">
+                            <span class="share-btn-icon">📋</span>
+                            <span class="share-btn-text">Share Your Result</span>
+                        </button>
+                    </div>
+                    <div class="quiz-restart">
+                        <button onclick="restartQuiz()">Take Quiz Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Configuration
         const CONFIG = {
@@ -2064,11 +2564,21 @@
         let identityData = null;
         let predictorModel = null;
         let allSeasonsData = {};
+        let quizQuestions = null;
+        let winnerData = null;
         let svg, g, zoom;
         let width, height;
         let allNodes = [];
         let selectedCastaways = new Set();
         let selectionMode = null;
+        
+        // Quiz state
+        let quizCurrentQuestion = 0;
+        let quizAnswers = [];
+        let quizRankedWinners = [];
+        let quizCurrentMatchIndex = 0;
+        let quizSkipCount = 0;
+        let quizFinalMatch = null;
 
         // Initialize
         document.addEventListener('DOMContentLoaded', init);
@@ -2083,6 +2593,7 @@
             await loadSimilarityData();
             await loadIdentityData();
             await loadPredictorModel();
+            await loadQuizData();
             
             const defaultSeason = seasonsManifest?.seasons[seasonsManifest.seasons.length - 1]?.id || 'us46';
             await loadSeason(defaultSeason);
@@ -3757,6 +4268,344 @@
                 riskEl.textContent = '🔴 High Risk';
                 riskEl.className = 'risk-level high';
             }
+        }
+
+        // ==================== QUIZ FUNCTIONS ====================
+        
+        async function loadQuizData() {
+            try {
+                const [questionsRes, winnersRes] = await Promise.all([
+                    fetch('data/winner_quiz_questions.json?v=' + Date.now()),
+                    fetch('data/winner_quiz_data.json?v=' + Date.now())
+                ]);
+                quizQuestions = await questionsRes.json();
+                const winnerJson = await winnersRes.json();
+                winnerData = winnerJson.winners;
+                console.log('Quiz data loaded:', quizQuestions.length, 'questions,', winnerData.length, 'winners');
+            } catch (error) {
+                console.error('Failed to load quiz data:', error);
+            }
+        }
+
+        function startQuiz() {
+            quizCurrentQuestion = 0;
+            quizAnswers = new Array(quizQuestions.length).fill(null);
+            quizRankedWinners = [];
+            quizCurrentMatchIndex = 0;
+            quizSkipCount = 0;
+            quizFinalMatch = null;
+            
+            document.getElementById('quiz-intro').style.display = 'none';
+            document.getElementById('quiz-questions').style.display = 'block';
+            document.getElementById('quiz-spoiler-check').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'none';
+            
+            renderQuizProgress();
+            renderQuizQuestion();
+        }
+
+        function renderQuizProgress() {
+            const container = document.getElementById('quiz-progress');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < quizQuestions.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot';
+                if (i < quizCurrentQuestion) dot.classList.add('completed');
+                if (i === quizCurrentQuestion) dot.classList.add('current');
+                container.appendChild(dot);
+            }
+        }
+
+        function renderQuizQuestion() {
+            const q = quizQuestions[quizCurrentQuestion];
+            
+            document.querySelector('.question-number').textContent = `Question ${quizCurrentQuestion + 1} of ${quizQuestions.length}`;
+            document.getElementById('question-text').textContent = q.question;
+            
+            const answersContainer = document.getElementById('quiz-answers');
+            answersContainer.innerHTML = '';
+            
+            q.answers.forEach((answer, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-answer';
+                btn.textContent = answer.text;
+                if (quizAnswers[quizCurrentQuestion] === idx) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => selectAnswer(idx));
+                answersContainer.appendChild(btn);
+            });
+            
+            // Update back button
+            document.getElementById('quiz-prev').disabled = quizCurrentQuestion === 0;
+        }
+
+        function selectAnswer(idx) {
+            quizAnswers[quizCurrentQuestion] = idx;
+            
+            // Update UI
+            document.querySelectorAll('.quiz-answer').forEach((btn, i) => {
+                btn.classList.toggle('selected', i === idx);
+            });
+            
+            // Auto-advance after a brief delay to show selection
+            setTimeout(() => {
+                if (quizCurrentQuestion < quizQuestions.length - 1) {
+                    quizCurrentQuestion++;
+                    renderQuizProgress();
+                    renderQuizQuestion();
+                } else {
+                    finishQuiz();
+                }
+            }, 300);
+        }
+
+        function prevQuestion() {
+            if (quizCurrentQuestion > 0) {
+                quizCurrentQuestion--;
+                renderQuizProgress();
+                renderQuizQuestion();
+            }
+        }
+
+        function calculateWinnerScores() {
+            // Initialize scores for each winner
+            const scores = winnerData.map(winner => ({
+                winner: winner,
+                score: 0,
+                matchedTraits: []
+            }));
+            
+            // Process each answer
+            quizAnswers.forEach((answerIdx, questionIdx) => {
+                if (answerIdx === null) return;
+                
+                const question = quizQuestions[questionIdx];
+                const answer = question.answers[answerIdx];
+                const weights = answer.weights;
+                
+                // Apply weights to each winner
+                scores.forEach(entry => {
+                    const winner = entry.winner;
+                    
+                    Object.entries(weights).forEach(([attr, weight]) => {
+                        // Handle special categorical attributes
+                        if (attr === 'collar') {
+                            if (weight === 'any') {
+                                entry.score += 0.5;
+                            } else if (winner.collar === weight) {
+                                entry.score += 1;
+                                entry.matchedTraits.push(weight);
+                            }
+                        } else if (attr === 'times_played') {
+                            const tp = winner.times_played;
+                            if (weight === 'very_high' && tp >= 4) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('Legend (4+ seasons)');
+                            } else if (weight === 'high' && tp >= 3) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('Returnee');
+                            } else if (weight === 'low' && tp === 1) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('One-timer');
+                            } else if (weight === 'medium' && tp === 2) {
+                                entry.score += 0.7;
+                            }
+                        } else if (attr === 'season_era') {
+                            const s = winner.season;
+                            if (weight === 'classic' && s <= 10) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('Old School');
+                            } else if (weight === 'middle' && s >= 11 && s <= 20) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('Middle Era');
+                            } else if (weight === 'modern' && s >= 21 && s <= 35) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('Modern Era');
+                            } else if (weight === 'new' && s >= 36) {
+                                entry.score += 1;
+                                entry.matchedTraits.push('New Era');
+                            }
+                        } else {
+                            // Numerical attributes
+                            const winnerValue = winner[attr] || 0;
+                            let contribution;
+                            if (weight > 0) {
+                                contribution = winnerValue * weight;
+                            } else {
+                                contribution = (1 - winnerValue) * Math.abs(weight);
+                            }
+                            entry.score += contribution;
+                        }
+                    });
+                });
+            });
+            
+            // Normalize scores to percentages
+            const maxScore = Math.max(...scores.map(s => s.score));
+            scores.forEach(s => {
+                s.percentage = maxScore > 0 ? (s.score / maxScore) * 100 : 0;
+            });
+            
+            // Sort by score descending
+            scores.sort((a, b) => b.score - a.score);
+            
+            return scores;
+        }
+
+        function finishQuiz() {
+            // Calculate scores and store ranked winners
+            quizRankedWinners = calculateWinnerScores();
+            quizCurrentMatchIndex = 0;
+            quizSkipCount = 0;
+            
+            // Show spoiler check for first match
+            showSpoilerCheck();
+        }
+
+        function showSpoilerCheck() {
+            const currentMatch = quizRankedWinners[quizCurrentMatchIndex];
+            const winner = currentMatch.winner;
+            
+            document.getElementById('quiz-questions').style.display = 'none';
+            document.getElementById('quiz-spoiler-check').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            
+            document.getElementById('spoiler-season').textContent = winner.season;
+            document.getElementById('spoiler-season-name').textContent = winner.season_name || winner.season;
+            
+            // Show skip count if any skips
+            const skipCountEl = document.getElementById('spoiler-skip-count');
+            if (quizSkipCount > 0) {
+                skipCountEl.textContent = `(${4 - quizSkipCount} skip${4 - quizSkipCount !== 1 ? 's' : ''} remaining)`;
+            } else {
+                skipCountEl.textContent = '';
+            }
+        }
+
+        function acceptSpoiler() {
+            quizFinalMatch = quizRankedWinners[quizCurrentMatchIndex];
+            showQuizResults();
+        }
+
+        function skipSpoiler() {
+            quizSkipCount++;
+            quizCurrentMatchIndex++;
+            
+            // After 4 skips (5th time), give up and show current match
+            if (quizSkipCount >= 4 || quizCurrentMatchIndex >= quizRankedWinners.length) {
+                quizFinalMatch = quizRankedWinners[quizCurrentMatchIndex] || quizRankedWinners[quizRankedWinners.length - 1];
+                showQuizResults();
+            } else {
+                showSpoilerCheck();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-spoiler-check').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            
+            const winner = quizFinalMatch.winner;
+            const seasonDisplay = winner.season_name && winner.season_name !== String(winner.season) 
+                ? `Season ${winner.season}: ${winner.season_name}`
+                : `Season ${winner.season}`;
+            
+            // Build traits display
+            const traits = [];
+            if (winner.personality_type) {
+                traits.push(winner.is_extrovert === 1 ? 'Extrovert' : 'Introvert');
+            }
+            if (winner.collar) traits.push(winner.collar);
+            if (winner.times_played > 1) traits.push(`${winner.times_played}x Player`);
+            if (winner.n_idols_found > 0) traits.push('Idol Finder');
+            if (winner.score_jury >= 0.9) traits.push('Jury Favorite');
+            if (winner.score_outplay_norm > 0.7) traits.push('Challenge Beast');
+            if (winner.score_inf_norm > 0.7) traits.push('Strategic Leader');
+            if (winner.n_votes_received === 0) traits.push('No Votes Received');
+            
+            // Render result
+            document.getElementById('winner-result').innerHTML = `
+                <div class="winner-name">${winner.name}</div>
+                <div class="winner-season">${seasonDisplay}</div>
+                <div class="winner-occupation">${winner.occupation || ''}</div>
+                <div class="match-percentage">${Math.round(quizFinalMatch.percentage)}%</div>
+                <div class="match-label">Match</div>
+                <div class="winner-traits">
+                    ${traits.slice(0, 5).map(t => `<span class="winner-trait">${t}</span>`).join('')}
+                </div>
+            `;
+        }
+
+        function copyShareText() {
+            const winner = quizFinalMatch.winner;
+            const matchRank = quizCurrentMatchIndex + 1;
+            const rankSuffix = matchRank === 1 ? '' : ` (#${matchRank} match)`;
+            const seasonName = winner.season_name && winner.season_name !== String(winner.season)
+                ? ` (${winner.season_name})`
+                : '';
+            
+            // Create share text (spoiler-free, text only like Wordle)
+            const shareText = `🏆 Which Survivor Winner Are You?
+
+I matched with the Season ${winner.season}${seasonName} Winner!${rankSuffix}
+${Math.round(quizFinalMatch.percentage)}% Match
+
+Take the quiz: ${window.location.href.split('?')[0].split('#')[0]}`;
+            
+            const shareBtn = document.querySelector('.share-btn');
+            
+            // Function to show success state
+            function showCopiedState() {
+                shareBtn.innerHTML = '<span class="share-btn-icon">✓</span><span class="share-btn-text">Copied!</span>';
+                shareBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    shareBtn.innerHTML = '<span class="share-btn-icon">📋</span><span class="share-btn-text">Share Your Result</span>';
+                    shareBtn.classList.remove('copied');
+                }, 2500);
+            }
+            
+            // Try modern clipboard API first, fallback to execCommand
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    showCopiedState();
+                }).catch(err => {
+                    // Fallback for when clipboard API fails (e.g., not HTTPS)
+                    fallbackCopy(shareText, showCopiedState);
+                });
+            } else {
+                fallbackCopy(shareText, showCopiedState);
+            }
+        }
+        
+        function fallbackCopy(text, onSuccess) {
+            // Create temporary textarea
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            textArea.style.top = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    onSuccess();
+                }
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function restartQuiz() {
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('quiz-spoiler-check').style.display = 'none';
+            document.getElementById('quiz-intro').style.display = 'block';
         }
     </script>
 </body>

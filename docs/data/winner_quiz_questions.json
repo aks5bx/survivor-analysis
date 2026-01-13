@@ -1,0 +1,315 @@
+[
+  {
+    "id": 1,
+    "question": "When there's drama in your friend group, you typically:",
+    "answers": [
+      {
+        "text": "Stay out of it completely",
+        "weights": {
+          "n_votes_received_norm": -1,
+          "score_inf_norm": -0.5
+        }
+      },
+      {
+        "text": "Quietly help smooth things over behind the scenes",
+        "weights": {
+          "n_votes_received_norm": -0.3,
+          "p_successful_boot_norm": 0.5
+        }
+      },
+      {
+        "text": "Address it directly and try to fix it",
+        "weights": {
+          "score_inf_norm": 0.7,
+          "n_votes_received_norm": 0.3
+        }
+      },
+      {
+        "text": "Honestly? Sometimes I stir the pot a little",
+        "weights": {
+          "score_inf_norm": 0.5,
+          "n_votes_received_norm": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "At a party with people you don't know well, you're most likely to:",
+    "answers": [
+      {
+        "text": "End up being the life of the party",
+        "weights": {
+          "is_extrovert": 1,
+          "score_inf_norm": 0.6
+        }
+      },
+      {
+        "text": "Float around and chat with lots of different people",
+        "weights": {
+          "is_extrovert": 0.3,
+          "score_jury_norm": 0.5
+        }
+      },
+      {
+        "text": "Find one or two people I click with and stick with them",
+        "weights": {
+          "is_extrovert": -0.5,
+          "p_successful_boot_norm": 0.3
+        }
+      },
+      {
+        "text": "Hang back and observe before jumping in",
+        "weights": {
+          "is_extrovert": -1,
+          "score_inf_norm": -0.5
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "When playing sports or games, what matters most?",
+    "answers": [
+      {
+        "text": "Winning \u2014 I'm naturally competitive",
+        "weights": {
+          "score_outplay_norm": 1.2
+        }
+      },
+      {
+        "text": "Doing my best, but it's not that serious",
+        "weights": {
+          "score_outplay_norm": 0.4
+        }
+      },
+      {
+        "text": "Having fun with friends is the real goal",
+        "weights": {
+          "score_outplay_norm": -0.4
+        }
+      },
+      {
+        "text": "I'd rather watch than compete",
+        "weights": {
+          "score_outplay_norm": -1.2
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Your approach to backup plans and safety nets:",
+    "answers": [
+      {
+        "text": "Always have multiple contingencies ready",
+        "weights": {
+          "score_adv_norm": 1.5
+        }
+      },
+      {
+        "text": "I like having a Plan B, just in case",
+        "weights": {
+          "score_adv_norm": 0.5
+        }
+      },
+      {
+        "text": "I prefer to trust my abilities over backups",
+        "weights": {
+          "score_adv_norm": -0.5
+        }
+      },
+      {
+        "text": "I go with the flow \u2014 things usually work out",
+        "weights": {
+          "score_adv_norm": -1.5,
+          "score_jury_norm": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Which work environment brings out your best?",
+    "answers": [
+      {
+        "text": "Corporate or professional settings with clear structure",
+        "weights": {
+          "collar": "White collar"
+        }
+      },
+      {
+        "text": "Hands-on work where I can build or fix things",
+        "weights": {
+          "collar": "Blue collar"
+        }
+      },
+      {
+        "text": "Creative or unconventional environments",
+        "weights": {
+          "collar": "No collar"
+        }
+      },
+      {
+        "text": "I adapt well to any environment",
+        "weights": {
+          "collar": "any"
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "In group projects, people usually see you as:",
+    "answers": [
+      {
+        "text": "The leader who drives the vision",
+        "weights": {
+          "score_inf_norm": 1.2,
+          "n_votes_received_norm": 0.2
+        }
+      },
+      {
+        "text": "Influential, but not in an obvious way",
+        "weights": {
+          "score_inf_norm": 0.5,
+          "n_votes_received_norm": -0.2
+        }
+      },
+      {
+        "text": "A reliable contributor who doesn't need the spotlight",
+        "weights": {
+          "score_inf_norm": -0.4,
+          "n_votes_received_norm": -0.4
+        }
+      },
+      {
+        "text": "The one people underestimate until crunch time",
+        "weights": {
+          "score_inf_norm": -1,
+          "score_jury_norm": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "How much do you care what others think of you?",
+    "answers": [
+      {
+        "text": "A lot \u2014 I want to be respected and well-liked",
+        "weights": {
+          "score_jury_norm": 1.5
+        }
+      },
+      {
+        "text": "I care, but I'll do what's right even if unpopular",
+        "weights": {
+          "score_jury_norm": 0.5
+        }
+      },
+      {
+        "text": "Results matter more than popularity",
+        "weights": {
+          "score_jury_norm": -0.3
+        }
+      },
+      {
+        "text": "Honestly, not much \u2014 I do my own thing",
+        "weights": {
+          "score_jury_norm": -1.2
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "When making decisions in a group, you usually:",
+    "answers": [
+      {
+        "text": "Know exactly what's happening and vote with confidence",
+        "weights": {
+          "p_successful_boot_norm": 1.2
+        }
+      },
+      {
+        "text": "Have good instincts about which way things are going",
+        "weights": {
+          "p_successful_boot_norm": 0.5
+        }
+      },
+      {
+        "text": "Sometimes get caught off guard by the outcome",
+        "weights": {
+          "p_successful_boot_norm": -0.3
+        }
+      },
+      {
+        "text": "Often find myself on the losing side",
+        "weights": {
+          "p_successful_boot_norm": -1
+        }
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "If you could do something challenging again, would you?",
+    "answers": [
+      {
+        "text": "Absolutely \u2014 I'd keep coming back for more",
+        "weights": {
+          "times_played": "very_high"
+        }
+      },
+      {
+        "text": "Yes, especially if I could apply what I learned",
+        "weights": {
+          "times_played": "high"
+        }
+      },
+      {
+        "text": "Maybe, if the circumstances were right",
+        "weights": {
+          "times_played": "medium"
+        }
+      },
+      {
+        "text": "Once was enough \u2014 I'd move on to new things",
+        "weights": {
+          "times_played": "low"
+        }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What kind of environment do you thrive in?",
+    "answers": [
+      {
+        "text": "Simple and straightforward \u2014 no gimmicks needed",
+        "weights": {
+          "season_era": "classic"
+        }
+      },
+      {
+        "text": "A bit more complex with room to strategize",
+        "weights": {
+          "season_era": "middle"
+        }
+      },
+      {
+        "text": "High-stakes with lots of twists and surprises",
+        "weights": {
+          "season_era": "modern"
+        }
+      },
+      {
+        "text": "Fast-paced and chaotic \u2014 I adapt quickly",
+        "weights": {
+          "season_era": "new"
+        }
+      }
+    ]
+  }
+]

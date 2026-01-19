@@ -5,6 +5,7 @@
     "made_ftc": 132,
     "made_merge": 542,
     "found_advantage": 182,
+    "won_individual_challenge": 290,
     "won_any_challenge": 826,
     "won_3plus_challenges": 686
   },
@@ -384,7 +385,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jason",
@@ -399,7 +400,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shannon",
@@ -414,7 +415,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nate",
@@ -429,7 +430,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "MC",
@@ -444,7 +445,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alex",
@@ -459,7 +460,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jawan",
@@ -474,7 +475,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sophie",
@@ -519,7 +520,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rizo",
@@ -534,7 +535,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sage",
@@ -549,7 +550,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sophi",
@@ -609,7 +610,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Justin",
@@ -639,7 +640,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bianca",
@@ -654,7 +655,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Charity",
@@ -669,7 +670,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sai",
@@ -684,7 +685,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cedrek",
@@ -699,7 +700,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chrissy",
@@ -714,7 +715,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "David",
@@ -729,7 +730,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Star",
@@ -744,7 +745,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mary",
@@ -759,7 +760,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shauhin",
@@ -789,7 +790,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kamilla",
@@ -834,7 +835,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kyle",
@@ -864,7 +865,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "TK",
@@ -879,7 +880,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Aysha",
@@ -894,7 +895,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kishan",
@@ -909,7 +910,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Anika",
@@ -924,7 +925,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rome",
@@ -939,7 +940,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tiyana",
@@ -954,7 +955,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sierra",
@@ -969,7 +970,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sol",
@@ -984,7 +985,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gabe",
@@ -1029,7 +1030,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Andy",
@@ -1044,7 +1045,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Genevieve",
@@ -1074,7 +1075,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sue",
@@ -1164,7 +1165,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bhanu",
@@ -1179,7 +1180,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jem",
@@ -1194,7 +1195,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Moriah",
@@ -1209,7 +1210,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tim",
@@ -1224,7 +1225,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Soda",
@@ -1239,7 +1240,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tevin",
@@ -1254,7 +1255,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Hunter",
@@ -1284,7 +1285,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Venus",
@@ -1299,7 +1300,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Q",
@@ -1344,7 +1345,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ben",
@@ -1434,7 +1435,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sean",
@@ -1449,7 +1450,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brando",
@@ -1464,7 +1465,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "J. Maya",
@@ -1479,7 +1480,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sifu",
@@ -1494,7 +1495,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kaleb",
@@ -1509,7 +1510,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kellie",
@@ -1524,7 +1525,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kendra",
@@ -1539,7 +1540,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bruce",
@@ -1599,7 +1600,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Katurah",
@@ -1614,7 +1615,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jake",
@@ -1629,7 +1630,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Austin",
@@ -1704,7 +1705,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Claire",
@@ -1719,7 +1720,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sarah",
@@ -1734,7 +1735,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Matthew",
@@ -1749,7 +1750,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Josh",
@@ -1764,7 +1765,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Matt",
@@ -1779,7 +1780,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brandon",
@@ -1794,7 +1795,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kane",
@@ -1809,7 +1810,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Frannie",
@@ -1839,7 +1840,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jaime",
@@ -1854,7 +1855,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lauren",
@@ -1899,7 +1900,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Heidi",
@@ -1959,7 +1960,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nneka",
@@ -1974,7 +1975,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lindsay",
@@ -1989,7 +1990,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Geo",
@@ -2004,7 +2005,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Elie",
@@ -2019,7 +2020,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dwight",
@@ -2034,7 +2035,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeanine",
@@ -2049,7 +2050,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "James",
@@ -2064,7 +2065,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ryan",
@@ -2079,7 +2080,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Noelle",
@@ -2109,7 +2110,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cody",
@@ -2124,7 +2125,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Karla",
@@ -2154,7 +2155,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Owen",
@@ -2229,7 +2230,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Marya",
@@ -2244,7 +2245,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jenny",
@@ -2259,7 +2260,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Swati",
@@ -2274,7 +2275,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Daniel",
@@ -2289,7 +2290,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lydia",
@@ -2304,7 +2305,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chanelle",
@@ -2319,7 +2320,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rocksroy",
@@ -2334,7 +2335,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tori",
@@ -2364,7 +2365,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Drea",
@@ -2379,7 +2380,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Omar",
@@ -2469,7 +2470,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Abraham",
@@ -2499,7 +2500,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Voce",
@@ -2529,7 +2530,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "JD",
@@ -2544,7 +2545,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Genie",
@@ -2559,7 +2560,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sydney",
@@ -2574,7 +2575,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tiffany",
@@ -2589,7 +2590,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Naseer",
@@ -2604,7 +2605,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Evvie",
@@ -2634,7 +2635,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Liana",
@@ -2649,7 +2650,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Danny",
@@ -2694,7 +2695,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Xander",
@@ -2724,7 +2725,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Erika",
@@ -2754,7 +2755,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Danni",
@@ -2769,7 +2770,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ethan",
@@ -2784,7 +2785,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Boston Rob",
@@ -2799,7 +2800,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Parvati",
@@ -2814,7 +2815,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sandra",
@@ -2829,7 +2830,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Yul",
@@ -2844,7 +2845,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Wendell",
@@ -2859,7 +2860,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Adam",
@@ -2874,7 +2875,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tyson",
@@ -2904,7 +2905,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kim",
@@ -2979,7 +2980,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sarah",
@@ -2994,7 +2995,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michele",
@@ -3069,7 +3070,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Vince",
@@ -3084,7 +3085,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chelsea",
@@ -3099,7 +3100,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tom",
@@ -3114,7 +3115,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jason",
@@ -3129,7 +3130,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jack",
@@ -3144,7 +3145,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kellee",
@@ -3159,7 +3160,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jamal",
@@ -3174,7 +3175,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Aaron",
@@ -3219,7 +3220,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Karishma",
@@ -3234,7 +3235,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Elaine",
@@ -3249,7 +3250,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dan",
@@ -3264,7 +3265,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Janet",
@@ -3279,7 +3280,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lauren",
@@ -3384,7 +3385,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Wendy",
@@ -3399,7 +3400,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joe",
@@ -3414,7 +3415,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Eric",
@@ -3429,7 +3430,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Julia",
@@ -3444,7 +3445,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "David",
@@ -3459,7 +3460,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelley",
@@ -3474,7 +3475,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Wardog",
@@ -3534,7 +3535,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lauren",
@@ -3549,7 +3550,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rick",
@@ -3624,7 +3625,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jessica",
@@ -3639,7 +3640,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeremy",
@@ -3654,7 +3655,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bi",
@@ -3669,7 +3670,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Natalia",
@@ -3684,7 +3685,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Natalie",
@@ -3699,7 +3700,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lyrsa",
@@ -3714,7 +3715,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Elizabeth",
@@ -3729,7 +3730,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "John",
@@ -3744,7 +3745,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dan",
@@ -3789,7 +3790,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gabby",
@@ -3804,7 +3805,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Christian",
@@ -3879,7 +3880,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mike",
@@ -3924,7 +3925,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jacob",
@@ -3939,7 +3940,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Morgan",
@@ -3954,7 +3955,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brendan",
@@ -3969,7 +3970,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephanie",
@@ -3984,7 +3985,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "James",
@@ -3999,7 +4000,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bradley",
@@ -4014,7 +4015,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chris",
@@ -4029,7 +4030,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Libby",
@@ -4044,7 +4045,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Desiree",
@@ -4059,7 +4060,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jenna",
@@ -4074,7 +4075,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michael",
@@ -4089,7 +4090,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chelsea",
@@ -4149,7 +4150,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Angela",
@@ -4224,7 +4225,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Simone",
@@ -4239,7 +4240,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Patrick",
@@ -4254,7 +4255,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alan",
@@ -4269,7 +4270,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Roark",
@@ -4284,7 +4285,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ali",
@@ -4299,7 +4300,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jessica",
@@ -4314,7 +4315,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Desi",
@@ -4359,7 +4360,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joe",
@@ -4374,7 +4375,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lauren",
@@ -4419,7 +4420,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Devon",
@@ -4434,7 +4435,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ryan",
@@ -4449,7 +4450,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chrissy",
@@ -4479,7 +4480,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ciera",
@@ -4539,7 +4540,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "J.T.",
@@ -4554,7 +4555,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sandra",
@@ -4569,7 +4570,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeff",
@@ -4584,7 +4585,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Hali",
@@ -4599,7 +4600,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ozzy",
@@ -4614,7 +4615,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Debbie",
@@ -4629,7 +4630,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Zeke",
@@ -4644,7 +4645,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sierra",
@@ -4659,7 +4660,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Andrea",
@@ -4689,7 +4690,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cirie",
@@ -4704,7 +4705,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Aubry",
@@ -4779,7 +4780,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rachel",
@@ -4809,7 +4810,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Paul",
@@ -4824,7 +4825,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lucy",
@@ -4839,7 +4840,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "CeCe",
@@ -4854,7 +4855,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Figgy",
@@ -4869,7 +4870,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michaela",
@@ -4884,7 +4885,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michelle",
@@ -4899,7 +4900,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Taylor",
@@ -4914,7 +4915,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chris",
@@ -4929,7 +4930,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jessica",
@@ -4944,7 +4945,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Zeke",
@@ -4959,7 +4960,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Will",
@@ -4989,7 +4990,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jay",
@@ -5019,7 +5020,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "David",
@@ -5049,7 +5050,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ken",
@@ -5124,7 +5125,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Caleb",
@@ -5139,7 +5140,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alecia",
@@ -5154,7 +5155,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Anna",
@@ -5169,7 +5170,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Peter",
@@ -5184,7 +5185,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Neal",
@@ -5199,7 +5200,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nick",
@@ -5229,7 +5230,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Scot",
@@ -5244,7 +5245,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Julia",
@@ -5364,7 +5365,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shirin",
@@ -5379,7 +5380,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Peih-Gee",
@@ -5394,7 +5395,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeff",
@@ -5409,7 +5410,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Monica",
@@ -5424,7 +5425,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Terry",
@@ -5439,7 +5440,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Woo",
@@ -5454,7 +5455,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kass",
@@ -5469,7 +5470,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Andrew",
@@ -5484,7 +5485,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly",
@@ -5499,7 +5500,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ciera",
@@ -5514,7 +5515,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephen",
@@ -5559,7 +5560,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kimmi",
@@ -5574,7 +5575,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Keith",
@@ -5634,7 +5635,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeremy",
@@ -5679,7 +5680,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nina",
@@ -5694,7 +5695,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lindsey",
@@ -5709,7 +5710,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Max",
@@ -5724,7 +5725,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joaquin",
@@ -5739,7 +5740,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly",
@@ -5754,7 +5755,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Hali",
@@ -5769,7 +5770,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joe",
@@ -5799,7 +5800,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shirin",
@@ -5814,7 +5815,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tyler",
@@ -5844,7 +5845,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sierra",
@@ -5859,7 +5860,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rodney",
@@ -5874,7 +5875,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Will",
@@ -5889,7 +5890,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Carolyn",
@@ -5979,7 +5980,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelley",
@@ -5994,7 +5995,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dale",
@@ -6009,7 +6010,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Julie",
@@ -6024,7 +6025,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Josh",
@@ -6039,7 +6040,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeremy",
@@ -6069,7 +6070,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Reed",
@@ -6099,7 +6100,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jon",
@@ -6234,7 +6235,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "J'Tia",
@@ -6249,7 +6250,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cliff",
@@ -6264,7 +6265,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lindsey",
@@ -6279,7 +6280,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alexis",
@@ -6294,7 +6295,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sarah",
@@ -6309,7 +6310,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Morgan",
@@ -6324,7 +6325,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "LJ",
@@ -6339,7 +6340,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeremiah",
@@ -6354,7 +6355,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jefra",
@@ -6369,7 +6370,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tasha",
@@ -6399,7 +6400,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Spencer",
@@ -6534,7 +6535,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "John",
@@ -6579,7 +6580,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Laura B.",
@@ -6594,7 +6595,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Aras",
@@ -6609,7 +6610,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Vytas",
@@ -6654,7 +6655,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Katie",
@@ -6684,7 +6685,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ciera",
@@ -6774,7 +6775,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Allie",
@@ -6789,7 +6790,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Hope",
@@ -6804,7 +6805,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shamar",
@@ -6819,7 +6820,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Laura",
@@ -6834,7 +6835,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brandon",
@@ -6849,7 +6850,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Matt",
@@ -6864,7 +6865,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Julia",
@@ -6879,7 +6880,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Corinne",
@@ -6894,7 +6895,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michael",
@@ -6909,7 +6910,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Phillip",
@@ -6924,7 +6925,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Malcolm",
@@ -6939,7 +6940,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Reynold",
@@ -7014,7 +7015,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sherri",
@@ -7029,7 +7030,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dawn",
@@ -7134,7 +7135,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dawson",
@@ -7149,7 +7150,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Katie",
@@ -7164,7 +7165,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "RC",
@@ -7179,7 +7180,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeff",
@@ -7194,7 +7195,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Artis",
@@ -7209,7 +7210,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Pete",
@@ -7224,7 +7225,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jonathan",
@@ -7299,7 +7300,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michael",
@@ -7374,7 +7375,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bill",
@@ -7389,7 +7390,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Monica",
@@ -7404,7 +7405,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Colton",
@@ -7419,7 +7420,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jonas",
@@ -7434,7 +7435,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michael",
@@ -7449,7 +7450,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jay",
@@ -7479,7 +7480,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Troyzan",
@@ -7524,7 +7525,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alicia",
@@ -7554,7 +7555,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chelsea",
@@ -7584,7 +7585,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kim",
@@ -7644,7 +7645,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stacey",
@@ -7659,7 +7660,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Elyse",
@@ -7674,7 +7675,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mikayla",
@@ -7689,7 +7690,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Keith",
@@ -7704,7 +7705,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jim",
@@ -7764,7 +7765,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Edna",
@@ -7779,7 +7780,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brandon",
@@ -7809,7 +7810,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ozzy",
@@ -7899,7 +7900,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kristina",
@@ -7914,7 +7915,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Krista",
@@ -7929,7 +7930,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephanie",
@@ -7944,7 +7945,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sarita",
@@ -7959,7 +7960,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Matt",
@@ -8004,7 +8005,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Julie",
@@ -8019,7 +8020,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ralph",
@@ -8049,7 +8050,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Grant",
@@ -8124,7 +8125,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Boston Rob",
@@ -8169,7 +8170,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jimmy J.",
@@ -8184,7 +8185,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jimmy T.",
@@ -8199,7 +8200,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tyrone",
@@ -8214,7 +8215,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly B.",
@@ -8229,7 +8230,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Yve",
@@ -8244,7 +8245,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jill",
@@ -8259,7 +8260,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alina",
@@ -8274,7 +8275,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Marty",
@@ -8289,7 +8290,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brenda",
@@ -8319,7 +8320,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Purple Kelly",
@@ -8334,7 +8335,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Benry",
@@ -8349,7 +8350,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jane",
@@ -8379,7 +8380,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Holly",
@@ -8394,7 +8395,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sash",
@@ -8454,7 +8455,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephenie",
@@ -8469,7 +8470,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Randy",
@@ -8484,7 +8485,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cirie",
@@ -8499,7 +8500,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tom",
@@ -8514,7 +8515,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tyson",
@@ -8529,7 +8530,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "James",
@@ -8544,7 +8545,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Boston Rob",
@@ -8559,7 +8560,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Coach",
@@ -8574,7 +8575,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Courtney",
@@ -8589,7 +8590,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "J.T.",
@@ -8604,7 +8605,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Amanda",
@@ -8619,7 +8620,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Candice",
@@ -8634,7 +8635,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Danielle",
@@ -8664,7 +8665,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Colby",
@@ -8679,7 +8680,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jerri",
@@ -8739,7 +8740,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Marisa",
@@ -8754,7 +8755,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mike",
@@ -8769,7 +8770,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Betsy",
@@ -8784,7 +8785,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ben",
@@ -8799,7 +8800,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Yasmin",
@@ -8814,7 +8815,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ashley",
@@ -8829,7 +8830,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Russell S.",
@@ -8844,7 +8845,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Liz",
@@ -8859,7 +8860,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Erik",
@@ -8874,7 +8875,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly",
@@ -8889,7 +8890,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Laura",
@@ -8934,7 +8935,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Monica",
@@ -8949,7 +8950,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shambo",
@@ -8964,7 +8965,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jaison",
@@ -9039,7 +9040,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Carolina",
@@ -9069,7 +9070,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jerry",
@@ -9084,7 +9085,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sandy",
@@ -9099,7 +9100,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Spencer",
@@ -9114,7 +9115,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sydney",
@@ -9129,7 +9130,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joe",
@@ -9144,7 +9145,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brendan",
@@ -9159,7 +9160,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tyson",
@@ -9189,7 +9190,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Debbie",
@@ -9234,7 +9235,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Erinn",
@@ -9249,7 +9250,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephen",
@@ -9324,7 +9325,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jacquie",
@@ -9339,7 +9340,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "GC",
@@ -9354,7 +9355,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly",
@@ -9369,7 +9370,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ace",
@@ -9384,7 +9385,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dan",
@@ -9399,7 +9400,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Marcus",
@@ -9429,7 +9430,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Randy",
@@ -9444,7 +9445,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Corinne",
@@ -9459,7 +9460,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Crystal",
@@ -9474,7 +9475,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ken",
@@ -9504,7 +9505,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sugar",
@@ -9519,7 +9520,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Susie",
@@ -9579,7 +9580,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Yau-Man",
@@ -9609,7 +9610,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joel",
@@ -9624,7 +9625,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jonathan",
@@ -9639,7 +9640,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Chet",
@@ -9654,7 +9655,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kathy",
@@ -9684,7 +9685,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ami",
@@ -9699,7 +9700,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Eliza",
@@ -9714,7 +9715,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ozzy",
@@ -9729,7 +9730,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jason",
@@ -9759,7 +9760,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alexis",
@@ -9804,7 +9805,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cirie",
@@ -9819,7 +9820,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Amanda",
@@ -9894,7 +9895,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dave",
@@ -9909,7 +9910,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Aaron",
@@ -9924,7 +9925,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sherea",
@@ -9939,7 +9940,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jaime",
@@ -9954,7 +9955,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jean-Robert",
@@ -9969,7 +9970,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Frosti",
@@ -9999,7 +10000,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Erik",
@@ -10089,7 +10090,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jessica",
@@ -10149,7 +10150,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Liliana",
@@ -10164,7 +10165,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rita",
@@ -10209,7 +10210,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lisi",
@@ -10224,7 +10225,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michelle",
@@ -10239,7 +10240,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Edgardo",
@@ -10254,7 +10255,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mookie",
@@ -10269,7 +10270,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alex",
@@ -10284,7 +10285,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stacy",
@@ -10374,7 +10375,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": true,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sekou",
@@ -10404,7 +10405,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cecilia",
@@ -10419,7 +10420,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "J.P.",
@@ -10434,7 +10435,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephannie",
@@ -10449,7 +10450,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cao Boi",
@@ -10464,7 +10465,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cristina",
@@ -10479,7 +10480,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jessica",
@@ -10494,7 +10495,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brad",
@@ -10509,7 +10510,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rebecca",
@@ -10524,7 +10525,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jenny",
@@ -10539,7 +10540,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nate",
@@ -10554,7 +10555,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Candice",
@@ -10569,7 +10570,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jonathan",
@@ -10584,7 +10585,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Parvati",
@@ -10629,7 +10630,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Becky",
@@ -10644,7 +10645,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ozzy",
@@ -10689,7 +10690,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Melinda",
@@ -10704,7 +10705,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Misty",
@@ -10719,7 +10720,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ruth Marie",
@@ -10734,7 +10735,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bobby",
@@ -10749,7 +10750,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dan",
@@ -10764,7 +10765,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Nick",
@@ -10779,7 +10780,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Austin",
@@ -10794,7 +10795,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sally",
@@ -10809,7 +10810,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bruce",
@@ -10824,7 +10825,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Courtney",
@@ -10839,7 +10840,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shane",
@@ -10854,7 +10855,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Cirie",
@@ -10929,7 +10930,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Morgan",
@@ -10944,7 +10945,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brianna",
@@ -10959,7 +10960,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brooke",
@@ -10974,7 +10975,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Blake",
@@ -10989,7 +10990,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Margaret",
@@ -11004,7 +11005,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brian",
@@ -11019,7 +11020,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Amy",
@@ -11034,7 +11035,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brandon",
@@ -11049,7 +11050,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bobby Jon",
@@ -11064,7 +11065,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jamie",
@@ -11139,7 +11140,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rafe",
@@ -11244,7 +11245,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeff",
@@ -11259,7 +11260,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kim",
@@ -11274,7 +11275,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Willard",
@@ -11289,7 +11290,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Angie",
@@ -11304,7 +11305,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "James",
@@ -11319,7 +11320,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ibrehem",
@@ -11334,7 +11335,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Bobby Jon",
@@ -11349,7 +11350,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Coby",
@@ -11364,7 +11365,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Janu",
@@ -11379,7 +11380,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephenie",
@@ -11394,7 +11395,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gregg",
@@ -11424,7 +11425,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jenn",
@@ -11439,7 +11440,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ian",
@@ -11469,7 +11470,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tom",
@@ -11514,7 +11515,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "John P.",
@@ -11529,7 +11530,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mia",
@@ -11544,7 +11545,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brady",
@@ -11559,7 +11560,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Travis",
@@ -11574,7 +11575,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lisa",
@@ -11589,7 +11590,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "John K.",
@@ -11604,7 +11605,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rory",
@@ -11619,7 +11620,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lea",
@@ -11649,7 +11650,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Leann",
@@ -11724,7 +11725,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Twila",
@@ -11784,7 +11785,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jenna M.",
@@ -11799,7 +11800,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rob C.",
@@ -11814,7 +11815,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Richard",
@@ -11829,7 +11830,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Sue",
@@ -11844,7 +11845,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Colby",
@@ -11859,7 +11860,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ethan",
@@ -11874,7 +11875,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jerri",
@@ -11889,7 +11890,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lex",
@@ -11904,7 +11905,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kathy",
@@ -11934,7 +11935,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shii Ann",
@@ -11994,7 +11995,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Boston Rob",
@@ -12039,7 +12040,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ryan S.",
@@ -12054,7 +12055,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michelle",
@@ -12069,7 +12070,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Trish",
@@ -12084,7 +12085,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shawn",
@@ -12099,7 +12100,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Osten",
@@ -12114,7 +12115,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Andrew",
@@ -12129,7 +12130,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ryan O.",
@@ -12144,7 +12145,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rupert",
@@ -12174,7 +12175,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Christa",
@@ -12189,7 +12190,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Burton",
@@ -12264,7 +12265,7 @@
       "made_ftc": true,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ryan",
@@ -12294,7 +12295,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Daniel",
@@ -12309,7 +12310,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "JoAnna",
@@ -12324,7 +12325,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeanne",
@@ -12339,7 +12340,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shawna",
@@ -12354,7 +12355,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Roger",
@@ -12369,7 +12370,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dave",
@@ -12429,7 +12430,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Heidi",
@@ -12444,7 +12445,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Butch",
@@ -12459,7 +12460,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rob",
@@ -12549,7 +12550,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ghandia",
@@ -12564,7 +12565,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stephanie",
@@ -12579,7 +12580,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Robb",
@@ -12594,7 +12595,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Shii Ann",
@@ -12609,7 +12610,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Erin",
@@ -12624,7 +12625,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ken",
@@ -12639,7 +12640,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Penny",
@@ -12654,7 +12655,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jake",
@@ -12669,7 +12670,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ted",
@@ -12714,7 +12715,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Clay",
@@ -12819,7 +12820,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gina",
@@ -12834,7 +12835,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Boston Rob",
@@ -12849,7 +12850,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "John",
@@ -12864,7 +12865,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Zoe",
@@ -12879,7 +12880,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Tammy",
@@ -13029,7 +13030,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Linda",
@@ -13044,7 +13045,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Silas",
@@ -13059,7 +13060,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Lindsey",
@@ -13074,7 +13075,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Clarence",
@@ -13089,7 +13090,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kelly",
@@ -13104,7 +13105,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Brandon",
@@ -13119,7 +13120,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Frank",
@@ -13134,7 +13135,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kim P.",
@@ -13149,7 +13150,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Teresa",
@@ -13254,7 +13255,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Maralyn",
@@ -13269,7 +13270,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Mitchell",
@@ -13284,7 +13285,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Kimmi",
@@ -13299,7 +13300,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Michael",
@@ -13314,7 +13315,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jeff",
@@ -13329,7 +13330,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Alicia",
@@ -13344,7 +13345,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Jerri",
@@ -13389,7 +13390,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rodger",
@@ -13404,7 +13405,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Elisabeth",
@@ -13419,7 +13420,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Keith",
@@ -13494,7 +13495,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Stacey",
@@ -13509,7 +13510,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Ramona",
@@ -13524,7 +13525,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Dirk",
@@ -13539,7 +13540,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Joel",
@@ -13554,7 +13555,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gretchen",
@@ -13569,7 +13570,7 @@
       "made_ftc": false,
       "made_merge": false,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Greg",
@@ -13599,7 +13600,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Gervase",
@@ -13659,7 +13660,7 @@
       "made_ftc": false,
       "made_merge": true,
       "found_advantage": false,
-      "won_individual_challenge": true
+      "won_individual_challenge": false
     },
     {
       "name": "Rudy",

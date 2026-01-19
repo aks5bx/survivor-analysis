@@ -2717,25 +2717,45 @@
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const tabId = btn.dataset.tab;
-                    
-                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                    
-                    btn.classList.add('active');
-                    document.getElementById(tabId + '-tab').classList.add('active');
-                    
-                    if (tabId === 'voteflow') {
-                        // Resize SVG when switching back
-                        setTimeout(() => {
-                            const container = document.getElementById('svg-wrapper');
-                            width = container.clientWidth;
-                            height = container.clientHeight || 600;
-                            svg.attr('width', width).attr('height', height);
-                            if (currentData) render(currentData);
-                        }, 100);
-                    }
+                    window.location.hash = tabId;
                 });
             });
+
+            // Handle hash changes (including back/forward buttons)
+            window.addEventListener('hashchange', () => {
+                switchToTab(getTabFromHash());
+            });
+
+            // Switch to initial tab based on URL hash
+            switchToTab(getTabFromHash());
+        }
+
+        function getTabFromHash() {
+            const hash = window.location.hash.slice(1);
+            const validTabs = ['voteflow', 'analysis', 'identity', 'predictor', 'quiz'];
+            return validTabs.includes(hash) ? hash : 'voteflow';
+        }
+
+        function switchToTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            if (btn) btn.classList.add('active');
+
+            const content = document.getElementById(tabId + '-tab');
+            if (content) content.classList.add('active');
+
+            if (tabId === 'voteflow') {
+                // Resize SVG when switching back
+                setTimeout(() => {
+                    const container = document.getElementById('svg-wrapper');
+                    width = container.clientWidth;
+                    height = container.clientHeight || 600;
+                    svg.attr('width', width).attr('height', height);
+                    if (currentData) render(currentData);
+                }, 100);
+            }
         }
 
         async function loadManifest() {
@@ -4659,8 +4679,8 @@
 I matched with the Season ${winner.season}${seasonName} Winner!${rankSuffix}
 ${Math.round(quizFinalMatch.percentage)}% Match
 
-Take the quiz: ${window.location.href.split('?')[0].split('#')[0]}`;
-            
+Take the quiz: .${window.location.href.split('?')[0].split('#')[0]}#quiz.`;
+
             const shareBtn = document.querySelector('.share-btn');
             
             // Function to show success state

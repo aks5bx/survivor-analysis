@@ -2298,6 +2298,11 @@
     </style>
 </head>
 <body>
+    <!-- Debug Indicator -->
+    <div id="debug-indicator" style="position: fixed; bottom: 10px; right: 10px; background: red; color: white; padding: 10px; border-radius: 5px; z-index: 999999; font-size: 12px; display: none;">
+        Event Debug
+    </div>
+
     <!-- Tab Navigation -->
     <nav class="tab-nav">
         <div class="tab-dropdown">
@@ -2903,24 +2908,70 @@
 
         // Tab functionality
         function setupTabs() {
+            console.log('[DEBUG] setupTabs() called');
+            console.log('[DEBUG] Found buttons:', document.querySelectorAll('.tab-dropdown-btn').length);
+
+            // Check for blocking elements
+            setTimeout(() => {
+                const buttons = document.querySelectorAll('.tab-dropdown-btn');
+                buttons.forEach((btn, index) => {
+                    const rect = btn.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const elementAtPoint = document.elementFromPoint(centerX, centerY);
+
+                    console.log(`[DEBUG] Button ${index} center: (${centerX}, ${centerY})`);
+                    console.log(`[DEBUG] Element at button ${index} center:`, elementAtPoint);
+                    console.log(`[DEBUG] Is button itself?`, elementAtPoint === btn || btn.contains(elementAtPoint));
+
+                    if (elementAtPoint && elementAtPoint !== btn && !btn.contains(elementAtPoint)) {
+                        console.warn(`[WARNING] Button ${index} is blocked by:`, elementAtPoint);
+                        console.warn('[WARNING] Blocking element z-index:', window.getComputedStyle(elementAtPoint).zIndex);
+                    }
+                });
+            }, 1000);
+
+            console.log('[DEBUG] Tab-nav z-index:', window.getComputedStyle(document.querySelector('.tab-nav')).zIndex);
+
             // Handle dropdown toggles
-            const handleDropdownToggle = (btn, e) => {
+            const handleDropdownToggle = (btn, e, eventType) => {
+                // Show debug indicator
+                const debugEl = document.getElementById('debug-indicator');
+                if (debugEl) {
+                    debugEl.style.display = 'block';
+                    debugEl.textContent = `${eventType} fired!`;
+                    setTimeout(() => {
+                        debugEl.style.display = 'none';
+                    }, 2000);
+                }
+
+                console.log('[DEBUG] handleDropdownToggle fired - event type:', eventType);
+                console.log('[DEBUG] Button:', btn.textContent.trim());
+                console.log('[DEBUG] Window width:', window.innerWidth);
+
                 e.preventDefault();
                 e.stopPropagation();
+
                 const dropdown = btn.closest('.tab-dropdown');
                 const isOpen = dropdown.classList.contains('open');
+
+                console.log('[DEBUG] Dropdown is currently:', isOpen ? 'OPEN' : 'CLOSED');
 
                 // Close all dropdowns
                 document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
 
                 // Toggle this dropdown
                 if (!isOpen) {
+                    console.log('[DEBUG] Opening dropdown...');
                     dropdown.classList.add('open');
 
                     // Position dropdown menu below button (for fixed positioning)
                     const menu = dropdown.querySelector('.dropdown-menu');
                     const rect = btn.getBoundingClientRect();
                     const isMobile = window.innerWidth <= 600;
+
+                    console.log('[DEBUG] Button rect:', rect);
+                    console.log('[DEBUG] Is mobile:', isMobile);
 
                     menu.style.top = (rect.bottom + 2) + 'px';
 
@@ -2934,13 +2985,34 @@
                         menu.style.right = 'auto';
                         menu.style.width = '';
                     }
+
+                    console.log('[DEBUG] Menu positioned at:', menu.style.top, menu.style.left);
+                    console.log('[DEBUG] Dropdown has class .open:', dropdown.classList.contains('open'));
+                } else {
+                    console.log('[DEBUG] Closing dropdown');
                 }
             };
 
-            document.querySelectorAll('.tab-dropdown-btn').forEach(btn => {
+            const buttons = document.querySelectorAll('.tab-dropdown-btn');
+            console.log('[DEBUG] Attaching listeners to', buttons.length, 'buttons');
+
+            buttons.forEach((btn, index) => {
+                console.log('[DEBUG] Attaching to button', index, ':', btn.textContent.trim());
+
                 // Handle both click and touch events
-                btn.addEventListener('click', (e) => handleDropdownToggle(btn, e));
-                btn.addEventListener('touchstart', (e) => handleDropdownToggle(btn, e), { passive: false });
+                btn.addEventListener('click', (e) => {
+                    console.log('[DEBUG] CLICK event on button', index);
+                    handleDropdownToggle(btn, e, 'click');
+                }, false);
+
+                btn.addEventListener('touchstart', (e) => {
+                    console.log('[DEBUG] TOUCHSTART event on button', index);
+                    handleDropdownToggle(btn, e, 'touchstart');
+                }, { passive: false });
+
+                btn.addEventListener('touchend', (e) => {
+                    console.log('[DEBUG] TOUCHEND event on button', index);
+                }, false);
             });
 
             // Handle dropdown item clicks

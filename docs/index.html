@@ -25,10 +25,13 @@
             background: #fff;
             border-bottom: 2px solid #e0e0e0;
             padding: 0 20px;
+            padding-top: env(safe-area-inset-top, 0);
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            position: relative;
+            z-index: 100;
         }
 
         .tab-nav::-webkit-scrollbar {
@@ -1750,10 +1753,13 @@
             }
 
             .tab-dropdown-btn {
-                padding: 10px 8px;
+                padding: 12px 8px;
                 font-size: 12px;
                 width: 100%;
                 justify-content: center;
+                min-height: 44px;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: rgba(0,0,0,0.1);
             }
 
             .dropdown-arrow {
@@ -2898,38 +2904,43 @@
         // Tab functionality
         function setupTabs() {
             // Handle dropdown toggles
-            document.querySelectorAll('.tab-dropdown-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const dropdown = btn.closest('.tab-dropdown');
-                    const isOpen = dropdown.classList.contains('open');
+            const handleDropdownToggle = (btn, e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = btn.closest('.tab-dropdown');
+                const isOpen = dropdown.classList.contains('open');
 
-                    // Close all dropdowns
-                    document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
+                // Close all dropdowns
+                document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
 
-                    // Toggle this dropdown
-                    if (!isOpen) {
-                        dropdown.classList.add('open');
+                // Toggle this dropdown
+                if (!isOpen) {
+                    dropdown.classList.add('open');
 
-                        // Position dropdown menu below button (for fixed positioning)
-                        const menu = dropdown.querySelector('.dropdown-menu');
-                        const rect = btn.getBoundingClientRect();
-                        const isMobile = window.innerWidth <= 600;
+                    // Position dropdown menu below button (for fixed positioning)
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    const rect = btn.getBoundingClientRect();
+                    const isMobile = window.innerWidth <= 600;
 
-                        menu.style.top = (rect.bottom + 2) + 'px';
+                    menu.style.top = (rect.bottom + 2) + 'px';
 
-                        if (isMobile) {
-                            // On mobile, make dropdown full width with margins
-                            menu.style.left = '5px';
-                            menu.style.right = '5px';
-                            menu.style.width = 'auto';
-                        } else {
-                            menu.style.left = rect.left + 'px';
-                            menu.style.right = 'auto';
-                            menu.style.width = '';
-                        }
+                    if (isMobile) {
+                        // On mobile, make dropdown full width with margins
+                        menu.style.left = '5px';
+                        menu.style.right = '5px';
+                        menu.style.width = 'auto';
+                    } else {
+                        menu.style.left = rect.left + 'px';
+                        menu.style.right = 'auto';
+                        menu.style.width = '';
                     }
-                });
+                }
+            };
+
+            document.querySelectorAll('.tab-dropdown-btn').forEach(btn => {
+                // Handle both click and touch events
+                btn.addEventListener('click', (e) => handleDropdownToggle(btn, e));
+                btn.addEventListener('touchstart', (e) => handleDropdownToggle(btn, e), { passive: false });
             });
 
             // Handle dropdown item clicks

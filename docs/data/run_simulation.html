@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor 50 Interactive Simulation</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* Top Section - Parameters and Rankings */
+        .top-section {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Left Panel - Configuration Controls */
+        .config-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 700px;
+            overflow-y: auto;
+        }
+
+        .config-panel h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        .config-section {
+            margin-bottom: 20px;
+        }
+
+        .config-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .preset-btn {
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .preset-btn:hover {
+            background: #e8e8e8;
+            border-color: #333;
+        }
+
+        .preset-btn.active {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+
+        .button-group {
+            margin-bottom: 15px;
+        }
+
+        .button-group-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+
+        .option-btn {
+            padding: 6px 8px;
+            background: #f5f5f5;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .option-btn:hover {
+            background: #e8e8e8;
+            border-color: #666;
+        }
+
+        .option-btn.active {
+            background: #4a90e2;
+            color: white;
+            border-color: #4a90e2;
+        }
+
+        /* Preset Buttons */
+        .preset-btn {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .preset-btn:hover {
+            border-color: #4a90e2;
+            transform: translateX(4px);
+        }
+
+        .preset-btn.active {
+            background: #4a90e2;
+            border-color: #4a90e2;
+        }
+
+        .preset-btn.active .preset-title {
+            color: white;
+        }
+
+        .preset-btn.active .preset-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .preset-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .preset-desc {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .slider-control {
+            margin-bottom: 12px;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: #666;
+        }
+
+        .slider-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e0e0e0;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .run-simulation-btn {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .run-simulation-btn:hover {
+            background: #555;
+        }
+
+        .run-simulation-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Right Panel - Player Rankings */
+        .rankings-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 700px;
+            overflow-y: auto;
+        }
+
+        .rankings-panel h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+
+        .rankings-hint {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 15px;
+            padding: 8px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .rankings-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .rankings-table th {
+            background: #f5f5f5;
+            padding: 10px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            position: sticky;
+            top: 52px;
+            z-index: 9;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .rankings-table th:hover {
+            background: #e8e8e8;
+        }
+
+        .rankings-table th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.3;
+            font-size: 10px;
+            margin-left: 2px;
+        }
+
+        .rankings-table th.sort-asc::after {
+            content: ' ▲';
+            opacity: 1;
+            color: #4a90e2;
+        }
+
+        .rankings-table th.sort-desc::after {
+            content: ' ▼';
+            opacity: 1;
+            color: #4a90e2;
+        }
+
+        .rankings-table td {
+            padding: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        .rankings-table tr {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rankings-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .rankings-table tr.highlighted {
+            background: #fff3cd;
+        }
+
+        .rank-number {
+            font-weight: 700;
+            color: #999;
+            width: 30px;
+        }
+
+        .player-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .stat-value {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .win-prob {
+            color: #28a745;
+        }
+
+        .avg-placement {
+            color: #007bff;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .chart-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        #placement-chart {
+            margin-top: 20px;
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .methodology-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        .methodology-intro {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .factor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .factor-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            background: #fafafa;
+        }
+
+        .factor-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .factor-weight {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .factor-description {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .factor-examples {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Player color legend */
+        .player-coin {
+            display: inline-block;
+            min-width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        /* Score Breakdown Table */
+        .score-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .score-breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            min-width: 800px;
+        }
+
+        .score-breakdown-table th {
+            background: #f5f5f5;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .score-breakdown-table th.sortable-score {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .score-breakdown-table th.sortable-score:hover {
+            background: #e8e8e8;
+        }
+
+        .score-breakdown-table th.sortable-score::after {
+            content: ' ⇅';
+            opacity: 0.3;
+            font-size: 10px;
+            margin-left: 2px;
+        }
+
+        .score-breakdown-table th.sortable-score.sort-asc::after {
+            content: ' ▲';
+            opacity: 1;
+            color: #4a90e2;
+        }
+
+        .score-breakdown-table th.sortable-score.sort-desc::after {
+            content: ' ▼';
+            opacity: 1;
+            color: #4a90e2;
+        }
+
+        .score-breakdown-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .score-breakdown-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            position: sticky;
+            left: 0;
+            background: white;
+            z-index: 5;
+        }
+
+        .score-breakdown-table tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        .score-breakdown-table tbody tr:hover td:first-child {
+            background: #f9f9f9;
+        }
+
+        .score-cell {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .score-high {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .score-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .score-low {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .winner-badge {
+            background: #ffd700;
+            color: #8B4513;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE STYLES
+           ============================================ */
+
+        /* Tablet and smaller */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .presets-panel {
+                order: 1;
+            }
+
+            .rankings-panel {
+                order: 2;
+            }
+
+            .chart-section {
+                order: 3;
+            }
+
+            .methodology-section {
+                order: 4;
+            }
+
+            .preset-btn {
+                padding: 10px 12px;
+            }
+
+            .preset-title {
+                font-size: 13px;
+            }
+
+            .preset-desc {
+                font-size: 10px;
+            }
+
+            #placement-chart svg {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .factor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 22px;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            /* Make table horizontally scrollable */
+            .rankings-panel {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .rankings-table {
+                min-width: 650px; /* Ensure table doesn't get too squished */
+                font-size: 11px;
+            }
+
+            .rankings-table th,
+            .rankings-table td {
+                padding: 8px 6px;
+            }
+
+            .rankings-table th {
+                font-size: 10px;
+                top: 0; /* Remove sticky on mobile to avoid scroll issues */
+                position: relative;
+            }
+
+            .player-coin {
+                width: 10px;
+                height: 10px;
+                margin-right: 6px;
+            }
+
+            .rank-number {
+                font-size: 11px;
+            }
+
+            /* Preset buttons - 2 columns on mobile */
+            .preset-btn {
+                margin-bottom: 8px;
+            }
+
+            /* Chart adjustments */
+            #placement-chart {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #placement-chart svg {
+                min-width: 600px;
+            }
+
+            .chart-section h2,
+            .methodology-section h2 {
+                font-size: 16px;
+            }
+
+            .rankings-hint {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            /* Score breakdown table mobile */
+            .score-breakdown-table {
+                font-size: 10px;
+            }
+
+            .score-breakdown-table th,
+            .score-breakdown-table td {
+                padding: 6px 4px;
+            }
+
+            .score-cell {
+                padding: 2px 5px;
+                font-size: 10px;
+            }
+
+            .winner-badge {
+                padding: 2px 5px;
+                font-size: 9px;
+            }
+
+            /* Methodology cards */
+            .factor-card {
+                padding: 15px;
+            }
+
+            .factor-card h3 {
+                font-size: 14px;
+            }
+
+            .factor-description,
+            .factor-examples {
+                font-size: 12px;
+            }
+
+            .factor-weight {
+                font-size: 11px;
+            }
+
+            .methodology-intro {
+                font-size: 13px;
+            }
+        }
+
+        /* Small mobile phones */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 8px;
+            }
+
+            .presets-panel,
+            .rankings-panel,
+            .chart-section,
+            .methodology-section {
+                padding: 12px;
+                border-radius: 6px;
+            }
+
+            .preset-btn {
+                padding: 8px 10px;
+            }
+
+            .preset-title {
+                font-size: 12px;
+            }
+
+            .preset-desc {
+                font-size: 9px;
+            }
+
+            .rankings-table {
+                min-width: 600px;
+                font-size: 10px;
+            }
+
+            .rankings-table th,
+            .rankings-table td {
+                padding: 6px 4px;
+            }
+
+            .stat-value {
+                font-size: 10px;
+            }
+
+            /* Make status text smaller */
+            #config-status {
+                font-size: 11px;
+                padding: 8px;
+            }
+
+            /* Compact factor cards */
+            .factor-card {
+                padding: 12px;
+                margin-bottom: 10px;
+            }
+
+            .factor-card h3 {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .factor-description {
+                font-size: 11px;
+                margin-bottom: 6px;
+            }
+
+            .factor-examples {
+                font-size: 10px;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .main-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chart-section,
+            .methodology-section {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            /* Increase tap targets for touch devices */
+            .preset-btn {
+                min-height: 48px;
+                padding: 12px;
+            }
+
+            .rankings-table tr {
+                min-height: 44px;
+            }
+
+            .rankings-table th {
+                min-height: 44px;
+                padding: 12px 8px;
+            }
+
+            /* Disable hover effects on touch devices */
+            .rankings-table tr:hover {
+                background: transparent;
+            }
+
+            .preset-btn:hover {
+                background: white;
+            }
+
+            /* Active/touch states */
+            .preset-btn:active {
+                background: #e8e8e8;
+            }
+
+            .rankings-table tr:active {
+                background: #f9f9f9;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .presets-panel {
+                display: none;
+            }
+
+            .rankings-panel,
+            .chart-section,
+            .methodology-section {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏝️ SURVIVOR SEASON 50 SIMULATION 🏝️</h1>
+        <p class="subtitle">Interactive Prediction Model - Adjust parameters to see how different game scenarios affect outcomes</p>
+
+        <!-- Top Section: Config + Rankings -->
+        <div class="top-section">
+            <!-- Left: Configuration Panel -->
+            <div class="config-panel">
+                <h2>⚙️ Configuration</h2>
+
+                <div class="config-section">
+                    <div id="config-status" style="font-size: 12px; color: #27ae60; font-weight: 600;">📊 Select a season type to see how it affects player outcomes</div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Season Type</h3>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 12px;">Click a season archetype to see how different game dynamics affect each player's chances</p>
+
+                    <button class="preset-btn active" data-preset="loyal_alliances">
+                        <div class="preset-title">🤝 Loyal Alliances</div>
+                        <div class="preset-desc">Old School - Strong voting blocs stick together</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="cutthroat">
+                        <div class="preset-title">🔪 Cutthroat</div>
+                        <div class="preset-desc">New Era - Constant flipping and backstabbing</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="idol_fest">
+                        <div class="preset-title">🗝️ Advantage Overload</div>
+                        <div class="preset-desc">Modern Survivor - Many idols and advantages</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="no_advantages">
+                        <div class="preset-title">♟️ Pure Strategy</div>
+                        <div class="preset-desc">Classic - Social game only, minimal advantages</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="social_game">
+                        <div class="preset-title">😊 Social Threats</div>
+                        <div class="preset-desc">Jury Management - Likeable players get targeted</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="physical_season">
+                        <div class="preset-title">💪 Physical Game</div>
+                        <div class="preset-desc">Challenge Beasts - Athletic players dominate</div>
+                    </button>
+
+                    <button class="preset-btn" data-preset="puzzle_heavy">
+                        <div class="preset-title">🧩 Puzzle Masters</div>
+                        <div class="preset-desc">Mental Game - Strategic minds prevail</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right: Player Rankings -->
+            <div class="rankings-panel">
+                <h2>📊 Player Rankings</h2>
+                <table class="rankings-table" id="rankings-table">
+                    <thead>
+                        <tr>
+                            <th class="rank-number">#</th>
+                            <th class="sortable" data-sort="name">Player</th>
+                            <th class="sortable" data-sort="winProb" style="text-align: right;">Win %</th>
+                            <th class="sortable" data-sort="ftc" style="text-align: right;">FTC %</th>
+                            <th class="sortable" data-sort="merge" style="text-align: right;">Merge %</th>
+                            <th class="sortable" data-sort="avgPlace" style="text-align: right;">Avg Place</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankings-body">
+                        <tr><td colspan="4" class="loading">Loading data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <h2>📈 Placement Distribution by Player</h2>
+            <p class="rankings-hint" style="margin-bottom: 15px;">💡 Click on a player in the table above to highlight their placement curve</p>
+            <div id="placement-chart"></div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="methodology-section">
+            <h2>🔬 How The Simulation Works</h2>
+            <p class="methodology-intro">
+                This simulation uses historical Survivor data and statistical modeling to predict Season 50 outcomes.
+                Each prediction is based on <strong>100K simulated seasons</strong> that account for challenges,
+                social dynamics, strategic gameplay, and random chance. Here's what influences the results:
+            </p>
+
+            <div class="factor-grid">
+                <div class="factor-card">
+                    <h3>Challenge Performance</h3>
+                    <p class="factor-description">
+                        Players are scored based on their historical challenge performance across all previous seasons.
+                        Strong challenge competitors win immunity more often, helping them survive. However, they also
+                        become bigger targets because other players see them as threats.
+                    </p>
+                    <p class="factor-examples">
+                        Example: Kyle Fraser and Joe Hunter excel in challenges, giving them protection through immunity but making them priority targets.
+                    </p>
+                </div>
+
+                <div class="factor-card">
+                    <h3>Strategic Threat</h3>
+                    <p class="factor-description">
+                        Strategic masterminds are identified based on their voting accuracy, past gameplay, and ability to
+                        orchestrate blindsides. Players known for strategic gameplay face higher elimination risk because
+                        they're dangerous to keep around.
+                    </p>
+                    <p class="factor-examples">
+                        Example: Charlie Davis and Cirie Fields are strategic powerhouses, making them priority targets once the merge hits.
+                    </p>
+                </div>
+
+                <div class="factor-card">
+                    <h3>Social Game</h3>
+                    <p class="factor-description">
+                        Strong social players build relationships and influence others, making them likeable to jurors.
+                        The simulation evaluates their influence, voting awareness, jury appeal, and connections with other
+                        players. Great social players can win but often get targeted late in the game.
+                    </p>
+                    <p class="factor-examples">
+                        Example: Rick Devens builds strong alliances through his social game but faces elimination when players start cutting jury threats.
+                    </p>
+                </div>
+
+                <div class="factor-card">
+                    <h3>Winner's Target 🎯</h3>
+                    <p class="factor-description">
+                        Prior winners face a <strong>massive target</strong> from day one. Kyle Fraser, Dee Valladares, and
+                        Savannah Louie have already won Survivor, making them high-priority targets. "You already won - you
+                        don't need another million" is a powerful narrative in returnee seasons.
+                    </p>
+                    <p class="factor-examples">
+                        Example: Winners like Kyle must rely on immunity wins and extremely strong alliances to survive the constant targeting.
+                    </p>
+                </div>
+
+                <div class="factor-card">
+                    <h3>Alliance Dynamics</h3>
+                    <p class="factor-description">
+                        Alliances form based on player relationships and compatibility. Alliance loyalty varies by
+                        configuration - some seasons feature tight voting blocs that protect members, while others see
+                        constant flipping and backstabbing. Strong alliances can protect even high-threat players.
+                    </p>
+                    <p class="factor-examples">
+                        Example: "Loyal Alliances" features Old School-style voting blocs; "Cutthroat" has New Era constant betrayals.
+                    </p>
+                </div>
+
+                <div class="factor-card">
+                    <h3>Randomness & Advantages</h3>
+                    <p class="factor-description">
+                        Hidden immunity idols and advantages can save players from elimination at critical moments.
+                        The simulation also includes random chaos to represent Survivor's unpredictability - twists,
+                        injuries, and unexpected vote swings. Some configurations are chaotic with many idols, others more predictable.
+                    </p>
+                    <p class="factor-examples">
+                        Example: "Idol Fest" floods the game with advantages; "No Advantages" keeps it pure strategy. More chaos helps underdogs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Score Breakdown Section -->
+        <div class="methodology-section" style="margin-top: 20px;">
+            <h2>📊 Player Score Breakdown</h2>
+            <p class="methodology-intro" style="margin-bottom: 20px;">
+                Historical performance scores used in the simulation. All scores are based on actual Survivor gameplay data.
+            </p>
+
+            <div class="score-table-container">
+                <table class="score-breakdown-table">
+                    <thead>
+                        <tr>
+                            <th class="sortable-score" data-sort="name">Player</th>
+                            <th class="sortable-score" data-sort="challenge">Challenge Threat</th>
+                            <th class="sortable-score" data-sort="strategic">Strategy</th>
+                            <th class="sortable-score" data-sort="social">Social Game</th>
+                            <th class="sortable-score" data-sort="vote">Vote Accuracy</th>
+                            <th class="sortable-score" data-sort="influence">Influence</th>
+                            <th class="sortable-score" data-sort="loyalty">Loyalty</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-breakdown-body">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 12px; color: #888; text-align: center;">
+                Historical Survivor data sourced from <a href="https://github.com/doehm/survivoR/tree/master" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; text-decoration: none;">survivoR</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration presets - map to available data files
+        // Configuration files - 7 most distinct season archetypes based on Survivor history
+        const CONFIGS = [
+            {
+                key: 'loyal_alliances',
+                file: 'config_loyal_alliances_results.json',
+                name: 'Loyal Alliances',
+                desc: 'Strong voting blocs, Old School style',
+                buttonMap: { challengeFocus: 'balanced', targetPriority: 'balanced', chaos: 'medium', advantages: 'medium', loyalty: 'high' }
+            },
+            {
+                key: 'cutthroat',
+                file: 'config_cutthroat_results.json',
+                name: 'Cutthroat',
+                desc: 'Constant flipping, New Era gameplay',
+                buttonMap: { challengeFocus: 'balanced', targetPriority: 'balanced', chaos: 'medium', advantages: 'medium', loyalty: 'low' }
+            },
+            {
+                key: 'idol_fest',
+                file: 'config_idol_fest_results.json',
+                name: 'Advantage Overload',
+                desc: 'Modern Survivor with many idols',
+                buttonMap: { challengeFocus: 'balanced', targetPriority: 'balanced', chaos: 'medium', advantages: 'high', loyalty: 'medium' }
+            },
+            {
+                key: 'no_advantages',
+                file: 'config_no_advantages_results.json',
+                name: 'Pure Strategy',
+                desc: 'Classic Survivor, social game only',
+                buttonMap: { challengeFocus: 'balanced', targetPriority: 'balanced', chaos: 'medium', advantages: 'low', loyalty: 'medium' }
+            },
+            {
+                key: 'social_game',
+                file: 'config_social_game_results.json',
+                name: 'Social Threats',
+                desc: 'Jury management matters most',
+                buttonMap: { challengeFocus: 'balanced', targetPriority: 'social', chaos: 'medium', advantages: 'medium', loyalty: 'medium' }
+            },
+            {
+                key: 'physical_season',
+                file: 'config_physical_season_results.json',
+                name: 'Physical Game',
+                desc: 'Challenge beasts thrive',
+                buttonMap: { challengeFocus: 'physical', targetPriority: 'balanced', chaos: 'medium', advantages: 'medium', loyalty: 'medium' }
+            },
+            {
+                key: 'puzzle_heavy',
+                file: 'config_puzzle_heavy_results.json',
+                name: 'Puzzle Masters',
+                desc: 'Mental game dominates',
+                buttonMap: { challengeFocus: 'puzzle', targetPriority: 'balanced', chaos: 'medium', advantages: 'medium', loyalty: 'medium' }
+            }
+        ];
+
+        let allConfigurations = {};  // Store all loaded configurations
+        let currentData = null;
+        let playerColors = {};
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', async () => {
+            console.log('DOMContentLoaded fired');
+
+            // Check if D3 loaded
+            if (typeof d3 === 'undefined') {
+                console.error('D3.js failed to load!');
+                document.getElementById('config-status').textContent = '❌ D3.js library failed to load. Check internet connection.';
+                return;
+            }
+            console.log('D3.js loaded successfully');
+
+            try {
+                await loadAllConfigurations();
+                setupControls();
+                updateDisplay();
+                await loadPlayerScores();  // Load player score breakdown table
+            } catch (error) {
+                console.error('Initialization error:', error);
+                document.getElementById('config-status').textContent = '❌ Initialization failed: ' + error.message;
+            }
+        });
+
+        async function loadAllConfigurations() {
+            document.getElementById('config-status').textContent = '⏳ Loading 7 distinct season types...';
+
+            try {
+                const promises = CONFIGS.map(config =>
+                    fetch(config.file)
+                        .then(r => {
+                            if (!r.ok) throw new Error(`HTTP ${r.status}: ${config.file}`);
+                            return r.json();
+                        })
+                        .then(data => {
+                            console.log(`Loaded ${config.key}: ${data.simulations_run} simulations`);
+                            return { key: config.key, data, config };
+                        })
+                        .catch(err => {
+                            console.error(`Failed to load ${config.file}:`, err);
+                            throw err;
+                        })
+                );
+
+                const results = await Promise.all(promises);
+                results.forEach(({ key, data, config }) => {
+                    allConfigurations[key] = { data, config };
+                });
+
+                console.log('All configurations loaded:', Object.keys(allConfigurations));
+                document.getElementById('config-status').textContent = '📊 Click buttons to see different season outcomes';
+            } catch (error) {
+                console.error('Error loading configurations:', error);
+                document.getElementById('config-status').textContent = '❌ Error loading data - check console';
+            }
+        }
+
+        function setupControls() {
+            // Preset buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const presetKey = btn.dataset.preset;
+
+                    // Update active state
+                    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Load and display the selected preset
+                    loadPreset(presetKey);
+                });
+            });
+
+            // Table column sorting
+            document.querySelectorAll('.rankings-table th.sortable').forEach(th => {
+                th.addEventListener('click', () => {
+                    const sortColumn = th.dataset.sort;
+
+                    // Toggle sort direction if clicking same column
+                    if (currentSort.column === sortColumn) {
+                        currentSort.ascending = !currentSort.ascending;
+                    } else {
+                        // New column - default to descending for probabilities, ascending for placement
+                        currentSort.column = sortColumn;
+                        if (sortColumn === 'avgPlace' || sortColumn === 'name') {
+                            currentSort.ascending = true;  // Lower placement is better, A-Z for names
+                        } else {
+                            currentSort.ascending = false; // Higher probability is better
+                        }
+                    }
+
+                    // Re-display with new sort
+                    displayRankings(currentData);
+                });
+            });
+        }
+
+        function loadPreset(presetKey) {
+            console.log('Loading preset:', presetKey);
+
+            if (Object.keys(allConfigurations).length === 0) {
+                console.log('No configurations loaded yet');
+                return;
+            }
+
+            // Find the config for this preset
+            const config = CONFIGS.find(c => c.key === presetKey);
+            if (!config) {
+                console.error('Preset not found:', presetKey);
+                return;
+            }
+
+            // Load the configuration data
+            const configData = allConfigurations[presetKey];
+            if (!configData || !configData.data) {
+                console.error('Config data not found for:', presetKey);
+                return;
+            }
+
+            currentData = configData.data;
+            console.log('Loaded data with', Object.keys(currentData.player_stats).length, 'players');
+
+            // Update status
+            document.getElementById('config-status').textContent = `📊 ${config.name}: ${config.desc}`;
+
+            displayRankings(currentData);
+            createPlacementChart(currentData);
+        }
+
+        function updateDisplay() {
+            // Load the default preset (loyal_alliances)
+            loadPreset('loyal_alliances');
+        }
+
+        function calculatePercentile(placementDist, percentile) {
+            // Convert placement distribution to array of placements
+            const placements = [];
+            for (let pos = 1; pos <= 24; pos++) {
+                const count = placementDist[pos.toString()] || 0;
+                for (let i = 0; i < count; i++) {
+                    placements.push(pos);
+                }
+            }
+
+            // Sort placements
+            placements.sort((a, b) => a - b);
+
+            // Calculate percentile
+            const index = Math.floor(placements.length * (percentile / 100));
+            return placements[index] || 24;
+        }
+
+        // Load and display player score breakdown
+        let playerScoresData = [];
+        let currentScoreSort = { column: 'name', ascending: true };
+
+        async function loadPlayerScores() {
+            try {
+                const response = await fetch('season50_enhanced_profiles.json');
+                const data = await response.json();
+                playerScoresData = data.players;
+
+                // Add computed scores to each player
+                playerScoresData.forEach(player => {
+                    player.strategicScore = player.voting_accuracy || player.score_vote || 0;
+                    player.socialScore = (
+                        (player.score_jury || 0) * 0.10 +
+                        (player.score_vote || 0) * 0.30 +
+                        (player.score_inf || 0) * 0.40 +
+                        0.20  // tribe_compat placeholder (dynamic in simulation)
+                    );
+                });
+
+                displayPlayerScores();
+                setupScoreTableSorting();
+
+                console.log('Player scores loaded:', playerScoresData.length);
+            } catch (error) {
+                console.error('Error loading player scores:', error);
+                const tbody = document.getElementById('score-breakdown-body');
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 20px;">Error loading player data</td></tr>';
+            }
+        }
+
+        function displayPlayerScores() {
+            // Helper function to format score with color coding
+            const formatScore = (value, invert = false) => {
+                const score = (value * 100).toFixed(1);
+                let className = 'score-medium';
+                if (invert) {
+                    // For loyalty, higher is better
+                    if (value >= 0.7) className = 'score-high';
+                    else if (value <= 0.4) className = 'score-low';
+                } else {
+                    // For most scores, higher is better
+                    if (value >= 0.7) className = 'score-high';
+                    else if (value <= 0.4) className = 'score-low';
+                }
+                return `<span class="score-cell ${className}">${score}</span>`;
+            };
+
+            // Sort players
+            const sortedPlayers = [...playerScoresData].sort((a, b) => {
+                let aVal, bVal;
+                switch(currentScoreSort.column) {
+                    case 'name': aVal = a.name; bVal = b.name; break;
+                    case 'challenge': aVal = a.challenge_win_prob || 0; bVal = b.challenge_win_prob || 0; break;
+                    case 'strategic': aVal = a.strategicScore; bVal = b.strategicScore; break;
+                    case 'social': aVal = a.socialScore; bVal = b.socialScore; break;
+                    case 'vote': aVal = a.score_vote || 0; bVal = b.score_vote || 0; break;
+                    case 'influence': aVal = a.score_inf || 0; bVal = b.score_inf || 0; break;
+                    case 'loyalty': aVal = a.loyalty_score || 0; bVal = b.loyalty_score || 0; break;
+                    default: aVal = a.name; bVal = b.name;
+                }
+
+                if (currentScoreSort.column === 'name') {
+                    return currentScoreSort.ascending ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+                }
+                return currentScoreSort.ascending ? (aVal - bVal) : (bVal - aVal);
+            });
+
+            const tbody = document.getElementById('score-breakdown-body');
+            tbody.innerHTML = '';
+
+            sortedPlayers.forEach(player => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${player.name}</td>
+                    <td>${formatScore(player.challenge_win_prob || 0)}</td>
+                    <td>${formatScore(player.strategicScore)}</td>
+                    <td>${formatScore(player.socialScore)}</td>
+                    <td>${formatScore(player.score_vote || 0)}</td>
+                    <td>${formatScore(player.score_inf || 0)}</td>
+                    <td>${formatScore(player.loyalty_score || 0, true)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Update sort indicators
+            document.querySelectorAll('.score-breakdown-table th.sortable-score').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.sort === currentScoreSort.column) {
+                    th.classList.add(currentScoreSort.ascending ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        }
+
+        function setupScoreTableSorting() {
+            document.querySelectorAll('.score-breakdown-table th.sortable-score').forEach(th => {
+                th.addEventListener('click', () => {
+                    const sortColumn = th.dataset.sort;
+                    if (currentScoreSort.column === sortColumn) {
+                        currentScoreSort.ascending = !currentScoreSort.ascending;
+                    } else {
+                        currentScoreSort.column = sortColumn;
+                        currentScoreSort.ascending = sortColumn === 'name' ? true : false; // A-Z for names, high-to-low for scores
+                    }
+                    displayPlayerScores();
+                });
+            });
+        }
+
+        let currentSort = { column: 'winProb', ascending: false };
+
+        function displayRankings(data) {
+            const stats = data.player_stats;
+            const players = Object.keys(stats);
+
+            // Calculate additional stats for each player
+            players.forEach(player => {
+                const playerStats = stats[player];
+                const dist = playerStats.placement_distribution;
+
+                // Calculate FTC probability (top 3 finishes)
+                const ftcCount = (dist['1'] || 0) + (dist['2'] || 0) + (dist['3'] || 0);
+                playerStats.ftc_probability = ftcCount / Object.values(dist).reduce((a, b) => a + b, 0);
+
+                // Merge probability (already exists or calculate from positions 1-12)
+                if (!playerStats.merge_probability) {
+                    let mergeCount = 0;
+                    for (let pos = 1; pos <= 12; pos++) {
+                        mergeCount += dist[pos.toString()] || 0;
+                    }
+                    playerStats.merge_probability = mergeCount / Object.values(dist).reduce((a, b) => a + b, 0);
+                }
+            });
+
+            // Sort by current column
+            sortPlayers(players, stats);
+
+            // Assign colors
+            const color = d3.scaleOrdinal(d3.schemeCategory10);
+            players.forEach((player, idx) => {
+                playerColors[player] = color(player);
+            });
+
+            // Build table
+            const tbody = document.getElementById('rankings-body');
+            tbody.innerHTML = '';
+
+            players.forEach((player, idx) => {
+                const playerStats = stats[player];
+                const row = document.createElement('tr');
+                row.dataset.player = player;
+                row.dataset.playerIdx = idx;
+
+                row.innerHTML = `
+                    <td class="rank-number">${idx + 1}</td>
+                    <td class="player-name">
+                        <span class="player-coin" style="background-color: ${playerColors[player]}"></span>
+                        ${player}
+                    </td>
+                    <td class="stat-value">${(playerStats.win_probability * 100).toFixed(2)}%</td>
+                    <td class="stat-value">${(playerStats.ftc_probability * 100).toFixed(1)}%</td>
+                    <td class="stat-value">${(playerStats.merge_probability * 100).toFixed(1)}%</td>
+                    <td class="stat-value">${playerStats.average_placement.toFixed(1)}</td>
+                `;
+
+                row.addEventListener('click', () => {
+                    highlightPlayer(player, idx);
+                });
+
+                tbody.appendChild(row);
+            });
+
+            // Update sort indicators
+            updateSortIndicators();
+        }
+
+        function sortPlayers(players, stats) {
+            players.sort((a, b) => {
+                let aVal, bVal;
+
+                switch(currentSort.column) {
+                    case 'name':
+                        aVal = a;
+                        bVal = b;
+                        break;
+                    case 'winProb':
+                        aVal = stats[a].win_probability;
+                        bVal = stats[b].win_probability;
+                        break;
+                    case 'ftc':
+                        aVal = stats[a].ftc_probability;
+                        bVal = stats[b].ftc_probability;
+                        break;
+                    case 'merge':
+                        aVal = stats[a].merge_probability;
+                        bVal = stats[b].merge_probability;
+                        break;
+                    case 'avgPlace':
+                        aVal = stats[a].average_placement;
+                        bVal = stats[b].average_placement;
+                        break;
+                    default:
+                        aVal = stats[a].win_probability;
+                        bVal = stats[b].win_probability;
+                }
+
+                // Handle string comparison for names
+                if (currentSort.column === 'name') {
+                    return currentSort.ascending ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+                }
+
+                // For placement columns (lower is better), invert the comparison
+                if (currentSort.column === 'avgPlace') {
+                    return currentSort.ascending ? (aVal - bVal) : (bVal - aVal);
+                }
+
+                // For probability columns (higher is better)
+                return currentSort.ascending ? (aVal - bVal) : (bVal - aVal);
+            });
+        }
+
+        function updateSortIndicators() {
+            // Remove all sort classes
+            document.querySelectorAll('.rankings-table th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+
+            // Add sort class to current column
+            const currentTh = document.querySelector(`th[data-sort="${currentSort.column}"]`);
+            if (currentTh) {
+                currentTh.classList.add(currentSort.ascending ? 'sort-asc' : 'sort-desc');
+            }
+        }
+
+        function highlightPlayer(player, idx) {
+            // Update table highlighting
+            document.querySelectorAll('.rankings-table tr').forEach(row => {
+                row.classList.remove('highlighted');
+            });
+            document.querySelector(`tr[data-player="${player}"]`).classList.add('highlighted');
+
+            // Highlight chart
+            d3.selectAll('.player-line').attr('opacity', 0.05).attr('stroke-width', 2);
+            d3.selectAll('.player-area').attr('opacity', 0.05);
+            d3.select(`.player-line.player-${idx}`).attr('opacity', 1).attr('stroke-width', 4);
+            d3.select(`.player-area.player-${idx}`).attr('opacity', 0.4);
+
+            // Scroll chart into view
+            document.querySelector('.chart-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function createPlacementChart(data) {
+            const stats = data.player_stats;
+            const players = Object.keys(stats);
+            const numSimulations = data.simulations_run;
+
+            // Sort by win probability for consistent ordering
+            players.sort((a, b) => stats[b].win_probability - stats[a].win_probability);
+
+            // Clear previous chart
+            d3.select('#placement-chart').html('');
+
+            const margin = {top: 20, right: 20, bottom: 60, left: 60};
+            const width = 1200 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            const svg = d3.select('#placement-chart')
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Find max percentage
+            let maxPercentage = 0;
+            players.forEach(player => {
+                const dist = stats[player].placement_distribution;
+                if (dist) {
+                    const maxCount = Math.max(...Object.values(dist));
+                    const percentage = (maxCount / numSimulations) * 100;
+                    maxPercentage = Math.max(maxPercentage, percentage);
+                }
+            });
+
+            // Scales
+            const x = d3.scaleLinear()
+                .domain([1, 24])
+                .range([0, width]);
+
+            const y = d3.scaleLinear()
+                .domain([0, maxPercentage])
+                .range([height, 0]);
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height})`)
+                .call(d3.axisBottom(x).ticks(24))
+                .style('font-size', '12px');
+
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height + 45)
+                .style('text-anchor', 'middle')
+                .style('font-weight', '700')
+                .text('Placement (1 = Winner, 24 = First Boot)');
+
+            svg.append('g')
+                .call(d3.axisLeft(y).ticks(10))
+                .style('font-size', '12px');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', -45)
+                .style('text-anchor', 'middle')
+                .style('font-weight', '700')
+                .text('Percentage of Simulations (%)');
+
+            // Line and area generators
+            const line = d3.line()
+                .x(d => x(d.placement))
+                .y(d => y(d.percentage));
+
+            const area = d3.area()
+                .x(d => x(d.placement))
+                .y0(height)
+                .y1(d => y(d.percentage));
+
+            // Draw curves
+            players.forEach((player, idx) => {
+                const playerStats = stats[player];
+                const dist = playerStats.placement_distribution;
+                if (!dist) return;
+
+                const lineData = [];
+                for (let place = 1; place <= 24; place++) {
+                    const count = dist[String(place)] || 0;
+                    lineData.push({
+                        placement: place,
+                        count: count,
+                        percentage: (count / numSimulations) * 100
+                    });
+                }
+
+                // Draw area
+                svg.append('path')
+                    .datum(lineData)
+                    .attr('class', `player-area player-${idx}`)
+                    .attr('fill', playerColors[player])
+                    .attr('opacity', 0.15)
+                    .attr('d', area);
+
+                // Draw line
+                svg.append('path')
+                    .datum(lineData)
+                    .attr('class', `player-line player-${idx}`)
+                    .attr('fill', 'none')
+                    .attr('stroke', playerColors[player])
+                    .attr('stroke-width', 2)
+                    .attr('opacity', 0.3)
+                    .attr('d', line);
+            });
+        }
+    </script>
+</body>
+</html>

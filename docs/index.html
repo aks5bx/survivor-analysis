@@ -60,6 +60,95 @@
             border-bottom-color: #d32f2f;
         }
 
+        /* Dropdown menu styles */
+        .tab-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tab-dropdown-btn {
+            padding: 12px 20px;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tab-dropdown-btn:hover {
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .tab-dropdown-btn.active {
+            color: #d32f2f;
+            border-bottom-color: #d32f2f;
+        }
+
+        .dropdown-arrow {
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .tab-dropdown.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            min-width: 200px;
+            z-index: 10000;
+            margin-top: 2px;
+        }
+
+        .tab-dropdown.open .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            background: none;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: #f5f5f5;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 4px 4px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 4px 4px;
+        }
+
+        .dropdown-item.active {
+            background: #fff3f3;
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
         .tab-content {
             display: none;
             height: calc(100vh - 50px);
@@ -1620,8 +1709,36 @@
             }
         }
 
+        /* Mobile Warning Banner */
+        .mobile-warning {
+            display: none;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+        }
+
+        .mobile-warning-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .mobile-warning-text {
+            font-size: 14px;
+            color: #856404;
+            line-height: 1.5;
+        }
+
         /* Mobile styles */
         @media (max-width: 600px) {
+            .mobile-warning {
+                display: block;
+            }
+
             .tab-nav {
                 padding: 0 10px;
             }
@@ -2148,15 +2265,47 @@
 <body>
     <!-- Tab Navigation -->
     <nav class="tab-nav">
-        <button class="tab-btn active" data-tab="voteflow">📊 Vote Flow</button>
-        <button class="tab-btn" data-tab="analysis">🔬 Season Similarity</button>
-        <button class="tab-btn" data-tab="identity">👤 Player Identity</button>
-        <button class="tab-btn" data-tab="predictor">🎯 Elimination Predictor</button>
-        <button class="tab-btn" data-tab="quiz">🏆 Which Winner Are You?</button>
+        <div class="tab-dropdown">
+            <button class="tab-dropdown-btn active" data-dropdown="season-analysis">
+                📊 Season Analysis <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item active" data-tab="voteflow">📊 Vote Flow</button>
+                <button class="dropdown-item" data-tab="analysis">🔬 Season Similarity</button>
+            </div>
+        </div>
+
+        <div class="tab-dropdown">
+            <button class="tab-dropdown-btn" data-dropdown="personal-quizzes">
+                👤 Personal Quizzes <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" data-tab="identity">📊 My Chances of Winning</button>
+                <button class="dropdown-item" data-tab="quiz">🏆 Which Winner Are You?</button>
+            </div>
+        </div>
+
+        <div class="tab-dropdown">
+            <button class="tab-dropdown-btn" data-dropdown="simulations">
+                🎲 Simulations <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" data-tab="predictor">🎯 Elimination Predictor</button>
+                <button class="dropdown-item" data-tab="simulation">🏝️ Season 50 Simulation</button>
+            </div>
+        </div>
     </nav>
 
     <!-- Vote Flow Tab -->
     <div id="voteflow-tab" class="tab-content active">
+        <!-- Mobile Warning -->
+        <div class="mobile-warning">
+            <div class="mobile-warning-title">📱 Mobile Notice</div>
+            <div class="mobile-warning-text">
+                The Vote Flow visualization is best viewed on a desktop or laptop browser for optimal rendering and interactivity.
+            </div>
+        </div>
+
         <div id="main-viz">
             <div id="header">
                 <div class="header-left">
@@ -2652,6 +2801,11 @@
         </div>
     </div>
 
+    <!-- Season 50 Simulation Tab -->
+    <div id="simulation-tab" class="tab-content">
+        <iframe src="data/run_simulation.html" style="width: 100%; height: calc(100vh - 50px); border: none;"></iframe>
+    </div>
+
     <script>
         // Configuration
         const CONFIG = {
@@ -2714,11 +2868,43 @@
 
         // Tab functionality
         function setupTabs() {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.dataset.tab;
-                    window.location.hash = tabId;
+            // Handle dropdown toggles
+            document.querySelectorAll('.tab-dropdown-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const dropdown = btn.closest('.tab-dropdown');
+                    const isOpen = dropdown.classList.contains('open');
+
+                    // Close all dropdowns
+                    document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
+
+                    // Toggle this dropdown
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+
+                        // Position dropdown menu below button (for fixed positioning)
+                        const menu = dropdown.querySelector('.dropdown-menu');
+                        const rect = btn.getBoundingClientRect();
+                        menu.style.top = (rect.bottom + 2) + 'px';
+                        menu.style.left = rect.left + 'px';
+                    }
                 });
+            });
+
+            // Handle dropdown item clicks
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const tabId = item.dataset.tab;
+                    window.location.hash = tabId;
+
+                    // Close all dropdowns
+                    document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
             });
 
             // Handle hash changes (including back/forward buttons)
@@ -2732,16 +2918,27 @@
 
         function getTabFromHash() {
             const hash = window.location.hash.slice(1);
-            const validTabs = ['voteflow', 'analysis', 'identity', 'predictor', 'quiz'];
+            const validTabs = ['voteflow', 'analysis', 'identity', 'predictor', 'quiz', 'simulation'];
             return validTabs.includes(hash) ? hash : 'voteflow';
         }
 
         function switchToTab(tabId) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Update active dropdown items
+            document.querySelectorAll('.dropdown-item').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
 
-            const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
-            if (btn) btn.classList.add('active');
+            const item = document.querySelector(`.dropdown-item[data-tab="${tabId}"]`);
+            if (item) {
+                item.classList.add('active');
+
+                // Update parent dropdown button active state
+                const dropdown = item.closest('.tab-dropdown');
+                document.querySelectorAll('.tab-dropdown-btn').forEach(btn => btn.classList.remove('active'));
+                if (dropdown) {
+                    const dropdownBtn = dropdown.querySelector('.tab-dropdown-btn');
+                    if (dropdownBtn) dropdownBtn.classList.add('active');
+                }
+            }
 
             const content = document.getElementById(tabId + '-tab');
             if (content) content.classList.add('active');

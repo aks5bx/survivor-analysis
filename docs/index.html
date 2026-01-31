@@ -2943,7 +2943,6 @@
             // Handle dropdown item clicks
             document.querySelectorAll('.dropdown-item').forEach(item => {
                 item.addEventListener('click', () => {
-                    log(`📌 Dropdown item clicked: ${item.dataset.tab}`);
                     const tabId = item.dataset.tab;
                     window.location.hash = tabId;
 
@@ -2954,16 +2953,10 @@
 
             // Close dropdowns when clicking outside
             document.addEventListener('click', (e) => {
-                const isButton = e.target.closest('.tab-dropdown-btn');
-                log(`🌍 Global click - isButton: ${!!isButton}, target: ${e.target.tagName}`);
-
                 // Don't close if clicking on a dropdown button or its children
-                if (isButton) {
-                    log('   ⏸️ Ignoring (button click)');
+                if (e.target.closest('.tab-dropdown-btn')) {
                     return;
                 }
-
-                log('   🚫 Closing all dropdowns (outside click)');
                 document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
             });
 

@@ -2911,7 +2911,6 @@
                 // Use only click event - modern browsers synthesize click from tap on mobile
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    e.stopPropagation();
 
                     const dropdown = btn.closest('.tab-dropdown');
                     const isOpen = dropdown.classList.contains('open');
@@ -2956,7 +2955,11 @@
             });
 
             // Close dropdowns when clicking outside
-            document.addEventListener('click', () => {
+            document.addEventListener('click', (e) => {
+                // Don't close if clicking on a dropdown button or its children
+                if (e.target.closest('.tab-dropdown-btn')) {
+                    return;
+                }
                 document.querySelectorAll('.tab-dropdown').forEach(d => d.classList.remove('open'));
             });
 

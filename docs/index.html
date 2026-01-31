@@ -2973,14 +2973,21 @@
                             menu.style.width = '';
                         }
                         log(`   📍 Positioned at top: ${menu.style.top}, left: ${menu.style.left}`);
+                        log(`   📍 Button rect - top: ${rect.top}, bottom: ${rect.bottom}, height: ${rect.height}`);
+
+                        // Add bright red border to menu for visibility testing
+                        menu.style.border = '5px solid red';
+                        menu.style.background = 'yellow';
 
                         // Check computed styles after a moment
                         setTimeout(() => {
                             const computed = window.getComputedStyle(menu);
+                            const menuRect = menu.getBoundingClientRect();
                             log(`   🔍 Menu display: ${computed.display}`);
                             log(`   🔍 Menu visibility: ${computed.visibility}`);
                             log(`   🔍 Menu opacity: ${computed.opacity}`);
                             log(`   🔍 Menu z-index: ${computed.zIndex}`);
+                            log(`   🔍 Menu rect - top: ${menuRect.top}, left: ${menuRect.left}, height: ${menuRect.height}`);
                             log(`   🔍 Has 'open' class: ${dropdown.classList.contains('open')}`);
                         }, 100);
                     } else {

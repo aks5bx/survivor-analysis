@@ -94,6 +94,8 @@
             cursor: pointer;
             transition: all 0.2s;
             text-align: center;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .preset-btn:hover {
@@ -654,10 +656,43 @@
                 gap: 20px;
             }
 
+            /* Hide placement chart on mobile */
+            .chart-section {
+                display: none;
+            }
+
+            /* Mobile scroll indicators */
+            .mobile-scroll-hint {
+                display: block;
+                background: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 4px;
+                padding: 8px;
+                margin: 10px 0;
+                font-size: 11px;
+                color: #856404;
+                text-align: center;
+            }
+
             /* Make table horizontally scrollable */
             .rankings-panel {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                position: relative;
+            }
+
+            .rankings-panel::after {
+                content: "← Scroll right for more →";
+                position: sticky;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(to top, rgba(255,243,205,0.95) 0%, transparent 100%);
+                padding: 8px;
+                text-align: center;
+                font-size: 10px;
+                color: #856404;
+                pointer-events: none;
             }
 
             .rankings-table {
@@ -897,7 +932,6 @@
 <body>
     <div class="container">
         <h1>🏝️ SURVIVOR SEASON 50 SIMULATION 🏝️</h1>
-        <p class="subtitle">Interactive Prediction Model - Adjust parameters to see how different game scenarios affect outcomes</p>
 
         <!-- Top Section: Config + Rankings -->
         <div class="top-section">
@@ -975,6 +1009,9 @@
         <div class="chart-section">
             <h2>📈 Placement Distribution by Player</h2>
             <p class="rankings-hint" style="margin-bottom: 15px;">💡 Click on a player in the table above to highlight their placement curve</p>
+            <div class="mobile-scroll-hint" style="display: none;">
+                📊 Placement distribution chart available on desktop browser
+            </div>
             <div id="placement-chart"></div>
         </div>
 

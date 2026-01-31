@@ -2972,7 +2972,17 @@
                             menu.style.right = 'auto';
                             menu.style.width = '';
                         }
-                        log(`   📍 Positioned at top: ${menu.style.top}`);
+                        log(`   📍 Positioned at top: ${menu.style.top}, left: ${menu.style.left}`);
+
+                        // Check computed styles after a moment
+                        setTimeout(() => {
+                            const computed = window.getComputedStyle(menu);
+                            log(`   🔍 Menu display: ${computed.display}`);
+                            log(`   🔍 Menu visibility: ${computed.visibility}`);
+                            log(`   🔍 Menu opacity: ${computed.opacity}`);
+                            log(`   🔍 Menu z-index: ${computed.zIndex}`);
+                            log(`   🔍 Has 'open' class: ${dropdown.classList.contains('open')}`);
+                        }, 100);
                     } else {
                         log('   ➡️ Already open, so closed it');
                     }

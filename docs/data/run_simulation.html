@@ -648,6 +648,7 @@
 
             .container {
                 padding: 10px;
+                padding-bottom: 80px; /* Extra space at bottom for mobile */
             }
 
             /* Stack configuration and rankings vertically on mobile */
@@ -1724,25 +1725,6 @@
                     .attr('d', line);
             });
         }
-    </script>
-
-    <!-- Debug viewport indicator -->
-    <div id="viewport-debug" style="position: fixed; bottom: 5px; right: 5px; background: rgba(255,0,0,0.9); color: white; padding: 5px 10px; font-size: 11px; z-index: 999999; border-radius: 3px; font-family: monospace;">
-        Loading...
-    </div>
-
-    <script>
-        // Update viewport debug info
-        function updateViewportDebug() {
-            const vw = window.innerWidth;
-            const vh = window.innerHeight;
-            const isMobile = vw <= 768;
-            const debug = document.getElementById('viewport-debug');
-            debug.innerHTML = `${vw}x${vh} ${isMobile ? 'MOBILE' : 'DESKTOP'}`;
-            debug.style.background = isMobile ? 'rgba(0,128,0,0.9)' : 'rgba(255,0,0,0.9)';
-        }
-        updateViewportDebug();
-        window.addEventListener('resize', updateViewportDebug);
     </script>
 </body>
 </html>

@@ -1713,24 +1713,24 @@
         .mobile-warning {
             display: none;
             background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin: 8px;
             text-align: center;
         }
 
         .mobile-warning-title {
-            font-size: 18px;
+            font-size: 12px;
             font-weight: 600;
             color: #856404;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
         }
 
         .mobile-warning-text {
-            font-size: 14px;
+            font-size: 11px;
             color: #856404;
-            line-height: 1.5;
+            line-height: 1.3;
         }
 
         /* Mobile styles */
@@ -1740,9 +1740,38 @@
             }
 
             .tab-nav {
-                padding: 0 10px;
+                padding: 0 5px;
+                gap: 4px;
             }
-            
+
+            .tab-dropdown {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .tab-dropdown-btn {
+                padding: 10px 8px;
+                font-size: 12px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dropdown-arrow {
+                font-size: 8px;
+            }
+
+            .dropdown-menu {
+                left: 5px !important;
+                right: 5px;
+                width: auto !important;
+                min-width: 0;
+            }
+
+            .dropdown-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
             .tab-btn {
                 padding: 12px 16px;
                 font-size: 13px;
@@ -2266,21 +2295,11 @@
     <!-- Tab Navigation -->
     <nav class="tab-nav">
         <div class="tab-dropdown">
-            <button class="tab-dropdown-btn active" data-dropdown="season-analysis">
-                📊 Season Analysis <span class="dropdown-arrow">▼</span>
-            </button>
-            <div class="dropdown-menu">
-                <button class="dropdown-item active" data-tab="voteflow">📊 Vote Flow</button>
-                <button class="dropdown-item" data-tab="analysis">🔬 Season Similarity</button>
-            </div>
-        </div>
-
-        <div class="tab-dropdown">
-            <button class="tab-dropdown-btn" data-dropdown="personal-quizzes">
+            <button class="tab-dropdown-btn active" data-dropdown="personal-quizzes">
                 👤 Personal Quizzes <span class="dropdown-arrow">▼</span>
             </button>
             <div class="dropdown-menu">
-                <button class="dropdown-item" data-tab="identity">📊 My Chances of Winning</button>
+                <button class="dropdown-item active" data-tab="identity">📊 My Chances of Winning</button>
                 <button class="dropdown-item" data-tab="quiz">🏆 Which Winner Are You?</button>
             </div>
         </div>
@@ -2294,10 +2313,20 @@
                 <button class="dropdown-item" data-tab="simulation">🏝️ Season 50 Simulation</button>
             </div>
         </div>
+
+        <div class="tab-dropdown">
+            <button class="tab-dropdown-btn" data-dropdown="season-analysis">
+                📊 Season Analysis <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" data-tab="voteflow">📊 Vote Flow</button>
+                <button class="dropdown-item" data-tab="analysis">🔬 Season Similarity</button>
+            </div>
+        </div>
     </nav>
 
     <!-- Vote Flow Tab -->
-    <div id="voteflow-tab" class="tab-content active">
+    <div id="voteflow-tab" class="tab-content">
         <!-- Mobile Warning -->
         <div class="mobile-warning">
             <div class="mobile-warning-title">📱 Mobile Notice</div>
@@ -2419,7 +2448,7 @@
     </div>
 
     <!-- Player Identity Tab -->
-    <div id="identity-tab" class="tab-content">
+    <div id="identity-tab" class="tab-content active">
         <div class="identity-container">
             <div class="identity-header">
                 <h2>👤 Player Identity Analysis</h2>
@@ -2885,8 +2914,20 @@
                         // Position dropdown menu below button (for fixed positioning)
                         const menu = dropdown.querySelector('.dropdown-menu');
                         const rect = btn.getBoundingClientRect();
+                        const isMobile = window.innerWidth <= 600;
+
                         menu.style.top = (rect.bottom + 2) + 'px';
-                        menu.style.left = rect.left + 'px';
+
+                        if (isMobile) {
+                            // On mobile, make dropdown full width with margins
+                            menu.style.left = '5px';
+                            menu.style.right = '5px';
+                            menu.style.width = 'auto';
+                        } else {
+                            menu.style.left = rect.left + 'px';
+                            menu.style.right = 'auto';
+                            menu.style.width = '';
+                        }
                     }
                 });
             });
@@ -2919,7 +2960,7 @@
         function getTabFromHash() {
             const hash = window.location.hash.slice(1);
             const validTabs = ['voteflow', 'analysis', 'identity', 'predictor', 'quiz', 'simulation'];
-            return validTabs.includes(hash) ? hash : 'voteflow';
+            return validTabs.includes(hash) ? hash : 'identity';
         }
 
         function switchToTab(tabId) {

@@ -656,9 +656,15 @@
                 gap: 20px;
             }
 
-            /* Hide placement chart on mobile */
-            .chart-section {
+            /* Hide chart elements on mobile, show note */
+            .chart-section h2,
+            .chart-section .rankings-hint,
+            .chart-section #placement-chart {
                 display: none;
+            }
+
+            .chart-section .mobile-scroll-hint {
+                display: block !important;
             }
 
             /* Mobile scroll indicators */

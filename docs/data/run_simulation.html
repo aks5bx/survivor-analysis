@@ -582,6 +582,51 @@
             font-size: 11px;
         }
 
+        /* Scenario Analysis Bars */
+        .scenario-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .scenario-label {
+            min-width: 180px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .scenario-bar-wrapper {
+            flex: 1;
+            background: #e8e8e8;
+            border-radius: 4px;
+            height: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scenario-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a90e2, #357abd);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+        }
+
+        .scenario-bar-fill.best {
+            background: linear-gradient(90deg, #28a745, #1e7e34);
+        }
+
+        .scenario-bar-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
         /* ============================================
            MOBILE RESPONSIVE STYLES
            ============================================ */
@@ -751,6 +796,28 @@
             .rankings-hint {
                 font-size: 12px;
                 margin-bottom: 10px;
+            }
+
+            /* Scenario analysis mobile */
+            #player-scenario-analysis {
+                padding: 15px;
+            }
+
+            #player-scenario-analysis h3 {
+                font-size: 16px;
+            }
+
+            .scenario-label {
+                min-width: 120px;
+                font-size: 11px;
+            }
+
+            .scenario-bar-wrapper {
+                height: 24px;
+            }
+
+            .scenario-bar-value {
+                font-size: 10px;
             }
 
             /* Score breakdown table mobile */
@@ -1034,6 +1101,13 @@
                 📊 Placement distribution chart available on desktop browser
             </div>
             <div id="placement-chart"></div>
+
+            <!-- Player Scenario Analysis -->
+            <div id="player-scenario-analysis" style="display: none; margin-top: 30px; background: #f9f9f9; border: 2px solid #e0e0e0; border-radius: 8px; padding: 20px;">
+                <h3 id="scenario-player-name" style="margin-bottom: 15px; color: #333;"></h3>
+                <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Win probability across different game scenarios:</p>
+                <div id="scenario-bars" style="display: flex; flex-direction: column; gap: 12px;"></div>
+            </div>
         </div>
 
         <!-- Methodology Section -->
@@ -1609,8 +1683,70 @@
             d3.select(`.player-line.player-${idx}`).attr('opacity', 1).attr('stroke-width', 4);
             d3.select(`.player-area.player-${idx}`).attr('opacity', 0.4);
 
+            // Show scenario analysis
+            showScenarioAnalysis(player);
+
             // Scroll chart into view
             document.querySelector('.chart-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function showScenarioAnalysis(player) {
+            const analysisDiv = document.getElementById('player-scenario-analysis');
+            const playerNameEl = document.getElementById('scenario-player-name');
+            const barsContainer = document.getElementById('scenario-bars');
+
+            // Collect win probabilities across all configurations
+            const scenarios = [];
+            CONFIGS.forEach(config => {
+                const data = allConfigurations[config.key];
+                if (data && data.player_stats[player]) {
+                    scenarios.push({
+                        name: config.name,
+                        desc: config.desc,
+                        winProb: data.player_stats[player].win_probability
+                    });
+                }
+            });
+
+            // Sort by win probability descending
+            scenarios.sort((a, b) => b.winProb - a.winProb);
+
+            // Find max for scaling
+            const maxWinProb = Math.max(...scenarios.map(s => s.winProb));
+
+            // Update player name
+            playerNameEl.textContent = `${player}'s Performance by Scenario`;
+
+            // Create bars
+            barsContainer.innerHTML = '';
+            scenarios.forEach((scenario, idx) => {
+                const barContainer = document.createElement('div');
+                barContainer.className = 'scenario-bar-container';
+
+                const label = document.createElement('div');
+                label.className = 'scenario-label';
+                label.textContent = scenario.name;
+
+                const barWrapper = document.createElement('div');
+                barWrapper.className = 'scenario-bar-wrapper';
+
+                const barFill = document.createElement('div');
+                barFill.className = 'scenario-bar-fill' + (idx === 0 ? ' best' : '');
+                barFill.style.width = `${(scenario.winProb / maxWinProb) * 100}%`;
+
+                const barValue = document.createElement('span');
+                barValue.className = 'scenario-bar-value';
+                barValue.textContent = `${(scenario.winProb * 100).toFixed(1)}%`;
+
+                barFill.appendChild(barValue);
+                barWrapper.appendChild(barFill);
+                barContainer.appendChild(label);
+                barContainer.appendChild(barWrapper);
+                barsContainer.appendChild(barContainer);
+            });
+
+            // Show the analysis section
+            analysisDiv.style.display = 'block';
         }
 
         function createPlacementChart(data) {

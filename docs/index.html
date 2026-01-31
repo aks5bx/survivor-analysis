@@ -2298,6 +2298,11 @@
     </style>
 </head>
 <body>
+    <!-- Menu Position Indicator -->
+    <div id="menu-indicator" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,0,0,0.9); color: white; padding: 20px; border-radius: 10px; z-index: 9999999; font-size: 18px; font-weight: bold; display: none; text-align: center; border: 5px solid yellow;">
+        MENU STATUS
+    </div>
+
     <!-- Debug Panel -->
     <div id="debug-panel" style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.9); color: #0f0; font-family: monospace; font-size: 11px; padding: 10px; z-index: 999999; max-height: 150px; overflow-y: auto; border-top: 2px solid #0f0;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
@@ -2979,16 +2984,50 @@
                         menu.style.border = '5px solid red';
                         menu.style.background = 'yellow';
 
+                        // Show status indicator
+                        const indicator = document.getElementById('menu-indicator');
+                        if (indicator) {
+                            indicator.textContent = 'MENU OPENED!\nCheck below tabs';
+                            indicator.style.display = 'block';
+                            setTimeout(() => indicator.style.display = 'none', 3000);
+                        }
+
                         // Check computed styles after a moment
                         setTimeout(() => {
                             const computed = window.getComputedStyle(menu);
                             const menuRect = menu.getBoundingClientRect();
+                            const viewport = {w: window.innerWidth, h: window.innerHeight};
+
                             log(`   🔍 Menu display: ${computed.display}`);
                             log(`   🔍 Menu visibility: ${computed.visibility}`);
                             log(`   🔍 Menu opacity: ${computed.opacity}`);
                             log(`   🔍 Menu z-index: ${computed.zIndex}`);
-                            log(`   🔍 Menu rect - top: ${menuRect.top}, left: ${menuRect.left}, height: ${menuRect.height}`);
+                            log(`   🔍 Menu position: ${computed.position}`);
+                            log(`   🔍 Menu rect - top: ${menuRect.top}, bottom: ${menuRect.bottom}`);
+                            log(`   🔍 Menu rect - left: ${menuRect.left}, right: ${menuRect.right}`);
+                            log(`   🔍 Menu rect - width: ${menuRect.width}, height: ${menuRect.height}`);
+                            log(`   🔍 Viewport: ${viewport.w}x${viewport.h}`);
+                            log(`   🔍 Menu visible in viewport? top: ${menuRect.top >= 0 && menuRect.top < viewport.h}`);
+                            log(`   🔍 Menu visible in viewport? left: ${menuRect.left >= 0 && menuRect.left < viewport.w}`);
                             log(`   🔍 Has 'open' class: ${dropdown.classList.contains('open')}`);
+                            log(`   🔍 Menu HTML items: ${menu.querySelectorAll('.dropdown-item').length}`);
+
+                            // Check what element is actually at the menu position
+                            const centerX = menuRect.left + menuRect.width / 2;
+                            const centerY = menuRect.top + menuRect.height / 2;
+                            const elementAtCenter = document.elementFromPoint(centerX, centerY);
+                            log(`   🔍 Element at menu center: ${elementAtCenter ? elementAtCenter.tagName + '.' + elementAtCenter.className : 'null'}`);
+                            log(`   🔍 Is menu element? ${elementAtCenter === menu || menu.contains(elementAtCenter)}`);
+
+                            // Check parent overflow settings
+                            let parent = menu.parentElement;
+                            while (parent && parent !== document.body) {
+                                const pStyle = window.getComputedStyle(parent);
+                                if (pStyle.overflow !== 'visible' || pStyle.overflowX !== 'visible' || pStyle.overflowY !== 'visible') {
+                                    log(`   ⚠️ Parent ${parent.tagName}.${parent.className} has overflow: ${pStyle.overflow}`);
+                                }
+                                parent = parent.parentElement;
+                            }
                         }, 100);
                     } else {
                         log('   ➡️ Already open, so closed it');

@@ -693,7 +693,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(to top, rgba(255,243,205,0.95) 0%, transparent 100%);
+                background: #fff3cd;
                 padding: 8px;
                 text-align: center;
                 font-size: 10px;
@@ -753,6 +753,24 @@
             }
 
             /* Score breakdown table mobile */
+            .score-table-container {
+                position: relative;
+            }
+
+            .score-table-container::after {
+                content: "← Scroll right for more →";
+                position: sticky;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #fff3cd;
+                padding: 8px;
+                text-align: center;
+                font-size: 10px;
+                color: #856404;
+                pointer-events: none;
+            }
+
             .score-breakdown-table {
                 font-size: 10px;
             }
@@ -901,11 +919,7 @@
                 background: transparent;
             }
 
-            .preset-btn:hover {
-                background: white;
-            }
-
-            /* Active/touch states */
+            /* Active/touch states - no white background */
             .preset-btn:active {
                 background: #e8e8e8;
             }
